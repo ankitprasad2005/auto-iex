@@ -17,10 +17,12 @@ describe("App", () => {
     expect(screen.getByRole("tab", { name: /dashboard/i })).toHaveAttribute("aria-selected", "true");
   });
 
-  it("switches to the Chain tab on click", () => {
+  it("switches to the Chain tab on click", async () => {
     render(<App />);
     fireEvent.click(screen.getByRole("tab", { name: /chain/i }));
     expect(screen.getByRole("tab", { name: /chain/i })).toHaveAttribute("aria-selected", "true");
-    expect(screen.getByText(/no blocks yet/i)).toBeInTheDocument();
+    // getChain() resolves asynchronously, so wait for the state update it
+    // triggers instead of asserting before React has re-rendered.
+    expect(await screen.findByText(/no blocks yet/i)).toBeInTheDocument();
   });
 });
