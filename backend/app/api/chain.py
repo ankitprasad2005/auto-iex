@@ -12,6 +12,10 @@ router = APIRouter()
 
 
 def _to_domain(models) -> list[ChainBlock]:
+    # DATETIME columns round-trip as naive (tzinfo stripped by the DB driver),
+    # but every block was hashed against a UTC-aware timestamp when created.
+    # Re-attaching UTC here keeps compute_hash()'s input identical to what it
+    # was at creation time, so verify() doesn't flag untampered blocks.
     return [
         ChainBlock(
             index=m.index,

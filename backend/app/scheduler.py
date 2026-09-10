@@ -15,16 +15,8 @@ def _run_scrape(market: str, date_offset: int) -> None:  # pragma: no cover
         session.close()
 
 
-class _SafeBackgroundScheduler(BackgroundScheduler):
-    """BackgroundScheduler that handles shutdown() gracefully even if not started."""
-
-    def shutdown(self, wait=True):
-        if self.running:
-            super().shutdown(wait=wait)
-
-
 def build_scheduler() -> BackgroundScheduler:
-    scheduler = _SafeBackgroundScheduler()
+    scheduler = BackgroundScheduler()
     scheduler.add_job(lambda: _run_scrape("DAM", 1), "cron", hour=DAM_SCRAPE_HOUR, minute=0, id="dam_scrape")
     scheduler.add_job(lambda: _run_scrape("RTM", 0), "interval", minutes=15, id="rtm_scrape")
     return scheduler
