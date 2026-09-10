@@ -37,6 +37,7 @@ def scrape_and_record(
     price_hash = _price_hash(records)
 
     existing_models = load_chain_blocks(session)
+    chain_was_empty = not existing_models
     chain = Chain(blocks=_to_domain_blocks(existing_models))
 
     is_duplicate = any(
@@ -54,8 +55,8 @@ def scrape_and_record(
     new_block = chain.append(
         {"market": market, "date": delivery_date.isoformat(), "block_count": len(records), "price_hash": price_hash}
     )
-    # Save genesis block if it was just created
-    if new_block.index == 1:
+    if chain_was_empty:
+        # append() auto-created the genesis block in-memory; persist it too.
         save_chain_block(session, chain.blocks[0])
     save_chain_block(session, new_block)
     return {"chain_block": new_block, "written": written, "skipped_duplicate": False}
