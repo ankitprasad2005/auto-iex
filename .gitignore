@@ -28,3 +28,6 @@ build/
 
 # Docker
 *.pid
+
+# Claude Code local harness state
+.claude/
