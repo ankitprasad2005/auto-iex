@@ -36,4 +36,16 @@ describe("ComparisonView", () => {
     render(<ComparisonView result={result} />);
     expect(screen.getAllByRole("row").length).toBeGreaterThan(1); // header + 1 data row
   });
+
+  it("wraps the table in a horizontally scrollable container so narrow viewports scroll instead of squishing columns", () => {
+    const result: ComparisonResult = {
+      ...emptyResult,
+      blocks: [
+        { block_index: 0, predicted_kwh: 1, dam_cost_rs: "4", rtm_cost_rs: "3", dam_pending: false, rtm_pending: false },
+      ],
+    };
+    render(<ComparisonView result={result} />);
+    const table = screen.getByRole("table");
+    expect(table.parentElement).toHaveClass("overflow-x-auto");
+  });
 });
