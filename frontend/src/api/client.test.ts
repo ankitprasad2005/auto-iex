@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, afterEach } from "vitest";
-import { createScenario, getChain, getComparison } from "./client";
+import { createScenario, getChain, getComparison, triggerScrape } from "./client";
 
 afterEach(() => {
   vi.restoreAllMocks();
@@ -52,5 +52,28 @@ describe("getChain", () => {
   it("throws when the API returns an error status", async () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
     await expect(getChain()).rejects.toThrow("500");
+  });
+});
+
+describe("triggerScrape", () => {
+  it("posts to /scrape/{market} with the date and returns the result", async () => {
+    const mockFetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ written: 96, skipped_duplicate: false, chain_block_index: 3 }),
+    });
+    vi.stubGlobal("fetch", mockFetch);
+
+    const result = await triggerScrape("DAM", "2026-09-13");
+
+    expect(result).toEqual({ written: 96, skipped_duplicate: false, chain_block_index: 3 });
+    expect(mockFetch).toHaveBeenCalledWith(
+      expect.stringContaining("/scrape/DAM?date=2026-09-13"),
+      expect.objectContaining({ method: "POST" }),
+    );
+  });
+
+  it("throws when the API returns an error status", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 502 }));
+    await expect(triggerScrape("RTM", "2026-09-12")).rejects.toThrow("502");
   });
 });

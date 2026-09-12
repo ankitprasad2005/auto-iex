@@ -34,3 +34,11 @@ export interface ChainBlock {
   prev_hash: string;
   hash: string;
 }
+
+export type Market = "DAM" | "RTM";
+
+export interface ScrapeResult {
+  written: number;
+  skipped_duplicate: boolean;
+  chain_block_index: number | null;
+}

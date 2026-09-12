@@ -1,4 +1,4 @@
-import type { ChainBlock, ComparisonResult, ConsumptionRangeInput, ScenarioOut } from "./types";
+import type { ChainBlock, ComparisonResult, ConsumptionRangeInput, Market, ScenarioOut, ScrapeResult } from "./types";
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000";
 
@@ -21,5 +21,11 @@ export async function getComparison(scenarioId: number, date: string): Promise<C
 export async function getChain(): Promise<ChainBlock[]> {
   const res = await fetch(`${BASE_URL}/chain`);
   if (!res.ok) throw new Error(`failed to fetch chain: ${res.status}`);
+  return res.json();
+}
+
+export async function triggerScrape(market: Market, date: string): Promise<ScrapeResult> {
+  const res = await fetch(`${BASE_URL}/scrape/${market}?date=${date}`, { method: "POST" });
+  if (!res.ok) throw new Error(`failed to trigger scrape: ${res.status}`);
   return res.json();
 }
