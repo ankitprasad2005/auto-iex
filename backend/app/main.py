@@ -1,11 +1,13 @@
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from .api.chain import router as chain_router
 from .api.prices import router as prices_router
 from .api.scenarios import router as scenarios_router
 from .api.scrape import router as scrape_router
+from .config import CORS_ALLOWED_ORIGINS
 from .db import init_db
 from .scheduler import build_scheduler
 
@@ -21,6 +23,12 @@ async def lifespan(app: FastAPI):  # pragma: no cover
 
 
 app = FastAPI(title="auto-iex", lifespan=lifespan)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=CORS_ALLOWED_ORIGINS.split(",") if CORS_ALLOWED_ORIGINS != "*" else ["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.include_router(prices_router)
 app.include_router(scenarios_router)
 app.include_router(scrape_router)
