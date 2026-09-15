@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { ChainNetwork } from "./ChainNetwork";
+import { formatIST } from "../lib/formatIST";
 import type { ChainBlock } from "../api/types";
 
 describe("ChainNetwork", () => {
@@ -9,7 +10,7 @@ describe("ChainNetwork", () => {
     expect(screen.getByText(/no blocks yet/i)).toBeInTheDocument();
   });
 
-  it("renders one node per block with a shortened hash", () => {
+  it("renders one box per block with a shortened hash", () => {
     const blocks: ChainBlock[] = [
       { index: 0, timestamp: "2026-09-10T00:00:00Z", payload: { genesis: true }, prev_hash: "0".repeat(64), hash: "a".repeat(64) },
       { index: 1, timestamp: "2026-09-10T00:15:00Z", payload: { market: "DAM" }, prev_hash: "a".repeat(64), hash: "b".repeat(64) },
@@ -26,19 +27,15 @@ describe("ChainNetwork", () => {
       { index: 1, timestamp: "2026-09-10T00:15:00Z", payload: { market: "DAM" }, prev_hash: "a".repeat(64), hash: "c".repeat(64) },
     ];
     render(<ChainNetwork blocks={blocks} />);
-    // block 1's prev_hash ("a"*64) should appear as its own labeled text, distinct from its own hash ("c"*64)
     expect(screen.getByText(/prev.*aaaaaaaa/i)).toBeInTheDocument();
   });
 
-  it("renders as a table of block records (Airtable-style grid, not free-floating cards)", () => {
+  it("displays block timestamps in IST", () => {
     const blocks: ChainBlock[] = [
-      { index: 0, timestamp: "2026-09-10T00:00:00Z", payload: { genesis: true }, prev_hash: "0".repeat(64), hash: "a".repeat(64) },
-      { index: 1, timestamp: "2026-09-10T00:15:00Z", payload: { market: "DAM" }, prev_hash: "a".repeat(64), hash: "b".repeat(64) },
+      { index: 0, timestamp: "2026-09-15T05:19:47.000Z", payload: { genesis: true }, prev_hash: "0".repeat(64), hash: "a".repeat(64) },
     ];
     render(<ChainNetwork blocks={blocks} />);
-    expect(screen.getByRole("table")).toBeInTheDocument();
-    // one header row + one row per block
-    expect(screen.getAllByRole("row")).toHaveLength(3);
+    expect(screen.getByText(formatIST("2026-09-15T05:19:47.000Z"))).toBeInTheDocument();
   });
 
   it("renders a connecting arrow between each consecutive pair of blocks, none after the last", () => {
@@ -58,5 +55,19 @@ describe("ChainNetwork", () => {
     ];
     render(<ChainNetwork blocks={blocks} />);
     expect(screen.queryByTestId("chain-arrow")).not.toBeInTheDocument();
+  });
+
+  it("wraps the boxes in a horizontally scrollable row instead of wrapping to a new line", () => {
+    // Regression guard: an earlier flex-wrap layout let boxes overlap once
+    // they wrapped to a second row. A strict single-row flex container with
+    // overflow-x-auto can't wrap at all, so it can't reproduce that bug.
+    const blocks: ChainBlock[] = [
+      { index: 0, timestamp: "2026-09-10T00:00:00Z", payload: { genesis: true }, prev_hash: "0".repeat(64), hash: "a".repeat(64) },
+    ];
+    render(<ChainNetwork blocks={blocks} />);
+    const scrollContainer = screen.getByTestId("chain-scroll-container");
+    expect(scrollContainer).toHaveClass("overflow-x-auto");
+    const row = screen.getByTestId("chain-row");
+    expect(row.className).not.toMatch(/flex-wrap/);
   });
 });

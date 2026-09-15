@@ -1,3 +1,4 @@
+import { formatIST } from "../lib/formatIST";
 import type { ChainBlock } from "../api/types";
 
 interface Props {
@@ -14,39 +15,42 @@ export function ChainNetwork({ blocks }: Props) {
   }
 
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full min-w-[720px] font-mono text-xs text-nd-text-primary border-collapse">
-        <thead>
-          <tr className="text-left text-nd-text-secondary uppercase tracking-label text-[11px]">
-            <th className="py-2 pr-2 w-6" aria-hidden="true"></th>
-            <th className="py-2 pr-4">Block</th>
-            <th className="py-2 pr-4">Hash</th>
-            <th className="py-2 pr-4">Prev hash</th>
-            <th className="py-2 pr-4">Timestamp</th>
-            <th className="py-2 pr-4">Payload</th>
-          </tr>
-        </thead>
-        <tbody>
-          {blocks.map((block, i) => (
-            <tr key={block.index} data-testid="chain-node" className="border-t border-nd-border">
-              <td className="py-2 pr-2 text-center text-nd-border-visible">
-                {i < blocks.length - 1 && (
-                  <span data-testid="chain-arrow" aria-hidden="true">
-                    ↓
-                  </span>
-                )}
-              </td>
-              <td className="py-2 pr-4 text-nd-text-secondary">#{block.index}</td>
-              <td className="py-2 pr-4 text-nd-text-display">{block.hash.slice(0, 8)}…</td>
-              <td className="py-2 pr-4 text-nd-text-disabled">prev: {block.prev_hash.slice(0, 8)}…</td>
-              <td className="py-2 pr-4 text-nd-text-disabled whitespace-nowrap">
-                {new Date(block.timestamp).toLocaleString()}
-              </td>
-              <td className="py-2 pr-4 text-nd-text-secondary break-all">{JSON.stringify(block.payload)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    // A strict single-row flex layout (no flex-wrap) scrolling horizontally
+    // instead of wrapping to a new line — a linked list is inherently 1D,
+    // and this also structurally rules out the overlap an earlier
+    // flex-wrap layout produced once boxes wrapped to a second row.
+    <div data-testid="chain-scroll-container" className="dot-grid overflow-x-auto p-4 sm:p-8 bg-nd-black">
+      <div data-testid="chain-row" className="flex items-stretch gap-0 w-max">
+        {blocks.map((block, i) => (
+          <div key={block.index} className="flex items-center flex-shrink-0">
+            <div
+              data-testid="chain-node"
+              className="flex flex-col gap-2 bg-nd-surface border border-nd-border-visible px-4 py-3 w-[220px] flex-shrink-0"
+            >
+              <span className="font-mono text-[11px] uppercase tracking-label text-nd-text-secondary">
+                Block #{block.index}
+              </span>
+              <span className="font-mono text-sm text-nd-text-display truncate">{block.hash.slice(0, 8)}…</span>
+              <span className="font-mono text-[11px] text-nd-text-disabled truncate">
+                prev: {block.prev_hash.slice(0, 8)}…
+              </span>
+              <span className="font-mono text-[11px] text-nd-text-disabled">{formatIST(block.timestamp)}</span>
+              <span className="font-mono text-[11px] text-nd-text-secondary break-all">
+                {JSON.stringify(block.payload)}
+              </span>
+            </div>
+            {i < blocks.length - 1 && (
+              <span
+                data-testid="chain-arrow"
+                aria-hidden="true"
+                className="font-mono text-lg text-nd-border-visible px-2 flex-shrink-0"
+              >
+                →
+              </span>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
