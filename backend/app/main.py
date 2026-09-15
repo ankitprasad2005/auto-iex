@@ -5,8 +5,10 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .api.chain import router as chain_router
 from .api.ledger import router as ledger_router
+from .api.price_ledger import router as price_ledger_router
 from .api.prices import router as prices_router
 from .api.scenarios import router as scenarios_router
+from .api.scheduler_settings import router as scheduler_settings_router
 from .api.scrape import router as scrape_router
 from .config import CORS_ALLOWED_ORIGINS
 from .db import init_db
@@ -35,3 +37,5 @@ app.include_router(scenarios_router)
 app.include_router(scrape_router)
 app.include_router(chain_router)
 app.include_router(ledger_router)
+app.include_router(price_ledger_router)
+app.include_router(scheduler_settings_router)
