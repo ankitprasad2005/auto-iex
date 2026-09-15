@@ -1,3 +1,4 @@
+import { formatIST } from "../lib/formatIST";
 import { isSettlementPayload, type SettlementBlock, type SettlementPayload } from "../api/types";
 
 interface Props {
@@ -83,9 +84,7 @@ export function SettlementLedger({ blocks, onCheckNow, checking }: Props) {
                         <span className="text-nd-warning">PARTIAL</span>
                       )}
                     </td>
-                    <td className="py-2 pr-4 text-nd-text-disabled">
-                      {new Date(p.settled_at).toLocaleString()}
-                    </td>
+                    <td className="py-2 pr-4 text-nd-text-disabled">{formatIST(p.settled_at)}</td>
                   </tr>
                 );
               })}

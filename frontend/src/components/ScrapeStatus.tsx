@@ -1,3 +1,4 @@
+import { formatIST } from "../lib/formatIST";
 import type { ChainBlock, Market } from "../api/types";
 
 interface Props {
@@ -30,7 +31,7 @@ export function ScrapeStatus({ chainBlocks, onScrape, scraping, errors }: Props)
               {market} last scraped
             </span>
             <span className="font-mono text-xs text-nd-text-primary">
-              {lastScraped ? new Date(lastScraped).toLocaleString() : "Never"}
+              {lastScraped ? formatIST(lastScraped) : "Never"}
             </span>
             <button
               type="button"

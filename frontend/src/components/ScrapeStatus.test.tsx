@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { ScrapeStatus } from "./ScrapeStatus";
+import { formatIST } from "../lib/formatIST";
 import type { ChainBlock } from "../api/types";
 
 describe("ScrapeStatus", () => {
@@ -32,8 +33,8 @@ describe("ScrapeStatus", () => {
       />,
     );
     // DAM's latest block (index 2) timestamp should be shown, not the earlier index-1 block
-    expect(screen.getByText(new Date("2026-09-12T09:30:00Z").toLocaleString())).toBeInTheDocument();
-    expect(screen.getByText(new Date("2026-09-12T10:00:00Z").toLocaleString())).toBeInTheDocument();
+    expect(screen.getByText(formatIST("2026-09-12T09:30:00Z"))).toBeInTheDocument();
+    expect(screen.getByText(formatIST("2026-09-12T10:00:00Z"))).toBeInTheDocument();
     expect(screen.queryByText(/never/i)).not.toBeInTheDocument();
   });
 
