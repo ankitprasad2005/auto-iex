@@ -5,7 +5,13 @@ from sqlalchemy.orm import Session
 
 from ..chain.block import ChainBlock
 from ..scraper.parser import PriceBlockRecord
-from .tables import ChainBlockModel, ConsumptionRangeModel, PriceBlockModel, ScenarioModel
+from .tables import (
+    ChainBlockModel,
+    ConsumptionRangeModel,
+    PriceBlockModel,
+    ScenarioModel,
+    SettlementBlockModel,
+)
 
 
 def upsert_price_blocks(session: Session, records: list[PriceBlockRecord]) -> int:
@@ -60,12 +66,32 @@ def get_scenario(session: Session, scenario_id: int) -> ScenarioModel | None:
     return session.get(ScenarioModel, scenario_id)
 
 
+def get_latest_scenario(session: Session) -> ScenarioModel | None:
+    # Ordered by id (monotonic autoincrement), not created_at: two scenarios
+    # created within the same clock tick would otherwise tie on timestamp.
+    return session.execute(select(ScenarioModel).order_by(ScenarioModel.id.desc()).limit(1)).scalar_one_or_none()
+
+
 def load_chain_blocks(session: Session) -> list[ChainBlockModel]:
     return list(session.execute(select(ChainBlockModel).order_by(ChainBlockModel.index)).scalars())
 
 
 def save_chain_block(session: Session, block: ChainBlock) -> ChainBlockModel:
     model = ChainBlockModel(
+        index=block.index, timestamp=block.timestamp, payload_json=block.payload,
+        prev_hash=block.prev_hash, hash=block.hash,
+    )
+    session.add(model)
+    session.commit()
+    return model
+
+
+def load_settlement_blocks(session: Session) -> list[SettlementBlockModel]:
+    return list(session.execute(select(SettlementBlockModel).order_by(SettlementBlockModel.index)).scalars())
+
+
+def save_settlement_block(session: Session, block: ChainBlock) -> SettlementBlockModel:
+    model = SettlementBlockModel(
         index=block.index, timestamp=block.timestamp, payload_json=block.payload,
         prev_hash=block.prev_hash, hash=block.hash,
     )

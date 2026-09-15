@@ -7,10 +7,13 @@ from sqlalchemy.exc import IntegrityError
 from app.chain.block import ChainBlock, GENESIS_PREV_HASH
 from app.models.repository import (
     create_scenario,
+    get_latest_scenario,
     get_price_blocks,
     get_scenario,
     load_chain_blocks,
+    load_settlement_blocks,
     save_chain_block,
+    save_settlement_block,
     upsert_price_blocks,
 )
 from app.scraper.parser import PriceBlockRecord
@@ -68,3 +71,32 @@ def test_save_chain_block_duplicate_index_rejected(db_session):
     duplicate = ChainBlock.create(index=0, timestamp=datetime.now(timezone.utc), payload={"a": 2}, prev_hash=GENESIS_PREV_HASH)
     with pytest.raises(IntegrityError):
         save_chain_block(db_session, duplicate)
+
+
+def test_save_and_load_settlement_block(db_session):
+    genesis = ChainBlock.create(index=0, timestamp=datetime.now(timezone.utc), payload={"genesis": True}, prev_hash=GENESIS_PREV_HASH)
+    save_settlement_block(db_session, genesis)
+    blocks = load_settlement_blocks(db_session)
+    assert len(blocks) == 1
+    assert blocks[0].index == 0
+    assert blocks[0].payload_json == {"genesis": True}
+
+
+def test_settlement_blocks_are_independent_from_chain_blocks(db_session):
+    genesis = ChainBlock.create(index=0, timestamp=datetime.now(timezone.utc), payload={"genesis": True}, prev_hash=GENESIS_PREV_HASH)
+    save_chain_block(db_session, genesis)
+    save_settlement_block(db_session, genesis)
+    assert len(load_chain_blocks(db_session)) == 1
+    assert len(load_settlement_blocks(db_session)) == 1
+
+
+def test_get_latest_scenario_returns_most_recently_created(db_session):
+    create_scenario(db_session, "first", [(0, 15, 1.0)])
+    second = create_scenario(db_session, "second", [(15, 30, 2.0)])
+    latest = get_latest_scenario(db_session)
+    assert latest is not None
+    assert latest.id == second.id
+
+
+def test_get_latest_scenario_returns_none_when_no_scenarios_exist(db_session):
+    assert get_latest_scenario(db_session) is None

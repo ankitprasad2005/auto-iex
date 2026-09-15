@@ -52,3 +52,18 @@ class ChainBlockModel(Base):
     payload_json: Mapped[dict] = mapped_column(JSON, nullable=False)
     prev_hash: Mapped[str] = mapped_column(String(64), nullable=False)
     hash: Mapped[str] = mapped_column(String(64), nullable=False)
+
+
+class SettlementBlockModel(Base):
+    # Independent hash chain from ChainBlockModel: chain_blocks audits scrape
+    # events, this audits realized consumption settlements (Task: settlement
+    # ledger). Kept as a separate table rather than a shared discriminator
+    # column so each chain's index sequence (the PK) stays independently
+    # contiguous from 0, matching Chain/ChainBlock's genesis-at-0 invariant.
+    __tablename__ = "settlement_blocks"
+
+    index: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=False)
+    timestamp: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+    payload_json: Mapped[dict] = mapped_column(JSON, nullable=False)
+    prev_hash: Mapped[str] = mapped_column(String(64), nullable=False)
+    hash: Mapped[str] = mapped_column(String(64), nullable=False)
