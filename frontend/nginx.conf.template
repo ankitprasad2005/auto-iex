@@ -1,0 +1,21 @@
+server {
+    listen 80;
+    root /usr/share/nginx/html;
+    index index.html;
+
+    # Proxies browser calls to the backend container over the compose
+    # network's service-name DNS — the backend is never exposed to the
+    # host, and the browser (which can't resolve docker-internal hostnames
+    # itself) only ever talks to this same origin. ${BACKEND_URL} is
+    # substituted from the container's environment at startup by the base
+    # nginx image's built-in envsubst entrypoint (see Dockerfile).
+    location /api/ {
+        proxy_pass ${BACKEND_URL}/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}

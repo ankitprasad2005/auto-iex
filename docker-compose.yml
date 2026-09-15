@@ -17,16 +17,26 @@ services:
       DAM_SCRAPE_HOUR: ${DAM_SCRAPE_HOUR}
     depends_on:
       - db
-    ports:
-      - "8000:8000"
+    # No ports: published — unreachable from the host. Only the frontend's
+    # nginx reverse proxy can reach it, via service-name DNS (http://backend:8000).
 
   frontend:
     build: ./frontend
     restart: unless-stopped
+    environment:
+      BACKEND_URL: http://backend:8000
+      # Restricts the base image's envsubst to this one variable, so nginx's
+      # own $uri/$host/$remote_addr in nginx.conf.template aren't clobbered
+      # (envsubst with no filter replaces every $-prefixed token it can
+      # find an env var for, and empties the rest).
+      NGINX_ENVSUBST_FILTER: "^BACKEND_URL$$"
     depends_on:
       - backend
     ports:
-      - "3000:80"
+      # Host-side port omitted on purpose: Docker publishes container port
+      # 80 to a random free host port. Find it with `docker compose port
+      # frontend 80` or `docker compose ps`.
+      - "80"
 
 volumes:
   db_data:

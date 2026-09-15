@@ -10,7 +10,12 @@ import type {
   SettlementBlock,
 } from "./types";
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000";
+// Relative by default so the built app works unmodified behind nginx's
+// /api/ reverse proxy in Docker (see frontend/nginx.conf.template) — no
+// build-time backend address needs to be baked in for that deployment.
+// Local dev (`npm run dev`, no proxy in front) overrides this directly with
+// VITE_API_BASE_URL to reach the backend dev server.
+const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "/api";
 
 export async function createScenario(name: string, ranges: ConsumptionRangeInput[]): Promise<ScenarioOut> {
   const res = await fetch(`${BASE_URL}/scenarios`, {

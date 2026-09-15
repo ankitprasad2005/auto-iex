@@ -8,7 +8,16 @@ hash-chained ledger visualized in the UI.
 
 1. Copy `.env.example` to `.env` and adjust values if needed.
 2. `docker compose up --build`
-3. Frontend: http://localhost:3000 — Backend API: http://localhost:8000
+3. Frontend: published to a random host port — find it with
+   `docker compose port frontend 80` (or `docker compose ps`).
+
+The **backend and database are not published to the host at all** — only
+the frontend container is. The frontend's nginx reverse-proxies `/api/*` to
+the backend over the compose network's service-name DNS
+(`http://backend:8000`, set via `BACKEND_URL` in `docker-compose.yml`), so
+the browser only ever talks to the frontend's origin and never needs to
+resolve a Docker-internal hostname itself. See
+`frontend/nginx.conf.template`.
 
 **If you change `POSTGRES_PASSWORD` after the stack has already run once:**
 Postgres only applies `POSTGRES_PASSWORD` when it first initializes an empty
