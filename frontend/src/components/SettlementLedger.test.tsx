@@ -62,4 +62,25 @@ describe("SettlementLedger", () => {
     render(<SettlementLedger blocks={blocks} onCheckNow={vi.fn()} checking={false} />);
     expect(screen.getByText(/8\.50/)).toBeInTheDocument();
   });
+
+  it("skips the chain's genesis block instead of crashing on its non-settlement payload", () => {
+    // Regression: every ledger response includes a genesis block at index 0
+    // with payload {genesis: true} — none of the SettlementPayload fields.
+    // Rendering it as if it were a settlement threw "Cannot read properties
+    // of undefined (reading 'toFixed')" the first time this was driven
+    // against a real backend response instead of a hand-built test fixture.
+    const genesisBlock: SettlementBlock = {
+      index: 0,
+      timestamp: "2026-09-15T00:00:00Z",
+      prev_hash: "0".repeat(64),
+      hash: "a".repeat(64),
+      payload: { genesis: true },
+    };
+    const blocks = [genesisBlock, makeBlock({ cost_rs: 5 }, 1)];
+
+    render(<SettlementLedger blocks={blocks} onCheckNow={vi.fn()} checking={false} />);
+
+    expect(screen.getAllByTestId("settlement-node")).toHaveLength(1);
+    expect(screen.getByText("5.00")).toBeInTheDocument();
+  });
 });

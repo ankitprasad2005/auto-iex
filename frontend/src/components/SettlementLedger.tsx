@@ -1,4 +1,4 @@
-import type { SettlementBlock } from "../api/types";
+import { isSettlementPayload, type SettlementBlock, type SettlementPayload } from "../api/types";
 
 interface Props {
   blocks: SettlementBlock[];
@@ -13,7 +13,12 @@ function minutesToHHMM(minutes: number): string {
 }
 
 export function SettlementLedger({ blocks, onCheckNow, checking }: Props) {
-  const totalCost = blocks.reduce((sum, b) => sum + b.payload.cost_rs, 0);
+  // The chain always includes a genesis block ({genesis: true}) alongside
+  // real settlements — filter it out rather than rendering it as one.
+  const settlements = blocks
+    .filter((b) => isSettlementPayload(b.payload))
+    .map((b) => ({ index: b.index, payload: b.payload as SettlementPayload }));
+  const totalCost = settlements.reduce((sum, b) => sum + b.payload.cost_rs, 0);
 
   return (
     <div className="flex flex-col gap-4">
@@ -34,7 +39,7 @@ export function SettlementLedger({ blocks, onCheckNow, checking }: Props) {
         </button>
       </div>
 
-      {blocks.length === 0 ? (
+      {settlements.length === 0 ? (
         <p className="font-mono text-sm text-nd-text-secondary">
           No settlements yet — ranges settle automatically once their scheduled time arrives.
         </p>
@@ -54,12 +59,11 @@ export function SettlementLedger({ blocks, onCheckNow, checking }: Props) {
               </tr>
             </thead>
             <tbody>
-              {blocks.map((block, i) => {
-                const p = block.payload;
+              {settlements.map(({ index, payload: p }, i) => {
                 return (
-                  <tr key={block.index} data-testid="settlement-node" className="border-t border-nd-border">
+                  <tr key={index} data-testid="settlement-node" className="border-t border-nd-border">
                     <td className="py-2 pr-2 text-center text-nd-border-visible">
-                      {i < blocks.length - 1 && (
+                      {i < settlements.length - 1 && (
                         <span data-testid="settlement-arrow" aria-hidden="true">
                           ↓
                         </span>

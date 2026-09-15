@@ -50,6 +50,10 @@ export interface PricePoint {
 }
 
 export interface SettlementPayload {
+  // Index signature so this structurally satisfies Record<string, unknown>,
+  // required for isSettlementPayload's type predicate and the narrowing
+  // cast in SettlementLedger to type-check.
+  [key: string]: unknown;
   scenario_id: number;
   range_id: number;
   date: string;
@@ -67,9 +71,15 @@ export interface SettlementPayload {
 export interface SettlementBlock {
   index: number;
   timestamp: string;
-  payload: SettlementPayload;
+  // The chain's genesis block (always index 0) carries {genesis: true}, not
+  // a SettlementPayload — narrow with isSettlementPayload before use.
+  payload: Record<string, unknown>;
   prev_hash: string;
   hash: string;
+}
+
+export function isSettlementPayload(payload: Record<string, unknown>): payload is SettlementPayload {
+  return typeof payload.range_id === "number" && typeof payload.cost_rs === "number";
 }
 
 export interface CheckLedgerResult {
