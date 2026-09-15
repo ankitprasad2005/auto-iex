@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .api.chain import router as chain_router
+from .api.ledger import router as ledger_router
 from .api.prices import router as prices_router
 from .api.scenarios import router as scenarios_router
 from .api.scrape import router as scrape_router
@@ -33,3 +34,4 @@ app.include_router(prices_router)
 app.include_router(scenarios_router)
 app.include_router(scrape_router)
 app.include_router(chain_router)
+app.include_router(ledger_router)
