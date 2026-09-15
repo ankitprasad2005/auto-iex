@@ -5,11 +5,20 @@ import { ChainNetwork } from "./components/ChainNetwork";
 import { PricesView } from "./components/PricesView";
 import { RangeList } from "./components/RangeList";
 import { ScrapeStatus } from "./components/ScrapeStatus";
-import { createScenario, getChain, getComparison, getPrices, triggerScrape } from "./api/client";
+import { SettlementLedger } from "./components/SettlementLedger";
+import {
+  checkLedgerNow,
+  createScenario,
+  getChain,
+  getComparison,
+  getLedger,
+  getPrices,
+  triggerScrape,
+} from "./api/client";
 import { mergePriceSeries, type MergedPricePoint } from "./lib/priceSeries";
-import type { ChainBlock, ComparisonResult, ConsumptionRangeInput, Market } from "./api/types";
+import type { ChainBlock, ComparisonResult, ConsumptionRangeInput, Market, SettlementBlock } from "./api/types";
 
-type Tab = "dashboard" | "prices" | "chain";
+type Tab = "dashboard" | "prices" | "chain" | "ledger";
 
 function isoDate(d: Date): string {
   return d.toISOString().slice(0, 10);
@@ -61,6 +70,8 @@ export default function App() {
   const [scrapeErrors, setScrapeErrors] = useState<Record<Market, string | null>>({ DAM: null, RTM: null });
   const [pricesDate, setPricesDate] = useState(defaultDate());
   const [priceSeries, setPriceSeries] = useState<MergedPricePoint[]>(mergePriceSeries([], []));
+  const [ledgerBlocks, setLedgerBlocks] = useState<SettlementBlock[]>([]);
+  const [checkingLedger, setCheckingLedger] = useState(false);
 
   useEffect(() => {
     getChain().then(setChainBlocks);
@@ -129,6 +140,21 @@ export default function App() {
     await loadPrices(nextDate);
   }
 
+  async function handleSelectLedgerTab() {
+    setTab("ledger");
+    setLedgerBlocks(await getLedger());
+  }
+
+  async function handleCheckLedgerNow() {
+    setCheckingLedger(true);
+    try {
+      await checkLedgerNow();
+      setLedgerBlocks(await getLedger());
+    } finally {
+      setCheckingLedger(false);
+    }
+  }
+
   return (
     <div className="min-h-screen bg-nd-black text-nd-text-primary font-body p-4 sm:p-8">
       <div className="max-w-5xl mx-auto flex flex-col gap-8">
@@ -138,6 +164,7 @@ export default function App() {
             <TabButton label="Dashboard" active={tab === "dashboard"} onClick={() => setTab("dashboard")} />
             <TabButton label="Prices" active={tab === "prices"} onClick={handleSelectPricesTab} />
             <TabButton label="Chain" active={tab === "chain"} onClick={handleSelectChainTab} />
+            <TabButton label="Ledger" active={tab === "ledger"} onClick={handleSelectLedgerTab} />
           </div>
         </header>
 
@@ -181,6 +208,10 @@ export default function App() {
         )}
 
         {tab === "chain" && <ChainNetwork blocks={chainBlocks} />}
+
+        {tab === "ledger" && (
+          <SettlementLedger blocks={ledgerBlocks} onCheckNow={handleCheckLedgerNow} checking={checkingLedger} />
+        )}
       </div>
     </div>
   );

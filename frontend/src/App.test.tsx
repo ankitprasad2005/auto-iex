@@ -12,6 +12,8 @@ vi.mock("./api/client", () => ({
   getChain: vi.fn().mockResolvedValue([]),
   triggerScrape: vi.fn().mockResolvedValue({ written: 96, skipped_duplicate: false, chain_block_index: 1 }),
   getPrices: vi.fn().mockResolvedValue([]),
+  getLedger: vi.fn().mockResolvedValue([]),
+  checkLedgerNow: vi.fn().mockResolvedValue({ settled_count: 0 }),
 }));
 
 beforeEach(() => {
@@ -23,6 +25,8 @@ beforeEach(() => {
   });
   vi.mocked(client.triggerScrape).mockResolvedValue({ written: 96, skipped_duplicate: false, chain_block_index: 1 });
   vi.mocked(client.getPrices).mockResolvedValue([]);
+  vi.mocked(client.getLedger).mockResolvedValue([]);
+  vi.mocked(client.checkLedgerNow).mockResolvedValue({ settled_count: 0 });
 });
 
 describe("App", () => {
@@ -86,5 +90,17 @@ describe("App", () => {
     await screen.findByRole("table");
     expect(client.getPrices).toHaveBeenCalledWith(expect.any(String), "DAM");
     expect(client.getPrices).toHaveBeenCalledWith(expect.any(String), "RTM");
+  });
+
+  it("switches to the Ledger tab, loads settlements, and can trigger a manual check", async () => {
+    render(<App />);
+    fireEvent.click(screen.getByRole("tab", { name: /ledger/i }));
+    expect(screen.getByRole("tab", { name: /ledger/i })).toHaveAttribute("aria-selected", "true");
+    await screen.findByText(/no settlements yet/i);
+    expect(client.getLedger).toHaveBeenCalled();
+
+    fireEvent.click(screen.getByRole("button", { name: /check now/i }));
+    await screen.findByRole("button", { name: /check now/i }); // waits for "Checking…" to revert
+    expect(client.checkLedgerNow).toHaveBeenCalled();
   });
 });

@@ -48,3 +48,30 @@ export interface PricePoint {
   block_end: string;
   mcp_rs_per_mwh: string;
 }
+
+export interface SettlementPayload {
+  scenario_id: number;
+  range_id: number;
+  date: string;
+  start_minute: number;
+  end_minute: number;
+  predicted_kw: number;
+  total_kwh: number;
+  priced_kwh: number;
+  cost_rs: number;
+  markets_used: Market[];
+  fully_priced: boolean;
+  settled_at: string;
+}
+
+export interface SettlementBlock {
+  index: number;
+  timestamp: string;
+  payload: SettlementPayload;
+  prev_hash: string;
+  hash: string;
+}
+
+export interface CheckLedgerResult {
+  settled_count: number;
+}

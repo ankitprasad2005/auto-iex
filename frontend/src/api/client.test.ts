@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, afterEach } from "vitest";
-import { createScenario, getChain, getComparison, getPrices, triggerScrape } from "./client";
+import { checkLedgerNow, createScenario, getChain, getComparison, getLedger, getPrices, triggerScrape } from "./client";
 
 afterEach(() => {
   vi.restoreAllMocks();
@@ -94,5 +94,38 @@ describe("triggerScrape", () => {
   it("throws when the API returns an error status", async () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 502 }));
     await expect(triggerScrape("RTM", "2026-09-12")).rejects.toThrow("502");
+  });
+});
+
+describe("getLedger", () => {
+  it("fetches settlement ledger blocks", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: true, json: async () => [] }));
+    const result = await getLedger();
+    expect(result).toEqual([]);
+  });
+
+  it("throws when the API returns an error status", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
+    await expect(getLedger()).rejects.toThrow("500");
+  });
+});
+
+describe("checkLedgerNow", () => {
+  it("posts to /ledger/check and returns the settled count", async () => {
+    const mockFetch = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ settled_count: 2 }) });
+    vi.stubGlobal("fetch", mockFetch);
+
+    const result = await checkLedgerNow();
+
+    expect(result).toEqual({ settled_count: 2 });
+    expect(mockFetch).toHaveBeenCalledWith(
+      expect.stringContaining("/ledger/check"),
+      expect.objectContaining({ method: "POST" }),
+    );
+  });
+
+  it("throws when the API returns an error status", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
+    await expect(checkLedgerNow()).rejects.toThrow("500");
   });
 });
