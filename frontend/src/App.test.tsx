@@ -14,6 +14,10 @@ vi.mock("./api/client", () => ({
   getPrices: vi.fn().mockResolvedValue([]),
   getLedger: vi.fn().mockResolvedValue([]),
   checkLedgerNow: vi.fn().mockResolvedValue({ settled_count: 0 }),
+  getPriceLedger: vi.fn().mockResolvedValue([]),
+  checkPriceLedgerNow: vi.fn().mockResolvedValue({ recorded_count: 0 }),
+  getRtmInterval: vi.fn().mockResolvedValue({ seconds: 30 }),
+  updateRtmInterval: vi.fn().mockResolvedValue({ seconds: 30 }),
 }));
 
 beforeEach(() => {
@@ -27,6 +31,10 @@ beforeEach(() => {
   vi.mocked(client.getPrices).mockResolvedValue([]);
   vi.mocked(client.getLedger).mockResolvedValue([]);
   vi.mocked(client.checkLedgerNow).mockResolvedValue({ settled_count: 0 });
+  vi.mocked(client.getPriceLedger).mockResolvedValue([]);
+  vi.mocked(client.checkPriceLedgerNow).mockResolvedValue({ recorded_count: 0 });
+  vi.mocked(client.getRtmInterval).mockResolvedValue({ seconds: 30 });
+  vi.mocked(client.updateRtmInterval).mockResolvedValue({ seconds: 30 });
 });
 
 describe("App", () => {
@@ -94,13 +102,36 @@ describe("App", () => {
 
   it("switches to the Ledger tab, loads settlements, and can trigger a manual check", async () => {
     render(<App />);
-    fireEvent.click(screen.getByRole("tab", { name: /ledger/i }));
-    expect(screen.getByRole("tab", { name: /ledger/i })).toHaveAttribute("aria-selected", "true");
+    fireEvent.click(screen.getByRole("tab", { name: "Ledger" }));
+    expect(screen.getByRole("tab", { name: "Ledger" })).toHaveAttribute("aria-selected", "true");
     await screen.findByText(/no settlements yet/i);
     expect(client.getLedger).toHaveBeenCalled();
 
     fireEvent.click(screen.getByRole("button", { name: /check now/i }));
     await screen.findByRole("button", { name: /check now/i }); // waits for "Checking…" to revert
     expect(client.checkLedgerNow).toHaveBeenCalled();
+  });
+
+  it("switches to the Price Ledger tab, loads blocks, and can trigger a manual check", async () => {
+    render(<App />);
+    fireEvent.click(screen.getByRole("tab", { name: "Price Ledger" }));
+    expect(screen.getByRole("tab", { name: "Price Ledger" })).toHaveAttribute("aria-selected", "true");
+    await screen.findByText(/no blocks yet/i);
+    expect(client.getPriceLedger).toHaveBeenCalled();
+
+    fireEvent.click(screen.getByRole("button", { name: /check now/i }));
+    await screen.findByRole("button", { name: /check now/i });
+    expect(client.checkPriceLedgerNow).toHaveBeenCalled();
+  });
+
+  it("loads the RTM interval on mount and can update it from the Dashboard", async () => {
+    render(<App />);
+    const input = await screen.findByLabelText(/rtm auto-scrape interval/i);
+    expect((input as HTMLInputElement).value).toBe("30");
+
+    fireEvent.change(input, { target: { value: "60" } });
+    fireEvent.click(screen.getByRole("button", { name: /^update$/i }));
+    await act(async () => {});
+    expect(client.updateRtmInterval).toHaveBeenCalledWith(60);
   });
 });

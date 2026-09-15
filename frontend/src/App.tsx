@@ -2,23 +2,29 @@ import { useEffect, useState } from "react";
 import { ConsumptionForm } from "./components/ConsumptionForm";
 import { ComparisonView } from "./components/ComparisonView";
 import { ChainNetwork } from "./components/ChainNetwork";
+import { PollingIntervalControl } from "./components/PollingIntervalControl";
+import { PriceLedgerView } from "./components/PriceLedgerView";
 import { PricesView } from "./components/PricesView";
 import { RangeList } from "./components/RangeList";
 import { ScrapeStatus } from "./components/ScrapeStatus";
 import { SettlementLedger } from "./components/SettlementLedger";
 import {
   checkLedgerNow,
+  checkPriceLedgerNow,
   createScenario,
   getChain,
   getComparison,
   getLedger,
+  getPriceLedger,
   getPrices,
+  getRtmInterval,
   triggerScrape,
+  updateRtmInterval,
 } from "./api/client";
 import { mergePriceSeries, type MergedPricePoint } from "./lib/priceSeries";
 import type { ChainBlock, ComparisonResult, ConsumptionRangeInput, Market, SettlementBlock } from "./api/types";
 
-type Tab = "dashboard" | "prices" | "chain" | "ledger";
+type Tab = "dashboard" | "prices" | "chain" | "ledger" | "priceLedger";
 
 function isoDate(d: Date): string {
   return d.toISOString().slice(0, 10);
@@ -72,9 +78,14 @@ export default function App() {
   const [priceSeries, setPriceSeries] = useState<MergedPricePoint[]>(mergePriceSeries([], []));
   const [ledgerBlocks, setLedgerBlocks] = useState<SettlementBlock[]>([]);
   const [checkingLedger, setCheckingLedger] = useState(false);
+  const [priceLedgerBlocks, setPriceLedgerBlocks] = useState<ChainBlock[]>([]);
+  const [checkingPriceLedger, setCheckingPriceLedger] = useState(false);
+  const [rtmIntervalSeconds, setRtmIntervalSeconds] = useState(30);
+  const [updatingRtmInterval, setUpdatingRtmInterval] = useState(false);
 
   useEffect(() => {
     getChain().then(setChainBlocks);
+    getRtmInterval().then((r) => setRtmIntervalSeconds(r.seconds));
   }, []);
 
   async function refreshComparison(nextRanges: ConsumptionRangeInput[], forDate: string) {
@@ -155,6 +166,31 @@ export default function App() {
     }
   }
 
+  async function handleSelectPriceLedgerTab() {
+    setTab("priceLedger");
+    setPriceLedgerBlocks(await getPriceLedger());
+  }
+
+  async function handleCheckPriceLedgerNow() {
+    setCheckingPriceLedger(true);
+    try {
+      await checkPriceLedgerNow();
+      setPriceLedgerBlocks(await getPriceLedger());
+    } finally {
+      setCheckingPriceLedger(false);
+    }
+  }
+
+  async function handleUpdateRtmInterval(seconds: number) {
+    setUpdatingRtmInterval(true);
+    try {
+      const result = await updateRtmInterval(seconds);
+      setRtmIntervalSeconds(result.seconds);
+    } finally {
+      setUpdatingRtmInterval(false);
+    }
+  }
+
   return (
     <div className="min-h-screen bg-nd-black text-nd-text-primary font-body p-4 sm:p-8">
       <div className="max-w-5xl mx-auto flex flex-col gap-8">
@@ -165,6 +201,11 @@ export default function App() {
             <TabButton label="Prices" active={tab === "prices"} onClick={handleSelectPricesTab} />
             <TabButton label="Chain" active={tab === "chain"} onClick={handleSelectChainTab} />
             <TabButton label="Ledger" active={tab === "ledger"} onClick={handleSelectLedgerTab} />
+            <TabButton
+              label="Price Ledger"
+              active={tab === "priceLedger"}
+              onClick={handleSelectPriceLedgerTab}
+            />
           </div>
         </header>
 
@@ -175,6 +216,12 @@ export default function App() {
               onScrape={handleScrape}
               scraping={scraping}
               errors={scrapeErrors}
+            />
+
+            <PollingIntervalControl
+              seconds={rtmIntervalSeconds}
+              onUpdate={handleUpdateRtmInterval}
+              updating={updatingRtmInterval}
             />
 
             <label htmlFor="comparison-date" className="flex flex-col gap-1 max-w-xs">
@@ -211,6 +258,14 @@ export default function App() {
 
         {tab === "ledger" && (
           <SettlementLedger blocks={ledgerBlocks} onCheckNow={handleCheckLedgerNow} checking={checkingLedger} />
+        )}
+
+        {tab === "priceLedger" && (
+          <PriceLedgerView
+            blocks={priceLedgerBlocks}
+            onCheckNow={handleCheckPriceLedgerNow}
+            checking={checkingPriceLedger}
+          />
         )}
       </div>
     </div>

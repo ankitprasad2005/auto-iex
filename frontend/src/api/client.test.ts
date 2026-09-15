@@ -1,5 +1,17 @@
 import { describe, expect, it, vi, afterEach } from "vitest";
-import { checkLedgerNow, createScenario, getChain, getComparison, getLedger, getPrices, triggerScrape } from "./client";
+import {
+  checkLedgerNow,
+  checkPriceLedgerNow,
+  createScenario,
+  getChain,
+  getComparison,
+  getLedger,
+  getPriceLedger,
+  getPrices,
+  getRtmInterval,
+  triggerScrape,
+  updateRtmInterval,
+} from "./client";
 
 afterEach(() => {
   vi.restoreAllMocks();
@@ -127,5 +139,75 @@ describe("checkLedgerNow", () => {
   it("throws when the API returns an error status", async () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
     await expect(checkLedgerNow()).rejects.toThrow("500");
+  });
+});
+
+describe("getPriceLedger", () => {
+  it("fetches price ledger blocks", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: true, json: async () => [] }));
+    const result = await getPriceLedger();
+    expect(result).toEqual([]);
+  });
+
+  it("throws when the API returns an error status", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
+    await expect(getPriceLedger()).rejects.toThrow("500");
+  });
+});
+
+describe("checkPriceLedgerNow", () => {
+  it("posts to /price-ledger/check and returns the recorded count", async () => {
+    const mockFetch = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ recorded_count: 3 }) });
+    vi.stubGlobal("fetch", mockFetch);
+
+    const result = await checkPriceLedgerNow();
+
+    expect(result).toEqual({ recorded_count: 3 });
+    expect(mockFetch).toHaveBeenCalledWith(
+      expect.stringContaining("/price-ledger/check"),
+      expect.objectContaining({ method: "POST" }),
+    );
+  });
+
+  it("throws when the API returns an error status", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
+    await expect(checkPriceLedgerNow()).rejects.toThrow("500");
+  });
+});
+
+describe("getRtmInterval", () => {
+  it("fetches the current RTM auto-scrape interval", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: true, json: async () => ({ seconds: 30 }) }));
+    const result = await getRtmInterval();
+    expect(result).toEqual({ seconds: 30 });
+  });
+
+  it("throws when the API returns an error status", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
+    await expect(getRtmInterval()).rejects.toThrow("500");
+  });
+});
+
+describe("updateRtmInterval", () => {
+  it("patches /scheduler/rtm-interval with the new seconds value", async () => {
+    const mockFetch = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ seconds: 120 }) });
+    vi.stubGlobal("fetch", mockFetch);
+
+    const result = await updateRtmInterval(120);
+
+    expect(result).toEqual({ seconds: 120 });
+    expect(mockFetch).toHaveBeenCalledWith(
+      expect.stringContaining("/scheduler/rtm-interval"),
+      expect.objectContaining({
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ seconds: 120 }),
+      }),
+    );
+  });
+
+  it("throws when the API returns an error status", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 422 }));
+    await expect(updateRtmInterval(5)).rejects.toThrow("422");
   });
 });

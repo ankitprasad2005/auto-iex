@@ -85,3 +85,11 @@ export function isSettlementPayload(payload: Record<string, unknown>): payload i
 export interface CheckLedgerResult {
   settled_count: number;
 }
+
+export interface CheckPriceLedgerResult {
+  recorded_count: number;
+}
+
+export interface RtmIntervalResult {
+  seconds: number;
+}
