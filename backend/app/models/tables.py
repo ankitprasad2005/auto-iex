@@ -67,3 +67,17 @@ class SettlementBlockModel(Base):
     payload_json: Mapped[dict] = mapped_column(JSON, nullable=False)
     prev_hash: Mapped[str] = mapped_column(String(64), nullable=False)
     hash: Mapped[str] = mapped_column(String(64), nullable=False)
+
+
+class PriceLedgerBlockModel(Base):
+    # Third independent chain: records every 15-minute block's realized
+    # DAM/RTM price the moment its delivery time arrives, regardless of any
+    # user scenario — a standing market price ledger, separate from both
+    # the scrape-audit chain and the per-scenario settlement ledger.
+    __tablename__ = "price_ledger_blocks"
+
+    index: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=False)
+    timestamp: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+    payload_json: Mapped[dict] = mapped_column(JSON, nullable=False)
+    prev_hash: Mapped[str] = mapped_column(String(64), nullable=False)
+    hash: Mapped[str] = mapped_column(String(64), nullable=False)

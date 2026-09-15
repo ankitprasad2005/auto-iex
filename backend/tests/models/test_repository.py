@@ -11,8 +11,10 @@ from app.models.repository import (
     get_price_blocks,
     get_scenario,
     load_chain_blocks,
+    load_price_ledger_blocks,
     load_settlement_blocks,
     save_chain_block,
+    save_price_ledger_block,
     save_settlement_block,
     upsert_price_blocks,
 )
@@ -100,3 +102,22 @@ def test_get_latest_scenario_returns_most_recently_created(db_session):
 
 def test_get_latest_scenario_returns_none_when_no_scenarios_exist(db_session):
     assert get_latest_scenario(db_session) is None
+
+
+def test_save_and_load_price_ledger_block(db_session):
+    genesis = ChainBlock.create(index=0, timestamp=datetime.now(timezone.utc), payload={"genesis": True}, prev_hash=GENESIS_PREV_HASH)
+    save_price_ledger_block(db_session, genesis)
+    blocks = load_price_ledger_blocks(db_session)
+    assert len(blocks) == 1
+    assert blocks[0].index == 0
+    assert blocks[0].payload_json == {"genesis": True}
+
+
+def test_price_ledger_blocks_are_independent_from_other_chains(db_session):
+    genesis = ChainBlock.create(index=0, timestamp=datetime.now(timezone.utc), payload={"genesis": True}, prev_hash=GENESIS_PREV_HASH)
+    save_chain_block(db_session, genesis)
+    save_settlement_block(db_session, genesis)
+    save_price_ledger_block(db_session, genesis)
+    assert len(load_chain_blocks(db_session)) == 1
+    assert len(load_settlement_blocks(db_session)) == 1
+    assert len(load_price_ledger_blocks(db_session)) == 1

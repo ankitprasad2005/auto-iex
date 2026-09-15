@@ -9,6 +9,7 @@ from app.models.tables import (
     ChainBlockModel,
     ConsumptionRangeModel,
     PriceBlockModel,
+    PriceLedgerBlockModel,
     ScenarioModel,
     SettlementBlockModel,
 )
@@ -33,13 +34,18 @@ def test_tables_create_and_roundtrip():
         index=0, timestamp=datetime.now(timezone.utc), payload_json={"genesis": True},
         prev_hash="0" * 64, hash="b" * 64,
     )
+    price_ledger_block = PriceLedgerBlockModel(
+        index=0, timestamp=datetime.now(timezone.utc), payload_json={"genesis": True},
+        prev_hash="0" * 64, hash="c" * 64,
+    )
 
-    session.add_all([price, scenario, chain_block, settlement_block])
+    session.add_all([price, scenario, chain_block, settlement_block, price_ledger_block])
     session.commit()
 
     assert session.query(PriceBlockModel).count() == 1
     assert session.query(ScenarioModel).one().ranges[0].predicted_kw == Decimal("4.0")
     assert session.query(ChainBlockModel).one().payload_json == {"genesis": True}
     assert session.query(SettlementBlockModel).one().payload_json == {"genesis": True}
+    assert session.query(PriceLedgerBlockModel).one().payload_json == {"genesis": True}
     session.close()
     engine.dispose()

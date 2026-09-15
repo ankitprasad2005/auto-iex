@@ -9,6 +9,7 @@ from .tables import (
     ChainBlockModel,
     ConsumptionRangeModel,
     PriceBlockModel,
+    PriceLedgerBlockModel,
     ScenarioModel,
     SettlementBlockModel,
 )
@@ -92,6 +93,20 @@ def load_settlement_blocks(session: Session) -> list[SettlementBlockModel]:
 
 def save_settlement_block(session: Session, block: ChainBlock) -> SettlementBlockModel:
     model = SettlementBlockModel(
+        index=block.index, timestamp=block.timestamp, payload_json=block.payload,
+        prev_hash=block.prev_hash, hash=block.hash,
+    )
+    session.add(model)
+    session.commit()
+    return model
+
+
+def load_price_ledger_blocks(session: Session) -> list[PriceLedgerBlockModel]:
+    return list(session.execute(select(PriceLedgerBlockModel).order_by(PriceLedgerBlockModel.index)).scalars())
+
+
+def save_price_ledger_block(session: Session, block: ChainBlock) -> PriceLedgerBlockModel:
+    model = PriceLedgerBlockModel(
         index=block.index, timestamp=block.timestamp, payload_json=block.payload,
         prev_hash=block.prev_hash, hash=block.hash,
     )
