@@ -11,6 +11,7 @@ vi.mock("./api/client", () => ({
   }),
   getChain: vi.fn().mockResolvedValue([]),
   triggerScrape: vi.fn().mockResolvedValue({ written: 96, skipped_duplicate: false, chain_block_index: 1 }),
+  getPrices: vi.fn().mockResolvedValue([]),
 }));
 
 beforeEach(() => {
@@ -21,6 +22,7 @@ beforeEach(() => {
     dam_pending_blocks: 96, rtm_pending_blocks: 96,
   });
   vi.mocked(client.triggerScrape).mockResolvedValue({ written: 96, skipped_duplicate: false, chain_block_index: 1 });
+  vi.mocked(client.getPrices).mockResolvedValue([]);
 });
 
 describe("App", () => {
@@ -75,5 +77,14 @@ describe("App", () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: /scrape dam now/i }));
     expect(await screen.findByText(/scraping/i)).toBeInTheDocument();
+  });
+
+  it("switches to the Prices tab and loads DAM/RTM price data for both markets", async () => {
+    render(<App />);
+    fireEvent.click(screen.getByRole("tab", { name: /prices/i }));
+    expect(screen.getByRole("tab", { name: /prices/i })).toHaveAttribute("aria-selected", "true");
+    await screen.findByRole("table");
+    expect(client.getPrices).toHaveBeenCalledWith(expect.any(String), "DAM");
+    expect(client.getPrices).toHaveBeenCalledWith(expect.any(String), "RTM");
   });
 });

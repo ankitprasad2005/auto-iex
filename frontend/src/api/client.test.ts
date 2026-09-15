@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, afterEach } from "vitest";
-import { createScenario, getChain, getComparison, triggerScrape } from "./client";
+import { createScenario, getChain, getComparison, getPrices, triggerScrape } from "./client";
 
 afterEach(() => {
   vi.restoreAllMocks();
@@ -52,6 +52,25 @@ describe("getChain", () => {
   it("throws when the API returns an error status", async () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
     await expect(getChain()).rejects.toThrow("500");
+  });
+});
+
+describe("getPrices", () => {
+  it("fetches prices for a date and market", async () => {
+    const mockFetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => [{ block_start: "00:00:00", block_end: "00:15:00", mcp_rs_per_mwh: "3245.5000" }],
+    });
+    vi.stubGlobal("fetch", mockFetch);
+
+    const result = await getPrices("2026-09-13", "DAM");
+    expect(result).toEqual([{ block_start: "00:00:00", block_end: "00:15:00", mcp_rs_per_mwh: "3245.5000" }]);
+    expect(mockFetch).toHaveBeenCalledWith(expect.stringContaining("/prices?date=2026-09-13&market=DAM"));
+  });
+
+  it("throws when the API returns an error status", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
+    await expect(getPrices("2026-09-13", "RTM")).rejects.toThrow("500");
   });
 });
 

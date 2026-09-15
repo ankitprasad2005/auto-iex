@@ -42,3 +42,9 @@ export interface ScrapeResult {
   skipped_duplicate: boolean;
   chain_block_index: number | null;
 }
+
+export interface PricePoint {
+  block_start: string;
+  block_end: string;
+  mcp_rs_per_mwh: string;
+}

@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { ConsumptionForm } from "./components/ConsumptionForm";
 import { ComparisonView } from "./components/ComparisonView";
 import { ChainNetwork } from "./components/ChainNetwork";
+import { PricesView } from "./components/PricesView";
 import { RangeList } from "./components/RangeList";
 import { ScrapeStatus } from "./components/ScrapeStatus";
-import { createScenario, getChain, getComparison, triggerScrape } from "./api/client";
+import { createScenario, getChain, getComparison, getPrices, triggerScrape } from "./api/client";
+import { mergePriceSeries, type MergedPricePoint } from "./lib/priceSeries";
 import type { ChainBlock, ComparisonResult, ConsumptionRangeInput, Market } from "./api/types";
 
-type Tab = "dashboard" | "chain";
+type Tab = "dashboard" | "prices" | "chain";
 
 function isoDate(d: Date): string {
   return d.toISOString().slice(0, 10);
@@ -57,6 +59,8 @@ export default function App() {
   const [chainBlocks, setChainBlocks] = useState<ChainBlock[]>([]);
   const [scraping, setScraping] = useState<Record<Market, boolean>>({ DAM: false, RTM: false });
   const [scrapeErrors, setScrapeErrors] = useState<Record<Market, string | null>>({ DAM: null, RTM: null });
+  const [pricesDate, setPricesDate] = useState(defaultDate());
+  const [priceSeries, setPriceSeries] = useState<MergedPricePoint[]>(mergePriceSeries([], []));
 
   useEffect(() => {
     getChain().then(setChainBlocks);
@@ -110,6 +114,21 @@ export default function App() {
     setChainBlocks(await getChain());
   }
 
+  async function loadPrices(forDate: string) {
+    const [dam, rtm] = await Promise.all([getPrices(forDate, "DAM"), getPrices(forDate, "RTM")]);
+    setPriceSeries(mergePriceSeries(dam, rtm));
+  }
+
+  async function handleSelectPricesTab() {
+    setTab("prices");
+    await loadPrices(pricesDate);
+  }
+
+  async function handlePricesDateChange(nextDate: string) {
+    setPricesDate(nextDate);
+    await loadPrices(nextDate);
+  }
+
   return (
     <div className="min-h-screen bg-nd-black text-nd-text-primary font-body p-4 sm:p-8">
       <div className="max-w-5xl mx-auto flex flex-col gap-8">
@@ -117,6 +136,7 @@ export default function App() {
           <h1 className="font-display text-2xl text-nd-text-display mb-6">auto-iex</h1>
           <div role="tablist" className="flex gap-8 border-b border-nd-border">
             <TabButton label="Dashboard" active={tab === "dashboard"} onClick={() => setTab("dashboard")} />
+            <TabButton label="Prices" active={tab === "prices"} onClick={handleSelectPricesTab} />
             <TabButton label="Chain" active={tab === "chain"} onClick={handleSelectChainTab} />
           </div>
         </header>
@@ -154,6 +174,10 @@ export default function App() {
 
             <ComparisonView result={comparison} />
           </div>
+        )}
+
+        {tab === "prices" && (
+          <PricesView date={pricesDate} onDateChange={handlePricesDateChange} data={priceSeries} />
         )}
 
         {tab === "chain" && <ChainNetwork blocks={chainBlocks} />}
