@@ -3,12 +3,14 @@ import {
   checkLedgerNow,
   checkPriceLedgerNow,
   createScenario,
+  getBillingHistory,
   getChain,
   getComparison,
   getLedger,
   getPriceLedger,
   getPrices,
   getRtmInterval,
+  loadDemoBillingData,
   triggerScrape,
   updateRtmInterval,
 } from "./client";
@@ -209,5 +211,43 @@ describe("updateRtmInterval", () => {
   it("throws when the API returns an error status", async () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 422 }));
     await expect(updateRtmInterval(5)).rejects.toThrow("422");
+  });
+});
+
+describe("getBillingHistory", () => {
+  it("fetches billing history with totals", async () => {
+    const mockFetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ records: [], total_kwh: "0", total_cost_rs: "0" }),
+    });
+    vi.stubGlobal("fetch", mockFetch);
+
+    const result = await getBillingHistory();
+    expect(result).toEqual({ records: [], total_kwh: "0", total_cost_rs: "0" });
+  });
+
+  it("throws when the API returns an error status", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
+    await expect(getBillingHistory()).rejects.toThrow("500");
+  });
+});
+
+describe("loadDemoBillingData", () => {
+  it("posts to /billing/demo and returns the created count", async () => {
+    const mockFetch = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ created_count: 45 }) });
+    vi.stubGlobal("fetch", mockFetch);
+
+    const result = await loadDemoBillingData();
+
+    expect(result).toEqual({ created_count: 45 });
+    expect(mockFetch).toHaveBeenCalledWith(
+      expect.stringContaining("/billing/demo"),
+      expect.objectContaining({ method: "POST" }),
+    );
+  });
+
+  it("throws when the API returns an error status", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
+    await expect(loadDemoBillingData()).rejects.toThrow("500");
   });
 });

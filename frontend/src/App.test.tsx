@@ -18,6 +18,8 @@ vi.mock("./api/client", () => ({
   checkPriceLedgerNow: vi.fn().mockResolvedValue({ recorded_count: 0 }),
   getRtmInterval: vi.fn().mockResolvedValue({ seconds: 30 }),
   updateRtmInterval: vi.fn().mockResolvedValue({ seconds: 30 }),
+  getBillingHistory: vi.fn().mockResolvedValue({ records: [], total_kwh: "0", total_cost_rs: "0" }),
+  loadDemoBillingData: vi.fn().mockResolvedValue({ created_count: 0 }),
 }));
 
 beforeEach(() => {
@@ -35,6 +37,8 @@ beforeEach(() => {
   vi.mocked(client.checkPriceLedgerNow).mockResolvedValue({ recorded_count: 0 });
   vi.mocked(client.getRtmInterval).mockResolvedValue({ seconds: 30 });
   vi.mocked(client.updateRtmInterval).mockResolvedValue({ seconds: 30 });
+  vi.mocked(client.getBillingHistory).mockResolvedValue({ records: [], total_kwh: "0", total_cost_rs: "0" });
+  vi.mocked(client.loadDemoBillingData).mockResolvedValue({ created_count: 0 });
 });
 
 describe("App", () => {
@@ -133,5 +137,17 @@ describe("App", () => {
     fireEvent.click(screen.getByRole("button", { name: /^update$/i }));
     await act(async () => {});
     expect(client.updateRtmInterval).toHaveBeenCalledWith(60);
+  });
+
+  it("switches to the Billing tab, loads history, and can load demo data", async () => {
+    render(<App />);
+    fireEvent.click(screen.getByRole("tab", { name: "Billing" }));
+    expect(screen.getByRole("tab", { name: "Billing" })).toHaveAttribute("aria-selected", "true");
+    await screen.findByText(/no billing history yet/i);
+    expect(client.getBillingHistory).toHaveBeenCalled();
+
+    fireEvent.click(screen.getByRole("button", { name: /load demo data/i }));
+    await screen.findByRole("button", { name: /load demo data/i }); // waits for "Loading…" to revert
+    expect(client.loadDemoBillingData).toHaveBeenCalled();
   });
 });

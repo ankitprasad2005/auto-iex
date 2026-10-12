@@ -1,9 +1,11 @@
 import type {
+  BillingHistory,
   ChainBlock,
   CheckLedgerResult,
   CheckPriceLedgerResult,
   ComparisonResult,
   ConsumptionRangeInput,
+  LoadDemoBillingResult,
   Market,
   PricePoint,
   RtmIntervalResult,
@@ -90,5 +92,17 @@ export async function updateRtmInterval(seconds: number): Promise<RtmIntervalRes
     body: JSON.stringify({ seconds }),
   });
   if (!res.ok) throw new Error(`failed to update RTM interval: ${res.status}`);
+  return res.json();
+}
+
+export async function getBillingHistory(): Promise<BillingHistory> {
+  const res = await fetch(`${BASE_URL}/billing/history`);
+  if (!res.ok) throw new Error(`failed to fetch billing history: ${res.status}`);
+  return res.json();
+}
+
+export async function loadDemoBillingData(): Promise<LoadDemoBillingResult> {
+  const res = await fetch(`${BASE_URL}/billing/demo`, { method: "POST" });
+  if (!res.ok) throw new Error(`failed to load demo billing data: ${res.status}`);
   return res.json();
 }

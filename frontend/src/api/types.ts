@@ -93,3 +93,21 @@ export interface CheckPriceLedgerResult {
 export interface RtmIntervalResult {
   seconds: number;
 }
+
+export interface BillingRecord {
+  date: string;
+  time_label: string;
+  market: Market;
+  kwh: string;
+  cost_rs: string;
+}
+
+export interface BillingHistory {
+  records: BillingRecord[];
+  total_kwh: string;
+  total_cost_rs: string;
+}
+
+export interface LoadDemoBillingResult {
+  created_count: number;
+}

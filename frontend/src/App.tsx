@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BillingView } from "./components/BillingView";
 import { ConsumptionForm } from "./components/ConsumptionForm";
 import { ComparisonView } from "./components/ComparisonView";
 import { ChainNetwork } from "./components/ChainNetwork";
@@ -12,19 +13,30 @@ import {
   checkLedgerNow,
   checkPriceLedgerNow,
   createScenario,
+  getBillingHistory,
   getChain,
   getComparison,
   getLedger,
   getPriceLedger,
   getPrices,
   getRtmInterval,
+  loadDemoBillingData,
   triggerScrape,
   updateRtmInterval,
 } from "./api/client";
 import { mergePriceSeries, type MergedPricePoint } from "./lib/priceSeries";
-import type { ChainBlock, ComparisonResult, ConsumptionRangeInput, Market, SettlementBlock } from "./api/types";
+import type {
+  BillingHistory,
+  ChainBlock,
+  ComparisonResult,
+  ConsumptionRangeInput,
+  Market,
+  SettlementBlock,
+} from "./api/types";
 
-type Tab = "dashboard" | "prices" | "chain" | "ledger" | "priceLedger";
+type Tab = "dashboard" | "prices" | "chain" | "ledger" | "priceLedger" | "billing";
+
+const EMPTY_BILLING_HISTORY: BillingHistory = { records: [], total_kwh: "0", total_cost_rs: "0" };
 
 function isoDate(d: Date): string {
   return d.toISOString().slice(0, 10);
@@ -82,6 +94,8 @@ export default function App() {
   const [checkingPriceLedger, setCheckingPriceLedger] = useState(false);
   const [rtmIntervalSeconds, setRtmIntervalSeconds] = useState(30);
   const [updatingRtmInterval, setUpdatingRtmInterval] = useState(false);
+  const [billingHistory, setBillingHistory] = useState<BillingHistory>(EMPTY_BILLING_HISTORY);
+  const [loadingDemoBilling, setLoadingDemoBilling] = useState(false);
 
   useEffect(() => {
     getChain().then(setChainBlocks);
@@ -191,6 +205,21 @@ export default function App() {
     }
   }
 
+  async function handleSelectBillingTab() {
+    setTab("billing");
+    setBillingHistory(await getBillingHistory());
+  }
+
+  async function handleLoadDemoBilling() {
+    setLoadingDemoBilling(true);
+    try {
+      await loadDemoBillingData();
+      setBillingHistory(await getBillingHistory());
+    } finally {
+      setLoadingDemoBilling(false);
+    }
+  }
+
   return (
     <div className="min-h-screen bg-nd-black text-nd-text-primary font-body p-4 sm:p-8">
       <div className="max-w-5xl mx-auto flex flex-col gap-8">
@@ -206,6 +235,7 @@ export default function App() {
               active={tab === "priceLedger"}
               onClick={handleSelectPriceLedgerTab}
             />
+            <TabButton label="Billing" active={tab === "billing"} onClick={handleSelectBillingTab} />
           </div>
         </header>
 
@@ -266,6 +296,10 @@ export default function App() {
             onCheckNow={handleCheckPriceLedgerNow}
             checking={checkingPriceLedger}
           />
+        )}
+
+        {tab === "billing" && (
+          <BillingView history={billingHistory} onLoadDemo={handleLoadDemoBilling} loading={loadingDemoBilling} />
         )}
       </div>
     </div>
