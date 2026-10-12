@@ -1,6 +1,7 @@
 from datetime import date as date_type, datetime, timezone
+from typing import Any
 
-from sqlalchemy import select
+from sqlalchemy import delete, select
 from sqlalchemy.orm import Session
 
 from ..chain.block import ChainBlock
@@ -8,6 +9,7 @@ from ..scraper.parser import PriceBlockRecord
 from .tables import (
     ChainBlockModel,
     ConsumptionRangeModel,
+    DemoBillingRecordModel,
     PriceBlockModel,
     PriceLedgerBlockModel,
     ScenarioModel,
@@ -113,3 +115,23 @@ def save_price_ledger_block(session: Session, block: ChainBlock) -> PriceLedgerB
     session.add(model)
     session.commit()
     return model
+
+
+def get_demo_billing_records(session: Session) -> list[DemoBillingRecordModel]:
+    return list(
+        session.execute(
+            select(DemoBillingRecordModel).order_by(DemoBillingRecordModel.date, DemoBillingRecordModel.time_label)
+        ).scalars()
+    )
+
+
+def create_demo_billing_records(session: Session, records: list[dict[str, Any]]) -> list[DemoBillingRecordModel]:
+    models = [DemoBillingRecordModel(**r) for r in records]
+    session.add_all(models)
+    session.commit()
+    return models
+
+
+def clear_demo_billing_records(session: Session) -> None:
+    session.execute(delete(DemoBillingRecordModel))
+    session.commit()

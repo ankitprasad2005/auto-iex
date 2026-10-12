@@ -6,7 +6,10 @@ from sqlalchemy.exc import IntegrityError
 
 from app.chain.block import ChainBlock, GENESIS_PREV_HASH
 from app.models.repository import (
+    clear_demo_billing_records,
+    create_demo_billing_records,
     create_scenario,
+    get_demo_billing_records,
     get_latest_scenario,
     get_price_blocks,
     get_scenario,
@@ -121,3 +124,46 @@ def test_price_ledger_blocks_are_independent_from_other_chains(db_session):
     assert len(load_chain_blocks(db_session)) == 1
     assert len(load_settlement_blocks(db_session)) == 1
     assert len(load_price_ledger_blocks(db_session)) == 1
+
+
+def _demo_record(day=date(2026, 9, 10), market="DAM"):
+    return {
+        "date": day, "time_label": "18:00-19:00", "market": market,
+        "kwh": Decimal("4.500"), "cost_rs": Decimal("18.00"), "created_at": datetime.now(timezone.utc),
+    }
+
+
+def test_create_and_get_demo_billing_records(db_session):
+    created = create_demo_billing_records(db_session, [_demo_record(), _demo_record(market="RTM")])
+    assert len(created) == 2
+    fetched = get_demo_billing_records(db_session)
+    assert len(fetched) == 2
+    assert {r.market for r in fetched} == {"DAM", "RTM"}
+
+
+def test_get_demo_billing_records_empty_when_none_created(db_session):
+    assert get_demo_billing_records(db_session) == []
+
+
+def test_clear_demo_billing_records_removes_all(db_session):
+    create_demo_billing_records(db_session, [_demo_record()])
+    assert len(get_demo_billing_records(db_session)) == 1
+    clear_demo_billing_records(db_session)
+    assert get_demo_billing_records(db_session) == []
+
+
+def test_demo_billing_records_ordered_by_date_then_time(db_session):
+    create_demo_billing_records(
+        db_session,
+        [
+            {**_demo_record(day=date(2026, 9, 11)), "time_label": "06:00-07:00"},
+            {**_demo_record(day=date(2026, 9, 10)), "time_label": "20:00-21:00"},
+            {**_demo_record(day=date(2026, 9, 10)), "time_label": "06:00-07:00"},
+        ],
+    )
+    fetched = get_demo_billing_records(db_session)
+    assert [(r.date, r.time_label) for r in fetched] == [
+        (date(2026, 9, 10), "06:00-07:00"),
+        (date(2026, 9, 10), "20:00-21:00"),
+        (date(2026, 9, 11), "06:00-07:00"),
+    ]

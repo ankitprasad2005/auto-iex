@@ -81,3 +81,20 @@ class PriceLedgerBlockModel(Base):
     payload_json: Mapped[dict] = mapped_column(JSON, nullable=False)
     prev_hash: Mapped[str] = mapped_column(String(64), nullable=False)
     hash: Mapped[str] = mapped_column(String(64), nullable=False)
+
+
+class DemoBillingRecordModel(Base):
+    # Deliberately NOT a hash-chain block: this is fabricated demo data for
+    # the Billing tab, generated on demand by the "Load Demo Data" button.
+    # Hashing fake records into a chain alongside genuinely audited data
+    # (chain_blocks/settlement_blocks/price_ledger_blocks) would misrepresent
+    # it as a trustworthy record of real events, so it gets a plain table.
+    __tablename__ = "demo_billing_records"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    date: Mapped[date] = mapped_column(Date, nullable=False)
+    time_label: Mapped[str] = mapped_column(String(20), nullable=False)
+    market: Mapped[str] = mapped_column(String(3), nullable=False)
+    kwh: Mapped[Decimal] = mapped_column(Numeric(10, 3), nullable=False)
+    cost_rs: Mapped[Decimal] = mapped_column(Numeric(12, 2), nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
