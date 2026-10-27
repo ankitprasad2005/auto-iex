@@ -3,6 +3,7 @@ from typing import Any, Protocol
 from eth_account import Account
 from hexbytes import HexBytes
 from web3 import Web3
+from web3.middleware import ExtraDataToPOAMiddleware
 
 from .. import config
 
@@ -27,7 +28,10 @@ class Web3AnchorPublisher:
         self.chain_id = chain_id
         self.receipt_timeout = receipt_timeout
         self._account = Account.from_key(private_key)
-        self._web3 = web3 if web3 is not None else Web3(Web3.HTTPProvider(rpc_url))
+        if web3 is None:
+            web3 = Web3(Web3.HTTPProvider(rpc_url))
+            web3.middleware_onion.inject(ExtraDataToPOAMiddleware, layer=0)
+        self._web3 = web3
 
     @property
     def address(self) -> str:

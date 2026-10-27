@@ -150,3 +150,19 @@ def test_get_publisher_builds_from_config(monkeypatch):
     assert pub.address == ADDRESS
     assert pub.chain_id == 1234
     assert pub._web3.provider.endpoint_uri == "http://127.0.0.1:2"
+
+
+def test_default_web3_client_reads_proof_of_authority_blocks(monkeypatch):
+    # Polygon is a POA chain: its block extraData is longer than the 32 bytes
+    # plain web3.py accepts, so reading the base fee fails without the POA middleware.
+    pub = Web3AnchorPublisher("http://127.0.0.1:1", 80002, KEY)
+    extra = "0x" + "ab" * 104
+    block = {"number": "0x1", "baseFeePerGas": "0x1e", "extraData": extra}
+    monkeypatch.setattr(
+        pub._web3.provider, "make_request", lambda method, params: {"jsonrpc": "2.0", "id": 1, "result": block}
+    )
+
+    latest = pub._web3.eth.get_block("latest")
+
+    assert latest["baseFeePerGas"] == 30
+    assert latest["proofOfAuthorityData"] == HexBytes(extra)
