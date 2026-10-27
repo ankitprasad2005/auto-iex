@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { AnchorsView } from "./components/AnchorsView";
 import { BillingView } from "./components/BillingView";
 import { ConsumptionForm } from "./components/ConsumptionForm";
 import { ComparisonView } from "./components/ComparisonView";
@@ -10,9 +11,13 @@ import { RangeList } from "./components/RangeList";
 import { ScrapeStatus } from "./components/ScrapeStatus";
 import { SettlementLedger } from "./components/SettlementLedger";
 import {
+  anchorNow,
   checkLedgerNow,
   checkPriceLedgerNow,
   createScenario,
+  getAnchorInterval,
+  getAnchors,
+  getAnchorStatus,
   getBillingHistory,
   getChain,
   getComparison,
@@ -22,10 +27,16 @@ import {
   getRtmInterval,
   loadDemoBillingData,
   triggerScrape,
+  updateAnchorInterval,
   updateRtmInterval,
+  verifyAnchor,
 } from "./api/client";
 import { mergePriceSeries, type MergedPricePoint } from "./lib/priceSeries";
 import type {
+  Anchor,
+  AnchorNowResult,
+  AnchorStatus,
+  AnchorVerifyResult,
   BillingHistory,
   ChainBlock,
   ComparisonResult,
@@ -34,9 +45,23 @@ import type {
   SettlementBlock,
 } from "./api/types";
 
-type Tab = "dashboard" | "prices" | "chain" | "ledger" | "priceLedger" | "billing";
+type Tab = "dashboard" | "prices" | "chain" | "ledger" | "priceLedger" | "billing" | "testnet";
 
 const EMPTY_BILLING_HISTORY: BillingHistory = { records: [], total_kwh: "0", total_cost_rs: "0" };
+
+// Mirrors the backend's default/minimum for the anchor_chain_heads job.
+const DEFAULT_ANCHOR_INTERVAL_SECONDS = 900;
+const MIN_ANCHOR_INTERVAL_SECONDS = 300;
+
+function errorMessage(err: unknown): string {
+  return err instanceof Error ? err.message : String(err);
+}
+
+function anchorNowMessage(result: AnchorNowResult): string {
+  if (result.anchored && result.anchor) return `Anchored in block ${result.anchor.block_number}`;
+  if (result.reason === "unchanged") return "No change since last anchor";
+  return `Anchor failed: ${result.anchor?.error ?? "unknown error"}`;
+}
 
 function isoDate(d: Date): string {
   return d.toISOString().slice(0, 10);
@@ -96,10 +121,22 @@ export default function App() {
   const [updatingRtmInterval, setUpdatingRtmInterval] = useState(false);
   const [billingHistory, setBillingHistory] = useState<BillingHistory>(EMPTY_BILLING_HISTORY);
   const [loadingDemoBilling, setLoadingDemoBilling] = useState(false);
+  const [anchorIntervalSeconds, setAnchorIntervalSeconds] = useState(DEFAULT_ANCHOR_INTERVAL_SECONDS);
+  const [updatingAnchorInterval, setUpdatingAnchorInterval] = useState(false);
+  const [anchorStatus, setAnchorStatus] = useState<AnchorStatus | null>(null);
+  const [anchors, setAnchors] = useState<Anchor[]>([]);
+  const [anchoring, setAnchoring] = useState(false);
+  const [anchorMessage, setAnchorMessage] = useState<string | null>(null);
+  const [verifyResults, setVerifyResults] = useState<Record<number, AnchorVerifyResult | string>>({});
 
   useEffect(() => {
     getChain().then(setChainBlocks);
     getRtmInterval().then((r) => setRtmIntervalSeconds(r.seconds));
+    // Anchoring is optional infrastructure: if the endpoint errors, keep the
+    // default value rather than breaking the dashboard.
+    getAnchorInterval()
+      .then((r) => setAnchorIntervalSeconds(r.seconds))
+      .catch(() => {});
   }, []);
 
   async function refreshComparison(nextRanges: ConsumptionRangeInput[], forDate: string) {
@@ -220,6 +257,53 @@ export default function App() {
     }
   }
 
+  async function handleUpdateAnchorInterval(seconds: number) {
+    setUpdatingAnchorInterval(true);
+    try {
+      const result = await updateAnchorInterval(seconds);
+      setAnchorIntervalSeconds(result.seconds);
+    } catch {
+      // Leave the last known server value in place; the control stays usable.
+    } finally {
+      setUpdatingAnchorInterval(false);
+    }
+  }
+
+  async function handleSelectTestnetTab() {
+    setTab("testnet");
+    try {
+      const [status, list] = await Promise.all([getAnchorStatus(), getAnchors()]);
+      setAnchorStatus(status);
+      setAnchors(list);
+    } catch (err) {
+      setAnchorMessage(errorMessage(err));
+    }
+  }
+
+  async function handleAnchorNow() {
+    setAnchoring(true);
+    setAnchorMessage(null);
+    try {
+      const result = await anchorNow();
+      setAnchorMessage(anchorNowMessage(result));
+      setAnchors(await getAnchors());
+    } catch (err) {
+      setAnchorMessage(errorMessage(err));
+    } finally {
+      setAnchoring(false);
+    }
+  }
+
+  async function handleVerify(id: number) {
+    let result: AnchorVerifyResult | string;
+    try {
+      result = await verifyAnchor(id);
+    } catch (err) {
+      result = errorMessage(err);
+    }
+    setVerifyResults((r) => ({ ...r, [id]: result }));
+  }
+
   return (
     <div className="min-h-screen bg-nd-black text-nd-text-primary font-body p-4 sm:p-8">
       <div className="max-w-5xl mx-auto flex flex-col gap-8">
@@ -236,6 +320,7 @@ export default function App() {
               onClick={handleSelectPriceLedgerTab}
             />
             <TabButton label="Billing" active={tab === "billing"} onClick={handleSelectBillingTab} />
+            <TabButton label="Testnet" active={tab === "testnet"} onClick={handleSelectTestnetTab} />
           </div>
         </header>
 
@@ -252,6 +337,14 @@ export default function App() {
               seconds={rtmIntervalSeconds}
               onUpdate={handleUpdateRtmInterval}
               updating={updatingRtmInterval}
+            />
+
+            <PollingIntervalControl
+              seconds={anchorIntervalSeconds}
+              onUpdate={handleUpdateAnchorInterval}
+              updating={updatingAnchorInterval}
+              label="Testnet anchor interval (seconds)"
+              min={MIN_ANCHOR_INTERVAL_SECONDS}
             />
 
             <label htmlFor="comparison-date" className="flex flex-col gap-1 max-w-xs">
@@ -300,6 +393,18 @@ export default function App() {
 
         {tab === "billing" && (
           <BillingView history={billingHistory} onLoadDemo={handleLoadDemoBilling} loading={loadingDemoBilling} />
+        )}
+
+        {tab === "testnet" && (
+          <AnchorsView
+            status={anchorStatus}
+            anchors={anchors}
+            onAnchorNow={handleAnchorNow}
+            anchoring={anchoring}
+            onVerify={handleVerify}
+            verifyResults={verifyResults}
+            message={anchorMessage}
+          />
         )}
       </div>
     </div>

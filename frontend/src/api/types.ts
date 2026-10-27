@@ -111,3 +111,46 @@ export interface BillingHistory {
 export interface LoadDemoBillingResult {
   created_count: number;
 }
+
+export type AnchorRecordStatus = "confirmed" | "failed";
+
+export interface Anchor {
+  id: number;
+  created_at: string;
+  scrape_head_index: number;
+  scrape_head_hash: string;
+  settlement_head_index: number;
+  settlement_head_hash: string;
+  price_ledger_head_index: number;
+  price_ledger_head_hash: string;
+  tx_hash: string | null;
+  status: AnchorRecordStatus;
+  block_number: number | null;
+  error: string | null;
+  explorer_url: string | null;
+}
+
+export interface AnchorStatus {
+  enabled: boolean;
+  network: string;
+  chain_id: number;
+  wallet_address: string | null;
+  explorer_tx_url: string;
+}
+
+export interface AnchorNowResult {
+  anchored: boolean;
+  reason: "unchanged" | "failed" | null;
+  anchor: Anchor | null;
+}
+
+export interface AnchorVerifyResult {
+  valid: boolean;
+  on_chain_matches_record: boolean;
+  ledger_matches_record: boolean;
+  mismatches: string[];
+}
+
+export interface AnchorIntervalResult {
+  seconds: number;
+}

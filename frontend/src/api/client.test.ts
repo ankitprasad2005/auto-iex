@@ -1,8 +1,12 @@
 import { describe, expect, it, vi, afterEach } from "vitest";
 import {
+  anchorNow,
   checkLedgerNow,
   checkPriceLedgerNow,
   createScenario,
+  getAnchorInterval,
+  getAnchors,
+  getAnchorStatus,
   getBillingHistory,
   getChain,
   getComparison,
@@ -12,8 +16,11 @@ import {
   getRtmInterval,
   loadDemoBillingData,
   triggerScrape,
+  updateAnchorInterval,
   updateRtmInterval,
+  verifyAnchor,
 } from "./client";
+import type { Anchor } from "./types";
 
 afterEach(() => {
   vi.restoreAllMocks();
@@ -249,5 +256,175 @@ describe("loadDemoBillingData", () => {
   it("throws when the API returns an error status", async () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
     await expect(loadDemoBillingData()).rejects.toThrow("500");
+  });
+});
+
+const sampleAnchor: Anchor = {
+  id: 1,
+  created_at: "2026-10-27T10:00:00Z",
+  scrape_head_index: 3,
+  scrape_head_hash: "a".repeat(64),
+  settlement_head_index: -1,
+  settlement_head_hash: "0".repeat(64),
+  price_ledger_head_index: 7,
+  price_ledger_head_hash: "b".repeat(64),
+  tx_hash: "0x" + "c".repeat(64),
+  status: "confirmed",
+  block_number: 123,
+  error: null,
+  explorer_url: "https://amoy.polygonscan.com/tx/0x" + "c".repeat(64),
+};
+
+describe("getAnchorStatus", () => {
+  it("fetches /anchors/status", async () => {
+    const status = {
+      enabled: true,
+      network: "Polygon Amoy",
+      chain_id: 80002,
+      wallet_address: "0xabc",
+      explorer_tx_url: "https://amoy.polygonscan.com/tx/",
+    };
+    const mockFetch = vi.fn().mockResolvedValue({ ok: true, json: async () => status });
+    vi.stubGlobal("fetch", mockFetch);
+    expect(await getAnchorStatus()).toEqual(status);
+    expect(mockFetch).toHaveBeenCalledWith(expect.stringMatching(/\/anchors\/status$/));
+  });
+
+  it("throws when the API returns an error status", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
+    await expect(getAnchorStatus()).rejects.toThrow("500");
+  });
+});
+
+describe("getAnchors", () => {
+  it("fetches /anchors", async () => {
+    const mockFetch = vi.fn().mockResolvedValue({ ok: true, json: async () => [sampleAnchor] });
+    vi.stubGlobal("fetch", mockFetch);
+    expect(await getAnchors()).toEqual([sampleAnchor]);
+    expect(mockFetch).toHaveBeenCalledWith(expect.stringMatching(/\/anchors$/));
+  });
+
+  it("throws when the API returns an error status", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
+    await expect(getAnchors()).rejects.toThrow("500");
+  });
+});
+
+describe("anchorNow", () => {
+  it("posts to /anchors/now and returns the result", async () => {
+    const result = { anchored: true, reason: null, anchor: sampleAnchor };
+    const mockFetch = vi.fn().mockResolvedValue({ ok: true, json: async () => result });
+    vi.stubGlobal("fetch", mockFetch);
+    expect(await anchorNow()).toEqual(result);
+    expect(mockFetch).toHaveBeenCalledWith(
+      expect.stringMatching(/\/anchors\/now$/),
+      expect.objectContaining({ method: "POST" }),
+    );
+  });
+
+  it("surfaces the backend's detail message on error", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({ ok: false, status: 503, json: async () => ({ detail: "anchoring not configured" }) }),
+    );
+    await expect(anchorNow()).rejects.toThrow(/503.*anchoring not configured/);
+  });
+
+  it("falls back to the status code when the error body is not JSON", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: false,
+        status: 502,
+        json: async () => {
+          throw new SyntaxError("Unexpected token");
+        },
+      }),
+    );
+    await expect(anchorNow()).rejects.toThrow("failed to anchor: 502");
+  });
+
+  it("falls back to the status code when the response has no json method", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
+    await expect(anchorNow()).rejects.toThrow("failed to anchor: 500");
+  });
+
+  it("ignores a non-string detail", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({ ok: false, status: 422, json: async () => ({ detail: [{ msg: "bad" }] }) }),
+    );
+    await expect(anchorNow()).rejects.toThrow(/^failed to anchor: 422$/);
+  });
+
+  it("ignores a null JSON body", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500, json: async () => null }));
+    await expect(anchorNow()).rejects.toThrow(/^failed to anchor: 500$/);
+  });
+});
+
+describe("verifyAnchor", () => {
+  it("fetches /anchors/{id}/verify", async () => {
+    const result = { valid: true, on_chain_matches_record: true, ledger_matches_record: true, mismatches: [] };
+    const mockFetch = vi.fn().mockResolvedValue({ ok: true, json: async () => result });
+    vi.stubGlobal("fetch", mockFetch);
+    expect(await verifyAnchor(42)).toEqual(result);
+    expect(mockFetch).toHaveBeenCalledWith(expect.stringMatching(/\/anchors\/42\/verify$/));
+  });
+
+  it("surfaces the backend's detail message for a 404", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({ ok: false, status: 404, json: async () => ({ detail: "anchor not found" }) }),
+    );
+    await expect(verifyAnchor(999)).rejects.toThrow(/404.*anchor not found/);
+  });
+
+  it("surfaces the backend's detail message for a 409", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({ ok: false, status: 409, json: async () => ({ detail: "anchor has no transaction" }) }),
+    );
+    await expect(verifyAnchor(2)).rejects.toThrow(/409.*anchor has no transaction/);
+  });
+
+  it("falls back to the status code without a detail", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 503, json: async () => ({}) }));
+    await expect(verifyAnchor(1)).rejects.toThrow(/^failed to verify anchor: 503$/);
+  });
+});
+
+describe("getAnchorInterval", () => {
+  it("fetches /scheduler/anchor-interval", async () => {
+    const mockFetch = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ seconds: 900 }) });
+    vi.stubGlobal("fetch", mockFetch);
+    expect(await getAnchorInterval()).toEqual({ seconds: 900 });
+    expect(mockFetch).toHaveBeenCalledWith(expect.stringMatching(/\/scheduler\/anchor-interval$/));
+  });
+
+  it("throws when the API returns an error status", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
+    await expect(getAnchorInterval()).rejects.toThrow("500");
+  });
+});
+
+describe("updateAnchorInterval", () => {
+  it("patches /scheduler/anchor-interval with the new seconds value", async () => {
+    const mockFetch = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ seconds: 600 }) });
+    vi.stubGlobal("fetch", mockFetch);
+    expect(await updateAnchorInterval(600)).toEqual({ seconds: 600 });
+    expect(mockFetch).toHaveBeenCalledWith(
+      expect.stringMatching(/\/scheduler\/anchor-interval$/),
+      expect.objectContaining({
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ seconds: 600 }),
+      }),
+    );
+  });
+
+  it("throws when the API returns an error status", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 422 }));
+    await expect(updateAnchorInterval(100)).rejects.toThrow("422");
   });
 });
