@@ -1,7 +1,7 @@
 from datetime import date, datetime, time
 from decimal import Decimal
 
-from sqlalchemy import JSON, Date, DateTime, ForeignKey, Integer, Numeric, String, Time, UniqueConstraint
+from sqlalchemy import JSON, Date, DateTime, ForeignKey, Integer, Numeric, String, Text, Time, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base
@@ -98,3 +98,22 @@ class DemoBillingRecordModel(Base):
     kwh: Mapped[Decimal] = mapped_column(Numeric(10, 3), nullable=False)
     cost_rs: Mapped[Decimal] = mapped_column(Numeric(12, 2), nullable=False)
     created_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+
+
+class AnchorModel(Base):
+    # One publication of all three chain heads to the public testnet.
+    # An empty chain is recorded as index -1 with an all-zero hash.
+    __tablename__ = "anchors"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+    scrape_head_index: Mapped[int] = mapped_column(Integer, nullable=False)
+    scrape_head_hash: Mapped[str] = mapped_column(String(64), nullable=False)
+    settlement_head_index: Mapped[int] = mapped_column(Integer, nullable=False)
+    settlement_head_hash: Mapped[str] = mapped_column(String(64), nullable=False)
+    price_ledger_head_index: Mapped[int] = mapped_column(Integer, nullable=False)
+    price_ledger_head_hash: Mapped[str] = mapped_column(String(64), nullable=False)
+    tx_hash: Mapped[str | None] = mapped_column(String(66), nullable=True)
+    status: Mapped[str] = mapped_column(String(16), nullable=False)
+    block_number: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    error: Mapped[str | None] = mapped_column(Text, nullable=True)

@@ -7,6 +7,7 @@ from sqlalchemy.orm import Session
 from ..chain.block import ChainBlock
 from ..scraper.parser import PriceBlockRecord
 from .tables import (
+    AnchorModel,
     ChainBlockModel,
     ConsumptionRangeModel,
     DemoBillingRecordModel,
@@ -135,3 +136,23 @@ def create_demo_billing_records(session: Session, records: list[dict[str, Any]])
 def clear_demo_billing_records(session: Session) -> None:
     session.execute(delete(DemoBillingRecordModel))
     session.commit()
+
+
+def save_anchor(session: Session, anchor: AnchorModel) -> AnchorModel:
+    session.add(anchor)
+    session.commit()
+    return anchor
+
+
+def list_anchors(session: Session) -> list[AnchorModel]:
+    return list(session.execute(select(AnchorModel).order_by(AnchorModel.id.desc())).scalars())
+
+
+def get_anchor(session: Session, anchor_id: int) -> AnchorModel | None:
+    return session.get(AnchorModel, anchor_id)
+
+
+def get_latest_confirmed_anchor(session: Session) -> AnchorModel | None:
+    return session.execute(
+        select(AnchorModel).where(AnchorModel.status == "confirmed").order_by(AnchorModel.id.desc()).limit(1)
+    ).scalar_one_or_none()

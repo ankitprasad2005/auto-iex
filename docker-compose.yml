@@ -15,6 +15,10 @@ services:
     environment:
       DATABASE_URL: ${DATABASE_URL}
       DAM_SCRAPE_HOUR: ${DAM_SCRAPE_HOUR}
+      ANCHOR_RPC_URL: ${ANCHOR_RPC_URL:-https://polygon-amoy-bor-rpc.publicnode.com}
+      ANCHOR_CHAIN_ID: ${ANCHOR_CHAIN_ID:-80002}
+      ANCHOR_PRIVATE_KEY: ${ANCHOR_PRIVATE_KEY:-}
+      ANCHOR_EXPLORER_TX_URL: ${ANCHOR_EXPLORER_TX_URL:-https://amoy.polygonscan.com/tx/}
     depends_on:
       - db
     # No ports: published — unreachable from the host. Only the frontend's

@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from .api.anchors import router as anchors_router
 from .api.billing import router as billing_router
 from .api.chain import router as chain_router
 from .api.ledger import router as ledger_router
@@ -41,3 +42,4 @@ app.include_router(ledger_router)
 app.include_router(price_ledger_router)
 app.include_router(scheduler_settings_router)
 app.include_router(billing_router)
+app.include_router(anchors_router)
