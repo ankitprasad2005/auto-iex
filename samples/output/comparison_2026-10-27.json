@@ -1,0 +1,777 @@
+{
+    "blocks": [
+        {
+            "block_index": 0,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 1,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 2,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 3,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 4,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 5,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 6,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 7,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 8,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 9,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 10,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 11,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 12,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 13,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 14,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 15,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 16,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 17,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 18,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 19,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 20,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 21,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 22,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 23,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 24,
+            "predicted_kwh": 1125.0,
+            "dam_cost_rs": "6187.59",
+            "rtm_cost_rs": "4792.55",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 25,
+            "predicted_kwh": 1125.0,
+            "dam_cost_rs": "7874.37",
+            "rtm_cost_rs": "6065.37",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 26,
+            "predicted_kwh": 1125.0,
+            "dam_cost_rs": "11250.00",
+            "rtm_cost_rs": "7313.27",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 27,
+            "predicted_kwh": 1125.0,
+            "dam_cost_rs": "11250.00",
+            "rtm_cost_rs": "7987.62",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 28,
+            "predicted_kwh": 1125.0,
+            "dam_cost_rs": "6188.25",
+            "rtm_cost_rs": "8395.16",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 29,
+            "predicted_kwh": 1125.0,
+            "dam_cost_rs": "5738.36",
+            "rtm_cost_rs": "7313.51",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 30,
+            "predicted_kwh": 1125.0,
+            "dam_cost_rs": "5033.58",
+            "rtm_cost_rs": "4331.93",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 31,
+            "predicted_kwh": 1125.0,
+            "dam_cost_rs": "4465.62",
+            "rtm_cost_rs": "2837.24",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 32,
+            "predicted_kwh": 1125.0,
+            "dam_cost_rs": "3798.54",
+            "rtm_cost_rs": "3150.90",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 33,
+            "predicted_kwh": 1125.0,
+            "dam_cost_rs": "3375.37",
+            "rtm_cost_rs": "2911.95",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 34,
+            "predicted_kwh": 1125.0,
+            "dam_cost_rs": "3091.57",
+            "rtm_cost_rs": "2813.34",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 35,
+            "predicted_kwh": 1125.0,
+            "dam_cost_rs": "3071.24",
+            "rtm_cost_rs": "2016.52",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 36,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 37,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 38,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 39,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 40,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 41,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 42,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 43,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 44,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 45,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 46,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 47,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 48,
+            "predicted_kwh": 1500.0,
+            "dam_cost_rs": "1620.05",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 49,
+            "predicted_kwh": 1500.0,
+            "dam_cost_rs": "1603.01",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 50,
+            "predicted_kwh": 1500.0,
+            "dam_cost_rs": "1583.94",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 51,
+            "predicted_kwh": 1500.0,
+            "dam_cost_rs": "1499.01",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 52,
+            "predicted_kwh": 1500.0,
+            "dam_cost_rs": "1229.15",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 53,
+            "predicted_kwh": 1500.0,
+            "dam_cost_rs": "1229.22",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 54,
+            "predicted_kwh": 1500.0,
+            "dam_cost_rs": "1620.06",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 55,
+            "predicted_kwh": 1500.0,
+            "dam_cost_rs": "1620.27",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 56,
+            "predicted_kwh": 1500.0,
+            "dam_cost_rs": "1668.30",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 57,
+            "predicted_kwh": 1500.0,
+            "dam_cost_rs": "2430.06",
+            "rtm_cost_rs": "35.19",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 58,
+            "predicted_kwh": 1500.0,
+            "dam_cost_rs": "2431.40",
+            "rtm_cost_rs": "1498.52",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 59,
+            "predicted_kwh": 1500.0,
+            "dam_cost_rs": "2867.61",
+            "rtm_cost_rs": "2338.98",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 60,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 61,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 62,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 63,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 64,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 65,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 66,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 67,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 68,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 69,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 70,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 71,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": "0.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 72,
+            "predicted_kwh": 1300.0,
+            "dam_cost_rs": "13000.00",
+            "rtm_cost_rs": "13000.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 73,
+            "predicted_kwh": 1300.0,
+            "dam_cost_rs": "13000.00",
+            "rtm_cost_rs": "13000.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 74,
+            "predicted_kwh": 1300.0,
+            "dam_cost_rs": "13000.00",
+            "rtm_cost_rs": "13000.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 75,
+            "predicted_kwh": 1300.0,
+            "dam_cost_rs": "13000.00",
+            "rtm_cost_rs": "13000.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 76,
+            "predicted_kwh": 1300.0,
+            "dam_cost_rs": "13000.00",
+            "rtm_cost_rs": "13000.00",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 77,
+            "predicted_kwh": 1300.0,
+            "dam_cost_rs": "13000.00",
+            "rtm_cost_rs": "12350.12",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 78,
+            "predicted_kwh": 1300.0,
+            "dam_cost_rs": "13000.00",
+            "rtm_cost_rs": "6773.38",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 79,
+            "predicted_kwh": 1300.0,
+            "dam_cost_rs": "8396.96",
+            "rtm_cost_rs": "6042.75",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 80,
+            "predicted_kwh": 1300.0,
+            "dam_cost_rs": "6956.21",
+            "rtm_cost_rs": "5512.87",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 81,
+            "predicted_kwh": 1300.0,
+            "dam_cost_rs": "6500.18",
+            "rtm_cost_rs": "5590.72",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 82,
+            "predicted_kwh": 1300.0,
+            "dam_cost_rs": "6182.45",
+            "rtm_cost_rs": "5201.24",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 83,
+            "predicted_kwh": 1300.0,
+            "dam_cost_rs": "5881.75",
+            "rtm_cost_rs": "4904.69",
+            "dam_pending": false,
+            "rtm_pending": false
+        },
+        {
+            "block_index": 84,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": null,
+            "dam_pending": false,
+            "rtm_pending": true
+        },
+        {
+            "block_index": 85,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": null,
+            "dam_pending": false,
+            "rtm_pending": true
+        },
+        {
+            "block_index": 86,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": null,
+            "dam_pending": false,
+            "rtm_pending": true
+        },
+        {
+            "block_index": 87,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": null,
+            "dam_pending": false,
+            "rtm_pending": true
+        },
+        {
+            "block_index": 88,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": null,
+            "dam_pending": false,
+            "rtm_pending": true
+        },
+        {
+            "block_index": 89,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": null,
+            "dam_pending": false,
+            "rtm_pending": true
+        },
+        {
+            "block_index": 90,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": null,
+            "dam_pending": false,
+            "rtm_pending": true
+        },
+        {
+            "block_index": 91,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": null,
+            "dam_pending": false,
+            "rtm_pending": true
+        },
+        {
+            "block_index": 92,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": null,
+            "dam_pending": false,
+            "rtm_pending": true
+        },
+        {
+            "block_index": 93,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": null,
+            "dam_pending": false,
+            "rtm_pending": true
+        },
+        {
+            "block_index": 94,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": null,
+            "dam_pending": false,
+            "rtm_pending": true
+        },
+        {
+            "block_index": 95,
+            "predicted_kwh": 0.0,
+            "dam_cost_rs": "0.00",
+            "rtm_cost_rs": null,
+            "dam_pending": false,
+            "rtm_pending": true
+        }
+    ],
+    "dam_total_rs": "217644.09",
+    "rtm_total_rs": "175177.79",
+    "hybrid_total_rs": "171395.73",
+    "dam_pending_blocks": 0,
+    "rtm_pending_blocks": 12
+}

@@ -1,0 +1,14 @@
+{
+    "scrape_chain": {
+        "valid": true,
+        "invalid_block_index": null
+    },
+    "settlement_ledger": {
+        "valid": true,
+        "invalid_block_index": null
+    },
+    "price_ledger": {
+        "valid": true,
+        "invalid_block_index": null
+    }
+}

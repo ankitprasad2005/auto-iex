@@ -1,0 +1,371 @@
+[
+    {
+        "index": 0,
+        "timestamp": "2026-09-15T10:49:46.940039",
+        "payload": {
+            "genesis": true
+        },
+        "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "3f2bb62680f38acd88200874a2818753bebabeaf5da16b7a905c27ef8785cd54"
+    },
+    {
+        "index": 1,
+        "timestamp": "2026-09-15T10:49:46.940145",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-09-16",
+            "block_count": 68,
+            "price_hash": "ea14e59dfad1d026caa3d68e9021b5e5520bf398b0d13d713f141ec6512248b8"
+        },
+        "prev_hash": "3f2bb62680f38acd88200874a2818753bebabeaf5da16b7a905c27ef8785cd54",
+        "hash": "b0ebd0e980f8bcfebfa23f989d124869d52ed42821a9f29859cb6b375de7226d"
+    },
+    {
+        "index": 2,
+        "timestamp": "2026-09-15T10:49:47.480742",
+        "payload": {
+            "market": "DAM",
+            "date": "2026-09-16",
+            "block_count": 96,
+            "price_hash": "6d8efee652f190a3e360caa43426ff1953f1323ab68809d6dead361113f90013"
+        },
+        "prev_hash": "b0ebd0e980f8bcfebfa23f989d124869d52ed42821a9f29859cb6b375de7226d",
+        "hash": "cad5237727736120e694640e8de73597176193d4a26ee8c47264d0d7e5ef8b60"
+    },
+    {
+        "index": 3,
+        "timestamp": "2026-09-15T11:04:25.249681",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-09-15",
+            "block_count": 70,
+            "price_hash": "b568008a0f4c54529b1b769b41b6b534d0cabadd9120c982663dacc5f2ab2121"
+        },
+        "prev_hash": "cad5237727736120e694640e8de73597176193d4a26ee8c47264d0d7e5ef8b60",
+        "hash": "bb4a61805358b7b90db40c192ca92540386a363bc26b818c7bd2fd602acd5c27"
+    },
+    {
+        "index": 4,
+        "timestamp": "2026-10-13T07:38:37.803952",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 56,
+            "price_hash": "740969ec886db8009740cf47bfd4adbd0aa25b72554a53da1cb1882fa311ce96"
+        },
+        "prev_hash": "bb4a61805358b7b90db40c192ca92540386a363bc26b818c7bd2fd602acd5c27",
+        "hash": "7f112a7809f322bffd7fc98bfaed20fdd034215335c095d4f9929bd3aee7cee5"
+    },
+    {
+        "index": 5,
+        "timestamp": "2026-10-13T07:41:03.157765",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 58,
+            "price_hash": "45b5c3cced038b03fe2f4aa02ea2018d859c5e68dd97ac0191a2060b6d80af9c"
+        },
+        "prev_hash": "7f112a7809f322bffd7fc98bfaed20fdd034215335c095d4f9929bd3aee7cee5",
+        "hash": "a760542dbbfef420965f62bb539405e87b013677753be63a1719ee9b24233068"
+    },
+    {
+        "index": 6,
+        "timestamp": "2026-10-13T08:10:36.828922",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 60,
+            "price_hash": "0ce5f805b9cb295bfcc76c1cfd2ef2e313197bb7c7123568e13d639f7c2ea384"
+        },
+        "prev_hash": "a760542dbbfef420965f62bb539405e87b013677753be63a1719ee9b24233068",
+        "hash": "715768ae76bb6b0fc952e669ad59b887f06afffc247fda00d684f6c9bd823974"
+    },
+    {
+        "index": 7,
+        "timestamp": "2026-10-13T08:40:31.176738",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 62,
+            "price_hash": "d9e8a681fb3410fa760261c491d2fe61db2ca26b2851a2b0248564b22e0f6ad7"
+        },
+        "prev_hash": "715768ae76bb6b0fc952e669ad59b887f06afffc247fda00d684f6c9bd823974",
+        "hash": "4bd1a92daf0a5e31e5b7bbd3a16f080ec6043e2cfd1729df7a64c4781415d8c8"
+    },
+    {
+        "index": 8,
+        "timestamp": "2026-10-13T09:10:29.374111",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 64,
+            "price_hash": "b632bbd545373c1e856685f4b748fe5d55e2490b809ed96d0a20f26e43fd310a"
+        },
+        "prev_hash": "4bd1a92daf0a5e31e5b7bbd3a16f080ec6043e2cfd1729df7a64c4781415d8c8",
+        "hash": "74234e05802546edeef44d930c45573ebef2c7e674a13cfca85e6e28a4ab1cda"
+    },
+    {
+        "index": 9,
+        "timestamp": "2026-10-13T09:45:29.893851",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 66,
+            "price_hash": "5ee41e7f4bf76df8c8c112672e321e991a7d7474728b02feb9fdd645b4580d9d"
+        },
+        "prev_hash": "74234e05802546edeef44d930c45573ebef2c7e674a13cfca85e6e28a4ab1cda",
+        "hash": "a77edd90141a8348fd34ee34fec935e5d80253e78917e8e43eba2ea3cd8c8b39"
+    },
+    {
+        "index": 10,
+        "timestamp": "2026-10-13T10:10:43.184026",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 68,
+            "price_hash": "02bbd29f991c55e0d26ff5b309cf10f5b297231833de4ed72f7720792e46547f"
+        },
+        "prev_hash": "a77edd90141a8348fd34ee34fec935e5d80253e78917e8e43eba2ea3cd8c8b39",
+        "hash": "0de46df80d04fc503e7b79928b5fdcbbc17f66fb2ca6b092f3b3b3eae7abb484"
+    },
+    {
+        "index": 11,
+        "timestamp": "2026-10-13T10:40:32.302141",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 70,
+            "price_hash": "e4e6c2da5313e1b64c12212976ec4064a719f5fd24d23ed9c2814f4e6fc5be6a"
+        },
+        "prev_hash": "0de46df80d04fc503e7b79928b5fdcbbc17f66fb2ca6b092f3b3b3eae7abb484",
+        "hash": "c69ca7003fa26af69ea86a516002a82e32f88dacff539a61b04e0de6b368fadf"
+    },
+    {
+        "index": 12,
+        "timestamp": "2026-10-13T11:33:39.250855",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 72,
+            "price_hash": "92bc374dad34db3261a37fa5e50a7121630c700344d6a1468286fd66d1967320"
+        },
+        "prev_hash": "c69ca7003fa26af69ea86a516002a82e32f88dacff539a61b04e0de6b368fadf",
+        "hash": "cb7f9214e8c33efc99100fb859aeb9eea21c66e3386ea4efa18065dd9cdb434d"
+    },
+    {
+        "index": 13,
+        "timestamp": "2026-10-13T11:40:28.502066",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 74,
+            "price_hash": "96e949c136c8f2fa44271bdf200b73ab548bf291ee72cbf86341921a74b80f54"
+        },
+        "prev_hash": "cb7f9214e8c33efc99100fb859aeb9eea21c66e3386ea4efa18065dd9cdb434d",
+        "hash": "7744305a5c17141b6dc18b2313c94bc4d719e26fe88b389b20a109c8e61d577e"
+    },
+    {
+        "index": 14,
+        "timestamp": "2026-10-13T12:10:43.342393",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 76,
+            "price_hash": "e3c8195cd24794a3ca5c9114a1e7f2ec2125fea6bc742d4c4a1473c0d738f8c9"
+        },
+        "prev_hash": "7744305a5c17141b6dc18b2313c94bc4d719e26fe88b389b20a109c8e61d577e",
+        "hash": "ee827fb6ca36dc42422038f46a1fed809f84cb151b8db1da8257d7d2e8e9b1a1"
+    },
+    {
+        "index": 15,
+        "timestamp": "2026-10-13T12:40:42.552745",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 78,
+            "price_hash": "9b6a59aa63e394fb13cffa9a2a00c3de92299ce96b41bf66b271f358101915c1"
+        },
+        "prev_hash": "ee827fb6ca36dc42422038f46a1fed809f84cb151b8db1da8257d7d2e8e9b1a1",
+        "hash": "bb6938f9e9c74ca842654661584a79256d5257c616321c90ae5bece5274c1e01"
+    },
+    {
+        "index": 16,
+        "timestamp": "2026-10-13T13:31:03.086657",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 80,
+            "price_hash": "a355dcefb4820aa635d70ed18fac139338a10b3536a9ddc1385accebf4788912"
+        },
+        "prev_hash": "bb6938f9e9c74ca842654661584a79256d5257c616321c90ae5bece5274c1e01",
+        "hash": "4395e3c58e66797ac6de87be48bafa560c567f26dbd558e60c3b10a76d9f7144"
+    },
+    {
+        "index": 17,
+        "timestamp": "2026-10-13T13:41:29.527212",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 82,
+            "price_hash": "4e953c8ff3e13591447474ffea6958a732061327d25d505d7316f158a6e71b36"
+        },
+        "prev_hash": "4395e3c58e66797ac6de87be48bafa560c567f26dbd558e60c3b10a76d9f7144",
+        "hash": "83e468245a4efed43354ea885c506e2cecc04ed7035289562910b8d848dd5a01"
+    },
+    {
+        "index": 18,
+        "timestamp": "2026-10-13T14:10:37.349163",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 84,
+            "price_hash": "6a170379e5486868774719a17593c6833bff026354985cc301052c1041009920"
+        },
+        "prev_hash": "83e468245a4efed43354ea885c506e2cecc04ed7035289562910b8d848dd5a01",
+        "hash": "6b5ae616af60531163363aacffcf0d6fe0171af0865f4771b1a706512835a6eb"
+    },
+    {
+        "index": 19,
+        "timestamp": "2026-10-13T19:33:14.086285",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 8,
+            "price_hash": "0bf388a295c3c4f58451ad548d25af6610a6a83246625c7e3a7d30d03b92dc1f"
+        },
+        "prev_hash": "6b5ae616af60531163363aacffcf0d6fe0171af0865f4771b1a706512835a6eb",
+        "hash": "e558c538355c18fca707964776c3f04fe0e43216cdc55e7f92e49049d30b472d"
+    },
+    {
+        "index": 20,
+        "timestamp": "2026-10-13T19:40:27.864631",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-13",
+            "block_count": 10,
+            "price_hash": "8bf55cfe5610fd19114276e125315e8d8ccc1a920b931b17487729dd3e07292a"
+        },
+        "prev_hash": "e558c538355c18fca707964776c3f04fe0e43216cdc55e7f92e49049d30b472d",
+        "hash": "6b47395eefe408470b002432dcd27fd46b4fbe03fdc02d476a1345431172b4ce"
+    },
+    {
+        "index": 21,
+        "timestamp": "2026-10-14T08:37:00.910812",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-14",
+            "block_count": 60,
+            "price_hash": "e5683e7bbd645f1d67fffb0556623e0fa6a84553eecee1fff383de17e11c3a4c"
+        },
+        "prev_hash": "6b47395eefe408470b002432dcd27fd46b4fbe03fdc02d476a1345431172b4ce",
+        "hash": "d95ff29e8840e60049016968e48f348ce0d1fb0f5571f4abb5e2fa69c6fabc19"
+    },
+    {
+        "index": 22,
+        "timestamp": "2026-10-14T08:45:03.471183",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-14",
+            "block_count": 62,
+            "price_hash": "d99f216727018d48fb64ba94a21d1d8f26befb786e74edcf74ce63a90f13a96a"
+        },
+        "prev_hash": "d95ff29e8840e60049016968e48f348ce0d1fb0f5571f4abb5e2fa69c6fabc19",
+        "hash": "22d7b009612855f34069cd53b9cf11485ac88b69a391e4c2a412d29621553126"
+    },
+    {
+        "index": 23,
+        "timestamp": "2026-10-14T09:11:20.072455",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-14",
+            "block_count": 64,
+            "price_hash": "d927aedf1bf27cf75c06b9380bf49f2d349e4a8255793cc13f65f60850fb4344"
+        },
+        "prev_hash": "22d7b009612855f34069cd53b9cf11485ac88b69a391e4c2a412d29621553126",
+        "hash": "0435cbf51392402f31c398e940a84c8819c3baa2372f72787ddd7f9a78098bc6"
+    },
+    {
+        "index": 24,
+        "timestamp": "2026-10-14T09:40:33.844829",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-14",
+            "block_count": 66,
+            "price_hash": "20bb2f5a19a09369a622f3eab08079d2298822cd165bbd5aefb3dfd89fd0a192"
+        },
+        "prev_hash": "0435cbf51392402f31c398e940a84c8819c3baa2372f72787ddd7f9a78098bc6",
+        "hash": "4be0b9d4904e4e0db7f05ee6e2f15b1411a68ea639877874aa6705601b78c678"
+    },
+    {
+        "index": 25,
+        "timestamp": "2026-10-14T09:43:50.419659",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-15",
+            "block_count": 66,
+            "price_hash": "20bb2f5a19a09369a622f3eab08079d2298822cd165bbd5aefb3dfd89fd0a192"
+        },
+        "prev_hash": "4be0b9d4904e4e0db7f05ee6e2f15b1411a68ea639877874aa6705601b78c678",
+        "hash": "bca61caab67db2b25fecfb0d07552cbc139d10acf5c3f1a165c001b21562a223"
+    },
+    {
+        "index": 26,
+        "timestamp": "2026-10-14T09:43:51.874263",
+        "payload": {
+            "market": "DAM",
+            "date": "2026-10-15",
+            "block_count": 96,
+            "price_hash": "a2f22335c7c4a687d5b069761e4285f67d992f2a54bebd130b0db63cff4c0cea"
+        },
+        "prev_hash": "bca61caab67db2b25fecfb0d07552cbc139d10acf5c3f1a165c001b21562a223",
+        "hash": "3c767d646772888f1008ff4f16dfaaa43c03674b0b75dcfdbc6d7d76b522b7fb"
+    },
+    {
+        "index": 27,
+        "timestamp": "2026-10-27T14:07:20.477485",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-27",
+            "block_count": 82,
+            "price_hash": "07adf2b803f45f9ff88651711d663df239345a25a16c4191cb1828f6a87c70c7"
+        },
+        "prev_hash": "3c767d646772888f1008ff4f16dfaaa43c03674b0b75dcfdbc6d7d76b522b7fb",
+        "hash": "9f78fa70f8b77bad0fb47652c8b7f939a139faa89acfa62e7b5c00e36f34778d"
+    },
+    {
+        "index": 28,
+        "timestamp": "2026-10-27T14:10:51.756553",
+        "payload": {
+            "market": "RTM",
+            "date": "2026-10-27",
+            "block_count": 84,
+            "price_hash": "ef078415536aa7c44e932ea2e291e675e4a5e1509bf2d3dd5f7f41fa8c6bf5a1"
+        },
+        "prev_hash": "9f78fa70f8b77bad0fb47652c8b7f939a139faa89acfa62e7b5c00e36f34778d",
+        "hash": "fae4c985d468bfcc111ca1fa4bbc395f9e4bdb2bb91f1fd337705b961ee18b03"
+    },
+    {
+        "index": 29,
+        "timestamp": "2026-10-27T14:11:08.599338",
+        "payload": {
+            "market": "DAM",
+            "date": "2026-10-27",
+            "block_count": 96,
+            "price_hash": "5736cb4bab46601905f2939646d00df1dd6ebb753b7a1dcc849ab6903355a7c0"
+        },
+        "prev_hash": "fae4c985d468bfcc111ca1fa4bbc395f9e4bdb2bb91f1fd337705b961ee18b03",
+        "hash": "357a74d73baf8b3359257cbba3a2df8ba68dab6640fcea0d8abf30c18c5fe1b4"
+    },
+    {
+        "index": 30,
+        "timestamp": "2026-10-27T14:11:38.117133",
+        "payload": {
+            "market": "DAM",
+            "date": "2026-10-28",
+            "block_count": 96,
+            "price_hash": "5736cb4bab46601905f2939646d00df1dd6ebb753b7a1dcc849ab6903355a7c0"
+        },
+        "prev_hash": "357a74d73baf8b3359257cbba3a2df8ba68dab6640fcea0d8abf30c18c5fe1b4",
+        "hash": "5d0b572cf78254410663c7e29550f6ccd01051efee59c23b5d172299a4ca03fe"
+    }
+]

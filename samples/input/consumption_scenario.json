@@ -1,0 +1,8 @@
+{
+  "name": "Plant load forecast",
+  "ranges": [
+    { "start_time": "06:00", "end_time": "09:00", "predicted_kw": 4500 },
+    { "start_time": "12:00", "end_time": "15:00", "predicted_kw": 6000 },
+    { "start_time": "18:00", "end_time": "21:00", "predicted_kw": 5200 }
+  ]
+}

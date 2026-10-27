@@ -1,0 +1,2981 @@
+[
+    {
+        "index": 0,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "genesis": true
+        },
+        "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "a33dab9c85a98e44da23dd178e977cf78b9076763f7035bb4e8d8587120f58c0"
+    },
+    {
+        "index": 1,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 0,
+            "start_minute": 0,
+            "end_minute": 15,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "a33dab9c85a98e44da23dd178e977cf78b9076763f7035bb4e8d8587120f58c0",
+        "hash": "9af9852a4072e2b2af1e6ca652a33447f32bfb2f7e3a021c5aa5dd3b4bfb150c"
+    },
+    {
+        "index": 2,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 1,
+            "start_minute": 15,
+            "end_minute": 30,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "9af9852a4072e2b2af1e6ca652a33447f32bfb2f7e3a021c5aa5dd3b4bfb150c",
+        "hash": "91ad67263172f50eebf553726de847d4fffa7ec1419f68cbb5756107e74652ad"
+    },
+    {
+        "index": 3,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 2,
+            "start_minute": 30,
+            "end_minute": 45,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "91ad67263172f50eebf553726de847d4fffa7ec1419f68cbb5756107e74652ad",
+        "hash": "173b5e4573c3c4ddd6258639ebd4258280464bbbd1d6cd5bd8cd38b9196e0f77"
+    },
+    {
+        "index": 4,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 3,
+            "start_minute": 45,
+            "end_minute": 60,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "173b5e4573c3c4ddd6258639ebd4258280464bbbd1d6cd5bd8cd38b9196e0f77",
+        "hash": "e55693473e70549c6e8efed20305de99e65153eed4733a1c1aff3737e25405c9"
+    },
+    {
+        "index": 5,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 4,
+            "start_minute": 60,
+            "end_minute": 75,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "e55693473e70549c6e8efed20305de99e65153eed4733a1c1aff3737e25405c9",
+        "hash": "9f3a036bd2652ecf761502ce1e6866beadb9be128ecd2ab07cbb1b14d2d5d825"
+    },
+    {
+        "index": 6,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 5,
+            "start_minute": 75,
+            "end_minute": 90,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "9f3a036bd2652ecf761502ce1e6866beadb9be128ecd2ab07cbb1b14d2d5d825",
+        "hash": "826a7f862642c01be1f0cfb3b5b6736d956fa47141d363fc18affbcf09506dc6"
+    },
+    {
+        "index": 7,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 6,
+            "start_minute": 90,
+            "end_minute": 105,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "826a7f862642c01be1f0cfb3b5b6736d956fa47141d363fc18affbcf09506dc6",
+        "hash": "605bf86b097748582f1292a8072a008096aedb67076123c1c467488e23ae0e37"
+    },
+    {
+        "index": 8,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 7,
+            "start_minute": 105,
+            "end_minute": 120,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "605bf86b097748582f1292a8072a008096aedb67076123c1c467488e23ae0e37",
+        "hash": "a23139a5b60468d6984875b34acb2fede6d3ccd1472d08be57c3a2563739d01f"
+    },
+    {
+        "index": 9,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 8,
+            "start_minute": 120,
+            "end_minute": 135,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "a23139a5b60468d6984875b34acb2fede6d3ccd1472d08be57c3a2563739d01f",
+        "hash": "9ba824be72a54029a49c3b463b4c25770b91e0c659782d6cb0e6ebeb8991ea99"
+    },
+    {
+        "index": 10,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 9,
+            "start_minute": 135,
+            "end_minute": 150,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "9ba824be72a54029a49c3b463b4c25770b91e0c659782d6cb0e6ebeb8991ea99",
+        "hash": "61e87eeb7d34d9ae665cf33f6cc12b8b26791d066082a75b051dd7835ee0f277"
+    },
+    {
+        "index": 11,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 10,
+            "start_minute": 150,
+            "end_minute": 165,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "61e87eeb7d34d9ae665cf33f6cc12b8b26791d066082a75b051dd7835ee0f277",
+        "hash": "c1074af4700e5924a47834039799f8382d5936aef480a0aca3e9b68aa7d9be77"
+    },
+    {
+        "index": 12,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 11,
+            "start_minute": 165,
+            "end_minute": 180,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "c1074af4700e5924a47834039799f8382d5936aef480a0aca3e9b68aa7d9be77",
+        "hash": "615a35054383b1ba3007257f2696c61412d9fbd154b1c6b9ee27c42a9e85a7e0"
+    },
+    {
+        "index": 13,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 12,
+            "start_minute": 180,
+            "end_minute": 195,
+            "dam_price": null,
+            "rtm_price": 9999.41,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "615a35054383b1ba3007257f2696c61412d9fbd154b1c6b9ee27c42a9e85a7e0",
+        "hash": "3a61356cf6a267bb28671d87a203bc50be03f3ae533fd44acf583ab7b0a876c3"
+    },
+    {
+        "index": 14,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 13,
+            "start_minute": 195,
+            "end_minute": 210,
+            "dam_price": null,
+            "rtm_price": 7996.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "3a61356cf6a267bb28671d87a203bc50be03f3ae533fd44acf583ab7b0a876c3",
+        "hash": "a5466ad84e66a22d4a18d5fae39cf86f384501fdc1306938f429408fa81a9528"
+    },
+    {
+        "index": 15,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 14,
+            "start_minute": 210,
+            "end_minute": 225,
+            "dam_price": null,
+            "rtm_price": 5357.86,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "a5466ad84e66a22d4a18d5fae39cf86f384501fdc1306938f429408fa81a9528",
+        "hash": "20ac2eb9ffcf712ca1f60d780093738669c018f8244e901da510f6980ca2dfea"
+    },
+    {
+        "index": 16,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 15,
+            "start_minute": 225,
+            "end_minute": 240,
+            "dam_price": null,
+            "rtm_price": 5357.38,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "20ac2eb9ffcf712ca1f60d780093738669c018f8244e901da510f6980ca2dfea",
+        "hash": "c4c7416393a2757d423dc15abf647dedcbb61c40b8f1b0397503d0485543ef88"
+    },
+    {
+        "index": 17,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 16,
+            "start_minute": 240,
+            "end_minute": 255,
+            "dam_price": null,
+            "rtm_price": 5227.06,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "c4c7416393a2757d423dc15abf647dedcbb61c40b8f1b0397503d0485543ef88",
+        "hash": "9d9e9ab9b253425f4a0cf5dbad8fd0fa05ac278d283eed4b7ba29289ae36705f"
+    },
+    {
+        "index": 18,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 17,
+            "start_minute": 255,
+            "end_minute": 270,
+            "dam_price": null,
+            "rtm_price": 6500.11,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "9d9e9ab9b253425f4a0cf5dbad8fd0fa05ac278d283eed4b7ba29289ae36705f",
+        "hash": "6fbd54ea40daa1bf0431157ec7e9a4b3ec49210980582389cfbab5ab66384ef8"
+    },
+    {
+        "index": 19,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 18,
+            "start_minute": 270,
+            "end_minute": 285,
+            "dam_price": null,
+            "rtm_price": 6000.54,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "6fbd54ea40daa1bf0431157ec7e9a4b3ec49210980582389cfbab5ab66384ef8",
+        "hash": "f53edd3784fb30008e66fc8e455a96996ec385b542c5ef32aab235e5161fd87a"
+    },
+    {
+        "index": 20,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 19,
+            "start_minute": 285,
+            "end_minute": 300,
+            "dam_price": null,
+            "rtm_price": 7999.67,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "f53edd3784fb30008e66fc8e455a96996ec385b542c5ef32aab235e5161fd87a",
+        "hash": "7fa42a74b209f180b45399aecb8fc7a3542b7873d7612d5b74b89232b2b6a3d6"
+    },
+    {
+        "index": 21,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 20,
+            "start_minute": 300,
+            "end_minute": 315,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "7fa42a74b209f180b45399aecb8fc7a3542b7873d7612d5b74b89232b2b6a3d6",
+        "hash": "f99c10c073b90400504cc70beebffe6f1dde9e74eb5aabd4060e261a3298d0f9"
+    },
+    {
+        "index": 22,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 21,
+            "start_minute": 315,
+            "end_minute": 330,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "f99c10c073b90400504cc70beebffe6f1dde9e74eb5aabd4060e261a3298d0f9",
+        "hash": "553190400410a86b5652f310d37ed51e3d4fe911ef55ae8a46e20ee7ff56767a"
+    },
+    {
+        "index": 23,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 22,
+            "start_minute": 330,
+            "end_minute": 345,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "553190400410a86b5652f310d37ed51e3d4fe911ef55ae8a46e20ee7ff56767a",
+        "hash": "1ae6c323bf84fa34a9682f8b70ef271d9bbe1fd8c58862a1ca1d7a2f7493ca3e"
+    },
+    {
+        "index": 24,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 23,
+            "start_minute": 345,
+            "end_minute": 360,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "1ae6c323bf84fa34a9682f8b70ef271d9bbe1fd8c58862a1ca1d7a2f7493ca3e",
+        "hash": "15bab696f0cf47b542d44096355fa8bc735aed4df3d962780e72498ff126338a"
+    },
+    {
+        "index": 25,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 24,
+            "start_minute": 360,
+            "end_minute": 375,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "15bab696f0cf47b542d44096355fa8bc735aed4df3d962780e72498ff126338a",
+        "hash": "bb99d92506caba9217fe5ff953050e6e4f4523d48cd83385bab592b5d65fddbb"
+    },
+    {
+        "index": 26,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 25,
+            "start_minute": 375,
+            "end_minute": 390,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "bb99d92506caba9217fe5ff953050e6e4f4523d48cd83385bab592b5d65fddbb",
+        "hash": "321aa1873c633609fa317e0954c29ed79cc31a1c2283c34667eff3116d8e2bcb"
+    },
+    {
+        "index": 27,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 26,
+            "start_minute": 390,
+            "end_minute": 405,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "321aa1873c633609fa317e0954c29ed79cc31a1c2283c34667eff3116d8e2bcb",
+        "hash": "cf0607461d06f2488824ff7ad64e094679620cb2cd80469e78b53db89ea0193d"
+    },
+    {
+        "index": 28,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 27,
+            "start_minute": 405,
+            "end_minute": 420,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "cf0607461d06f2488824ff7ad64e094679620cb2cd80469e78b53db89ea0193d",
+        "hash": "7e7fe2827099341bb7158ebe56e40d82d60e5aaf3541950e1f9e0c8b904b8f79"
+    },
+    {
+        "index": 29,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 28,
+            "start_minute": 420,
+            "end_minute": 435,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "7e7fe2827099341bb7158ebe56e40d82d60e5aaf3541950e1f9e0c8b904b8f79",
+        "hash": "5db50c87e947a4a6e240c36f1eafa5578bd25e9d4b37b2a4683750c0c57e7955"
+    },
+    {
+        "index": 30,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 29,
+            "start_minute": 435,
+            "end_minute": 450,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "5db50c87e947a4a6e240c36f1eafa5578bd25e9d4b37b2a4683750c0c57e7955",
+        "hash": "d938d2e6d3967f98c8ec2033f1de7cb42691130c89ccc261a9f3fad1b4cdc2fd"
+    },
+    {
+        "index": 31,
+        "timestamp": "2026-10-13T07:38:51.651338",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 30,
+            "start_minute": 450,
+            "end_minute": 465,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:38:51.651338+00:00"
+        },
+        "prev_hash": "d938d2e6d3967f98c8ec2033f1de7cb42691130c89ccc261a9f3fad1b4cdc2fd",
+        "hash": "807df96072e64a3701f468764e64e9a654cb40367e9b6fb2a949f6bc0168308f"
+    },
+    {
+        "index": 32,
+        "timestamp": "2026-10-13T07:45:51.638029",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 31,
+            "start_minute": 465,
+            "end_minute": 480,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T07:45:51.638029+00:00"
+        },
+        "prev_hash": "807df96072e64a3701f468764e64e9a654cb40367e9b6fb2a949f6bc0168308f",
+        "hash": "ce89c8dae9b9e208657525ea29be463c19c57a5b5bbc7b377eef6fea7d9475ff"
+    },
+    {
+        "index": 33,
+        "timestamp": "2026-10-13T08:00:51.642009",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 32,
+            "start_minute": 480,
+            "end_minute": 495,
+            "dam_price": null,
+            "rtm_price": 4648.31,
+            "recorded_at": "2026-10-13T08:00:51.642009+00:00"
+        },
+        "prev_hash": "ce89c8dae9b9e208657525ea29be463c19c57a5b5bbc7b377eef6fea7d9475ff",
+        "hash": "d42f7babe5afb6c8c0cf513f5caa1bd66aed0b3b57733ff3328cff4130228362"
+    },
+    {
+        "index": 34,
+        "timestamp": "2026-10-13T08:15:51.679815",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 33,
+            "start_minute": 495,
+            "end_minute": 510,
+            "dam_price": null,
+            "rtm_price": 4000.03,
+            "recorded_at": "2026-10-13T08:15:51.679815+00:00"
+        },
+        "prev_hash": "d42f7babe5afb6c8c0cf513f5caa1bd66aed0b3b57733ff3328cff4130228362",
+        "hash": "d0265e3012005bf7c911f2e560c5f6e94decfb6556445b1fc983939a4f1c6b36"
+    },
+    {
+        "index": 35,
+        "timestamp": "2026-10-13T08:30:51.649297",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 34,
+            "start_minute": 510,
+            "end_minute": 525,
+            "dam_price": null,
+            "rtm_price": 2810.94,
+            "recorded_at": "2026-10-13T08:30:51.649297+00:00"
+        },
+        "prev_hash": "d0265e3012005bf7c911f2e560c5f6e94decfb6556445b1fc983939a4f1c6b36",
+        "hash": "845de6c641bf9fd5e96f3d56aab38ebd40bb253ef9d8050cc90f6e638920e059"
+    },
+    {
+        "index": 36,
+        "timestamp": "2026-10-13T08:45:51.649034",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 35,
+            "start_minute": 525,
+            "end_minute": 540,
+            "dam_price": null,
+            "rtm_price": 2791.2,
+            "recorded_at": "2026-10-13T08:45:51.649034+00:00"
+        },
+        "prev_hash": "845de6c641bf9fd5e96f3d56aab38ebd40bb253ef9d8050cc90f6e638920e059",
+        "hash": "65b89e24f74dba2972e6d41a9b95c718767407581a4154c4824954ee7ad862ba"
+    },
+    {
+        "index": 37,
+        "timestamp": "2026-10-13T09:00:51.645699",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 36,
+            "start_minute": 540,
+            "end_minute": 555,
+            "dam_price": null,
+            "rtm_price": 3206.01,
+            "recorded_at": "2026-10-13T09:00:51.645699+00:00"
+        },
+        "prev_hash": "65b89e24f74dba2972e6d41a9b95c718767407581a4154c4824954ee7ad862ba",
+        "hash": "9aa2f4d09a50a3866b36725adac84633fbf80f3446ee971128408f4c20455123"
+    },
+    {
+        "index": 38,
+        "timestamp": "2026-10-13T09:15:51.649122",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 37,
+            "start_minute": 555,
+            "end_minute": 570,
+            "dam_price": null,
+            "rtm_price": 2960.39,
+            "recorded_at": "2026-10-13T09:15:51.649122+00:00"
+        },
+        "prev_hash": "9aa2f4d09a50a3866b36725adac84633fbf80f3446ee971128408f4c20455123",
+        "hash": "99bb97414b1b2c3267233871e3dcd6cf964524f93eadeb9fe2280d70ca9be687"
+    },
+    {
+        "index": 39,
+        "timestamp": "2026-10-13T09:30:51.649182",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 38,
+            "start_minute": 570,
+            "end_minute": 585,
+            "dam_price": null,
+            "rtm_price": 2550.46,
+            "recorded_at": "2026-10-13T09:30:51.649182+00:00"
+        },
+        "prev_hash": "99bb97414b1b2c3267233871e3dcd6cf964524f93eadeb9fe2280d70ca9be687",
+        "hash": "28397ed27f5f0b1d27fb1f7431fee27d2df397ad96d8418c933125271fb94dde"
+    },
+    {
+        "index": 40,
+        "timestamp": "2026-10-13T09:45:51.649223",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 39,
+            "start_minute": 585,
+            "end_minute": 600,
+            "dam_price": null,
+            "rtm_price": 2550.13,
+            "recorded_at": "2026-10-13T09:45:51.649223+00:00"
+        },
+        "prev_hash": "28397ed27f5f0b1d27fb1f7431fee27d2df397ad96d8418c933125271fb94dde",
+        "hash": "1bf65bfac73507f5b8e7ce3a0d70609587e05e58be8cf391248f3a9aab8fcf86"
+    },
+    {
+        "index": 41,
+        "timestamp": "2026-10-13T10:00:51.673468",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 40,
+            "start_minute": 600,
+            "end_minute": 615,
+            "dam_price": null,
+            "rtm_price": 2700.81,
+            "recorded_at": "2026-10-13T10:00:51.673468+00:00"
+        },
+        "prev_hash": "1bf65bfac73507f5b8e7ce3a0d70609587e05e58be8cf391248f3a9aab8fcf86",
+        "hash": "a9f5de94eab05a27307b82ee2e4b4ab71a5db07d159b2f09d54d42a66b9313db"
+    },
+    {
+        "index": 42,
+        "timestamp": "2026-10-13T10:15:51.650058",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 41,
+            "start_minute": 615,
+            "end_minute": 630,
+            "dam_price": null,
+            "rtm_price": 2581.65,
+            "recorded_at": "2026-10-13T10:15:51.650058+00:00"
+        },
+        "prev_hash": "a9f5de94eab05a27307b82ee2e4b4ab71a5db07d159b2f09d54d42a66b9313db",
+        "hash": "a4dedd3e32df902d9643ff93a8e2e8a318b123cd4d8b9697375688db1124c479"
+    },
+    {
+        "index": 43,
+        "timestamp": "2026-10-13T10:30:51.648844",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 42,
+            "start_minute": 630,
+            "end_minute": 645,
+            "dam_price": null,
+            "rtm_price": 2600.54,
+            "recorded_at": "2026-10-13T10:30:51.648844+00:00"
+        },
+        "prev_hash": "a4dedd3e32df902d9643ff93a8e2e8a318b123cd4d8b9697375688db1124c479",
+        "hash": "2cb4f5e6bc20bdcfabc77b73d9e751ed5a1eca87ae9ca799cc57d324dda1bf72"
+    },
+    {
+        "index": 44,
+        "timestamp": "2026-10-13T10:45:51.649125",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 43,
+            "start_minute": 645,
+            "end_minute": 660,
+            "dam_price": null,
+            "rtm_price": 2581.68,
+            "recorded_at": "2026-10-13T10:45:51.649125+00:00"
+        },
+        "prev_hash": "2cb4f5e6bc20bdcfabc77b73d9e751ed5a1eca87ae9ca799cc57d324dda1bf72",
+        "hash": "54e64a2ac92f3dca4b847f6808256c2e43a6460c78606bf0713d4d451c3bb635"
+    },
+    {
+        "index": 45,
+        "timestamp": "2026-10-13T11:00:51.655874",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 44,
+            "start_minute": 660,
+            "end_minute": 675,
+            "dam_price": null,
+            "rtm_price": 2130.61,
+            "recorded_at": "2026-10-13T11:00:51.655874+00:00"
+        },
+        "prev_hash": "54e64a2ac92f3dca4b847f6808256c2e43a6460c78606bf0713d4d451c3bb635",
+        "hash": "db7a87403f56c5b5da45658257e9eb9c4c55bfe72d010c18436a0791e5c19285"
+    },
+    {
+        "index": 46,
+        "timestamp": "2026-10-13T11:33:51.647747",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 45,
+            "start_minute": 675,
+            "end_minute": 690,
+            "dam_price": null,
+            "rtm_price": 2130.83,
+            "recorded_at": "2026-10-13T11:33:51.647747+00:00"
+        },
+        "prev_hash": "db7a87403f56c5b5da45658257e9eb9c4c55bfe72d010c18436a0791e5c19285",
+        "hash": "faa0d2128e5a90abd821cd60823f96fa62f31c0200444386f9a16d0660555821"
+    },
+    {
+        "index": 47,
+        "timestamp": "2026-10-13T11:33:51.647747",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 46,
+            "start_minute": 690,
+            "end_minute": 705,
+            "dam_price": null,
+            "rtm_price": 2536.18,
+            "recorded_at": "2026-10-13T11:33:51.647747+00:00"
+        },
+        "prev_hash": "faa0d2128e5a90abd821cd60823f96fa62f31c0200444386f9a16d0660555821",
+        "hash": "5261a1926d91fb741848f2611b0f188aa906e030705127270e5bc1b6ddc275dd"
+    },
+    {
+        "index": 48,
+        "timestamp": "2026-10-13T11:45:51.659400",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 47,
+            "start_minute": 705,
+            "end_minute": 720,
+            "dam_price": null,
+            "rtm_price": 2625.01,
+            "recorded_at": "2026-10-13T11:45:51.659400+00:00"
+        },
+        "prev_hash": "5261a1926d91fb741848f2611b0f188aa906e030705127270e5bc1b6ddc275dd",
+        "hash": "d5835ad93fca34abd328bdcde6491db5fb30f943080edc4942d741199b08ddd6"
+    },
+    {
+        "index": 49,
+        "timestamp": "2026-10-13T12:00:51.645431",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 48,
+            "start_minute": 720,
+            "end_minute": 735,
+            "dam_price": null,
+            "rtm_price": 2521.58,
+            "recorded_at": "2026-10-13T12:00:51.645431+00:00"
+        },
+        "prev_hash": "d5835ad93fca34abd328bdcde6491db5fb30f943080edc4942d741199b08ddd6",
+        "hash": "0539bfda289a5bf0d51bd2e05c0e37f6d0dbc2dc55393fd8767d83d717c10d91"
+    },
+    {
+        "index": 50,
+        "timestamp": "2026-10-13T12:15:51.679027",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 49,
+            "start_minute": 735,
+            "end_minute": 750,
+            "dam_price": null,
+            "rtm_price": 2604.15,
+            "recorded_at": "2026-10-13T12:15:51.679027+00:00"
+        },
+        "prev_hash": "0539bfda289a5bf0d51bd2e05c0e37f6d0dbc2dc55393fd8767d83d717c10d91",
+        "hash": "d498fd1f687a3f3ab75802f3bc7d6ad1051d8b6c56f0b7f28e55b2da357b5bae"
+    },
+    {
+        "index": 51,
+        "timestamp": "2026-10-13T12:30:51.701710",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 50,
+            "start_minute": 750,
+            "end_minute": 765,
+            "dam_price": null,
+            "rtm_price": 2489.5,
+            "recorded_at": "2026-10-13T12:30:51.701710+00:00"
+        },
+        "prev_hash": "d498fd1f687a3f3ab75802f3bc7d6ad1051d8b6c56f0b7f28e55b2da357b5bae",
+        "hash": "d62f25ab67aa79f1eaedf4f320a3ec0d89355c1428f62293892c340d1238d318"
+    },
+    {
+        "index": 52,
+        "timestamp": "2026-10-13T12:45:51.648074",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 51,
+            "start_minute": 765,
+            "end_minute": 780,
+            "dam_price": null,
+            "rtm_price": 2235.91,
+            "recorded_at": "2026-10-13T12:45:51.648074+00:00"
+        },
+        "prev_hash": "d62f25ab67aa79f1eaedf4f320a3ec0d89355c1428f62293892c340d1238d318",
+        "hash": "1ac606db2bdad73ea4f58b3a07b9cce9dd93e340b7c05efc2afb793b908750bb"
+    },
+    {
+        "index": 53,
+        "timestamp": "2026-10-13T13:30:51.647336",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 52,
+            "start_minute": 780,
+            "end_minute": 795,
+            "dam_price": null,
+            "rtm_price": 1949.3,
+            "recorded_at": "2026-10-13T13:30:51.647336+00:00"
+        },
+        "prev_hash": "1ac606db2bdad73ea4f58b3a07b9cce9dd93e340b7c05efc2afb793b908750bb",
+        "hash": "8838a00cdec4fc3e20b56e9e2b87cac1bb4a9eb729a6e36ea9428604a67eb37a"
+    },
+    {
+        "index": 54,
+        "timestamp": "2026-10-13T13:30:51.647336",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 53,
+            "start_minute": 795,
+            "end_minute": 810,
+            "dam_price": null,
+            "rtm_price": 2150.12,
+            "recorded_at": "2026-10-13T13:30:51.647336+00:00"
+        },
+        "prev_hash": "8838a00cdec4fc3e20b56e9e2b87cac1bb4a9eb729a6e36ea9428604a67eb37a",
+        "hash": "f8d79e61ef2af1f515d677b987864ab19120560c7cd9a2d311023353986ab5e4"
+    },
+    {
+        "index": 55,
+        "timestamp": "2026-10-13T13:30:51.647336",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 54,
+            "start_minute": 810,
+            "end_minute": 825,
+            "dam_price": null,
+            "rtm_price": 2235.5,
+            "recorded_at": "2026-10-13T13:30:51.647336+00:00"
+        },
+        "prev_hash": "f8d79e61ef2af1f515d677b987864ab19120560c7cd9a2d311023353986ab5e4",
+        "hash": "e08cb6d92c1d5e86e0277d8963d08073bc95eb252005b2bfa120822e207ace04"
+    },
+    {
+        "index": 56,
+        "timestamp": "2026-10-13T13:45:51.650236",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 55,
+            "start_minute": 825,
+            "end_minute": 840,
+            "dam_price": null,
+            "rtm_price": 2500.57,
+            "recorded_at": "2026-10-13T13:45:51.650236+00:00"
+        },
+        "prev_hash": "e08cb6d92c1d5e86e0277d8963d08073bc95eb252005b2bfa120822e207ace04",
+        "hash": "c46242e51ba38ca20c3f3720a58ff5a7827da593cd819d1fac4005751570c921"
+    },
+    {
+        "index": 57,
+        "timestamp": "2026-10-13T14:00:51.648557",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 56,
+            "start_minute": 840,
+            "end_minute": 855,
+            "dam_price": null,
+            "rtm_price": 3124.32,
+            "recorded_at": "2026-10-13T14:00:51.648557+00:00"
+        },
+        "prev_hash": "c46242e51ba38ca20c3f3720a58ff5a7827da593cd819d1fac4005751570c921",
+        "hash": "dc546b70d964ac68efcc9a91492fe2353cc8f9b855d4b31a52d3ad4b5c19f2a7"
+    },
+    {
+        "index": 58,
+        "timestamp": "2026-10-13T14:15:51.647348",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 57,
+            "start_minute": 855,
+            "end_minute": 870,
+            "dam_price": null,
+            "rtm_price": 3050.01,
+            "recorded_at": "2026-10-13T14:15:51.647348+00:00"
+        },
+        "prev_hash": "dc546b70d964ac68efcc9a91492fe2353cc8f9b855d4b31a52d3ad4b5c19f2a7",
+        "hash": "8e787c769db2b6487efd190966fee18aa9269099c44c65c597ff950723caafdb"
+    },
+    {
+        "index": 59,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 58,
+            "start_minute": 870,
+            "end_minute": 885,
+            "dam_price": null,
+            "rtm_price": 3246.5,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "8e787c769db2b6487efd190966fee18aa9269099c44c65c597ff950723caafdb",
+        "hash": "d16525442daa3ecab9751f5528347e6dbe2ca8d7b5c991cf5701d48c3d4f07e1"
+    },
+    {
+        "index": 60,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 59,
+            "start_minute": 885,
+            "end_minute": 900,
+            "dam_price": null,
+            "rtm_price": 3500.45,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "d16525442daa3ecab9751f5528347e6dbe2ca8d7b5c991cf5701d48c3d4f07e1",
+        "hash": "1cef442c763f29fbab5000a58951bf5e0174729c47564de00c047331ac1e5100"
+    },
+    {
+        "index": 61,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 60,
+            "start_minute": 900,
+            "end_minute": 915,
+            "dam_price": null,
+            "rtm_price": 4348.9,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "1cef442c763f29fbab5000a58951bf5e0174729c47564de00c047331ac1e5100",
+        "hash": "af76a2fc5a2cd397812de3efe553fcd0c6102ebc32802680023ba14b10361c10"
+    },
+    {
+        "index": 62,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 61,
+            "start_minute": 915,
+            "end_minute": 930,
+            "dam_price": null,
+            "rtm_price": 4110.25,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "af76a2fc5a2cd397812de3efe553fcd0c6102ebc32802680023ba14b10361c10",
+        "hash": "7d758c644b90a2a73172d2311dcf7a9ea76619e71882b08b08d4d4d8e2882c08"
+    },
+    {
+        "index": 63,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 62,
+            "start_minute": 930,
+            "end_minute": 945,
+            "dam_price": null,
+            "rtm_price": 6000.44,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "7d758c644b90a2a73172d2311dcf7a9ea76619e71882b08b08d4d4d8e2882c08",
+        "hash": "528625aec32be9c504c0de1ee7bd706435e0452a8c06dea1686c86f9160d5477"
+    },
+    {
+        "index": 64,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 63,
+            "start_minute": 945,
+            "end_minute": 960,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "528625aec32be9c504c0de1ee7bd706435e0452a8c06dea1686c86f9160d5477",
+        "hash": "cafdf3cac9c7099c5940829774cf87e296e10260a5822c41ac84fabd7a5f97be"
+    },
+    {
+        "index": 65,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 64,
+            "start_minute": 960,
+            "end_minute": 975,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "cafdf3cac9c7099c5940829774cf87e296e10260a5822c41ac84fabd7a5f97be",
+        "hash": "476d9cdfde81b6c031ce4d1fe7016eec524a4006fe5329017c8c0530e7d8cccf"
+    },
+    {
+        "index": 66,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 65,
+            "start_minute": 975,
+            "end_minute": 990,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "476d9cdfde81b6c031ce4d1fe7016eec524a4006fe5329017c8c0530e7d8cccf",
+        "hash": "77e981200138157ab0c1d2dae5a74d7690b758d02bb5873f875e670547e1bcf8"
+    },
+    {
+        "index": 67,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 66,
+            "start_minute": 990,
+            "end_minute": 1005,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "77e981200138157ab0c1d2dae5a74d7690b758d02bb5873f875e670547e1bcf8",
+        "hash": "0ff2d356eae12e4929e1581f53026b6d7e0ed5f4d637cf9a09b2f3ce32610c34"
+    },
+    {
+        "index": 68,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 67,
+            "start_minute": 1005,
+            "end_minute": 1020,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "0ff2d356eae12e4929e1581f53026b6d7e0ed5f4d637cf9a09b2f3ce32610c34",
+        "hash": "78575bcba4a05da326bacd00d36e1ceb6178989cdb5c90bfa1cbcf694fdbdc19"
+    },
+    {
+        "index": 69,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 68,
+            "start_minute": 1020,
+            "end_minute": 1035,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "78575bcba4a05da326bacd00d36e1ceb6178989cdb5c90bfa1cbcf694fdbdc19",
+        "hash": "3c4f69a4801c0dc1cb8e46ca6d1f3de3e17c9f16203d0efdce9068cb9de7a450"
+    },
+    {
+        "index": 70,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 69,
+            "start_minute": 1035,
+            "end_minute": 1050,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "3c4f69a4801c0dc1cb8e46ca6d1f3de3e17c9f16203d0efdce9068cb9de7a450",
+        "hash": "08718bccf1b744bb806f41fcb7f43410a8e6363c12a4db3222281a022a3e27e0"
+    },
+    {
+        "index": 71,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 70,
+            "start_minute": 1050,
+            "end_minute": 1065,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "08718bccf1b744bb806f41fcb7f43410a8e6363c12a4db3222281a022a3e27e0",
+        "hash": "11493e771eec6e11fe953536c4ee9ee36c24949f16a8c62c78228097804a4e6b"
+    },
+    {
+        "index": 72,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 71,
+            "start_minute": 1065,
+            "end_minute": 1080,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "11493e771eec6e11fe953536c4ee9ee36c24949f16a8c62c78228097804a4e6b",
+        "hash": "a513f63d194cab1b83896d90c14bebc045f65987fd0a8dfcecd269bb19b0b475"
+    },
+    {
+        "index": 73,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 72,
+            "start_minute": 1080,
+            "end_minute": 1095,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "a513f63d194cab1b83896d90c14bebc045f65987fd0a8dfcecd269bb19b0b475",
+        "hash": "a35fad73eaa9908850c39ec245fb583feb8b4f58d21567b1c0d4058d80871e44"
+    },
+    {
+        "index": 74,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 73,
+            "start_minute": 1095,
+            "end_minute": 1110,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "a35fad73eaa9908850c39ec245fb583feb8b4f58d21567b1c0d4058d80871e44",
+        "hash": "2069a3fdb0aee00144308d69c99ffe075077d6ae57dd037af9d2780231b27b44"
+    },
+    {
+        "index": 75,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 74,
+            "start_minute": 1110,
+            "end_minute": 1125,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "2069a3fdb0aee00144308d69c99ffe075077d6ae57dd037af9d2780231b27b44",
+        "hash": "5c4156593e80292e31f06c748326db710f539a1517eeadb2487b48ff53730ba3"
+    },
+    {
+        "index": 76,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 75,
+            "start_minute": 1125,
+            "end_minute": 1140,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "5c4156593e80292e31f06c748326db710f539a1517eeadb2487b48ff53730ba3",
+        "hash": "5cc9ac52d12ffe905a9edaf5f5792af219d7ab7b30014967fea51ec7f259633a"
+    },
+    {
+        "index": 77,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 76,
+            "start_minute": 1140,
+            "end_minute": 1155,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "5cc9ac52d12ffe905a9edaf5f5792af219d7ab7b30014967fea51ec7f259633a",
+        "hash": "db71602e23b396eebe9a473b588772c7b809d39dd5e78c3c076f079a2d8c8904"
+    },
+    {
+        "index": 78,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 77,
+            "start_minute": 1155,
+            "end_minute": 1170,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "db71602e23b396eebe9a473b588772c7b809d39dd5e78c3c076f079a2d8c8904",
+        "hash": "a05e8627ce349b0362f73d9c4ddea419803a64ce95f73a4d3fa2f9f4a269954b"
+    },
+    {
+        "index": 79,
+        "timestamp": "2026-10-13T19:32:51.638435",
+        "payload": {
+            "date": "2026-10-13",
+            "block_index": 78,
+            "start_minute": 1170,
+            "end_minute": 1185,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-13T19:32:51.638435+00:00"
+        },
+        "prev_hash": "a05e8627ce349b0362f73d9c4ddea419803a64ce95f73a4d3fa2f9f4a269954b",
+        "hash": "ee2d4238c8fb2ba21918c278c69ad54fc47390f29fe1967a4b7e9576b3a3d461"
+    },
+    {
+        "index": 80,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 0,
+            "start_minute": 0,
+            "end_minute": 15,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "ee2d4238c8fb2ba21918c278c69ad54fc47390f29fe1967a4b7e9576b3a3d461",
+        "hash": "e220a71eef738e28f288f8a8beb252e5a29a837806160b951cb1b23db0d822bc"
+    },
+    {
+        "index": 81,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 1,
+            "start_minute": 15,
+            "end_minute": 30,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "e220a71eef738e28f288f8a8beb252e5a29a837806160b951cb1b23db0d822bc",
+        "hash": "aae5f65d91511ece3c6c013dd9a379905c1d2b01d17efb15f1b6058bb02266ba"
+    },
+    {
+        "index": 82,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 2,
+            "start_minute": 30,
+            "end_minute": 45,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "aae5f65d91511ece3c6c013dd9a379905c1d2b01d17efb15f1b6058bb02266ba",
+        "hash": "2108fbd115af67d127aa63861481dce06440ba888022dbdb0d666d3a1106eb04"
+    },
+    {
+        "index": 83,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 3,
+            "start_minute": 45,
+            "end_minute": 60,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "2108fbd115af67d127aa63861481dce06440ba888022dbdb0d666d3a1106eb04",
+        "hash": "6f3407dcbb3e6c55cbdaa281b66b88253a4dca54da1eba2d7439f85b41abc991"
+    },
+    {
+        "index": 84,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 4,
+            "start_minute": 60,
+            "end_minute": 75,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "6f3407dcbb3e6c55cbdaa281b66b88253a4dca54da1eba2d7439f85b41abc991",
+        "hash": "730551e44f70581872780874a0cbf53863fa06beb7723b00390674949d426fdf"
+    },
+    {
+        "index": 85,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 5,
+            "start_minute": 75,
+            "end_minute": 90,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "730551e44f70581872780874a0cbf53863fa06beb7723b00390674949d426fdf",
+        "hash": "a5c3e65606dfdb93df870221ef654b65d85c87c31a135ca2adab07ea327d3bee"
+    },
+    {
+        "index": 86,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 6,
+            "start_minute": 90,
+            "end_minute": 105,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "a5c3e65606dfdb93df870221ef654b65d85c87c31a135ca2adab07ea327d3bee",
+        "hash": "0e91a8aecefa3cde4ef4605c13db25b0d1fcb6afd4fc7af0c29155f8625ce5ac"
+    },
+    {
+        "index": 87,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 7,
+            "start_minute": 105,
+            "end_minute": 120,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "0e91a8aecefa3cde4ef4605c13db25b0d1fcb6afd4fc7af0c29155f8625ce5ac",
+        "hash": "1b021b2094dc2b11715683f3064b1cba29796a8f99a14bfb37f9575d7d30f9b5"
+    },
+    {
+        "index": 88,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 8,
+            "start_minute": 120,
+            "end_minute": 135,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "1b021b2094dc2b11715683f3064b1cba29796a8f99a14bfb37f9575d7d30f9b5",
+        "hash": "df597700c8c5e9806959f03988d65b5b853738637e163fd5b58d41be65e0e996"
+    },
+    {
+        "index": 89,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 9,
+            "start_minute": 135,
+            "end_minute": 150,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "df597700c8c5e9806959f03988d65b5b853738637e163fd5b58d41be65e0e996",
+        "hash": "8198404447dd152c849ed2cc7f69b721ecfab6643823e4864e7aedfc32f78172"
+    },
+    {
+        "index": 90,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 10,
+            "start_minute": 150,
+            "end_minute": 165,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "8198404447dd152c849ed2cc7f69b721ecfab6643823e4864e7aedfc32f78172",
+        "hash": "2cc04444d40901b16fcdb846d9f9721c0e03699a32c9336f15ca562e508461f4"
+    },
+    {
+        "index": 91,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 11,
+            "start_minute": 165,
+            "end_minute": 180,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "2cc04444d40901b16fcdb846d9f9721c0e03699a32c9336f15ca562e508461f4",
+        "hash": "4755905ef65ca43dbd32643c4b434e0f2c1e0b1be873c3645f940b1003fb572c"
+    },
+    {
+        "index": 92,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 12,
+            "start_minute": 180,
+            "end_minute": 195,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "4755905ef65ca43dbd32643c4b434e0f2c1e0b1be873c3645f940b1003fb572c",
+        "hash": "c950f940c921ee46f5fbec27d17e310bde33cbe3016c270de1bd6f258eb14269"
+    },
+    {
+        "index": 93,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 13,
+            "start_minute": 195,
+            "end_minute": 210,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "c950f940c921ee46f5fbec27d17e310bde33cbe3016c270de1bd6f258eb14269",
+        "hash": "94d3b0aecdf1277379e22768c4994da6aef78753281041981a4bd1e05a001e4d"
+    },
+    {
+        "index": 94,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 14,
+            "start_minute": 210,
+            "end_minute": 225,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "94d3b0aecdf1277379e22768c4994da6aef78753281041981a4bd1e05a001e4d",
+        "hash": "6ec51c97e5968774f6130ae2677218db9a6c358a6952ecc2a137aea9b353e61d"
+    },
+    {
+        "index": 95,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 15,
+            "start_minute": 225,
+            "end_minute": 240,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "6ec51c97e5968774f6130ae2677218db9a6c358a6952ecc2a137aea9b353e61d",
+        "hash": "b710adceb2c81470f0698b46e5b4a875f92bfa1b89d28252b421b819e0dc2504"
+    },
+    {
+        "index": 96,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 16,
+            "start_minute": 240,
+            "end_minute": 255,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "b710adceb2c81470f0698b46e5b4a875f92bfa1b89d28252b421b819e0dc2504",
+        "hash": "8d43239d49ad03790e01f65805f517f44aa37abd4c0bc5a8b79ab18e9c95fba9"
+    },
+    {
+        "index": 97,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 17,
+            "start_minute": 255,
+            "end_minute": 270,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "8d43239d49ad03790e01f65805f517f44aa37abd4c0bc5a8b79ab18e9c95fba9",
+        "hash": "d2db599a8bfc624717c636961ea21f355968e1c9320c902034a7b992d100c1eb"
+    },
+    {
+        "index": 98,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 18,
+            "start_minute": 270,
+            "end_minute": 285,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "d2db599a8bfc624717c636961ea21f355968e1c9320c902034a7b992d100c1eb",
+        "hash": "b4e37a6f21bd070fabb94e83fd456b7d10d4078e4f05ae685e048c0c30a4b86a"
+    },
+    {
+        "index": 99,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 19,
+            "start_minute": 285,
+            "end_minute": 300,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "b4e37a6f21bd070fabb94e83fd456b7d10d4078e4f05ae685e048c0c30a4b86a",
+        "hash": "97ee06226b7e4fd94483b9e67605862142d7167442a06e059d7f1f48317265ca"
+    },
+    {
+        "index": 100,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 20,
+            "start_minute": 300,
+            "end_minute": 315,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "97ee06226b7e4fd94483b9e67605862142d7167442a06e059d7f1f48317265ca",
+        "hash": "f033f9df098700391e2360a46faa468d3b805b7e83553157c294fbef7fcf842b"
+    },
+    {
+        "index": 101,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 21,
+            "start_minute": 315,
+            "end_minute": 330,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "f033f9df098700391e2360a46faa468d3b805b7e83553157c294fbef7fcf842b",
+        "hash": "5d0a32bca0b697629efd3fab5b18c84126079d4eea0fdb1ee65c39746692479e"
+    },
+    {
+        "index": 102,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 22,
+            "start_minute": 330,
+            "end_minute": 345,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "5d0a32bca0b697629efd3fab5b18c84126079d4eea0fdb1ee65c39746692479e",
+        "hash": "e205fc4726a94664979cac7e56e373372224148966cffa795ec5eb89ddeac41e"
+    },
+    {
+        "index": 103,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 23,
+            "start_minute": 345,
+            "end_minute": 360,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "e205fc4726a94664979cac7e56e373372224148966cffa795ec5eb89ddeac41e",
+        "hash": "f5da87c5ae7378622c266d7e08fa2cae9f681834994d1a608380a42b45d8bb56"
+    },
+    {
+        "index": 104,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 24,
+            "start_minute": 360,
+            "end_minute": 375,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "f5da87c5ae7378622c266d7e08fa2cae9f681834994d1a608380a42b45d8bb56",
+        "hash": "59132387addb393f6c7dbee6659533571183a1ae1bad1d7bc4193ecc4a00a517"
+    },
+    {
+        "index": 105,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 25,
+            "start_minute": 375,
+            "end_minute": 390,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "59132387addb393f6c7dbee6659533571183a1ae1bad1d7bc4193ecc4a00a517",
+        "hash": "385c9fb47dfddbd220c9dea343ba4dd109a442d64b842477fd06d939ff57f387"
+    },
+    {
+        "index": 106,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 26,
+            "start_minute": 390,
+            "end_minute": 405,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "385c9fb47dfddbd220c9dea343ba4dd109a442d64b842477fd06d939ff57f387",
+        "hash": "09d1334ac4b75b485f889bc583d383a9c8bcb8dd0516db73c253ddbf6a31afd9"
+    },
+    {
+        "index": 107,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 27,
+            "start_minute": 405,
+            "end_minute": 420,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "09d1334ac4b75b485f889bc583d383a9c8bcb8dd0516db73c253ddbf6a31afd9",
+        "hash": "c2da2958956c83296fb10fb38534a90881bf5ba6156b3d7670c347900ca961b8"
+    },
+    {
+        "index": 108,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 28,
+            "start_minute": 420,
+            "end_minute": 435,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "c2da2958956c83296fb10fb38534a90881bf5ba6156b3d7670c347900ca961b8",
+        "hash": "8ec0b615fc3d88c6b5bc387442c25c428dff698aec0d20cf8589224c0651c5c8"
+    },
+    {
+        "index": 109,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 29,
+            "start_minute": 435,
+            "end_minute": 450,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "8ec0b615fc3d88c6b5bc387442c25c428dff698aec0d20cf8589224c0651c5c8",
+        "hash": "faa29a06b9180a01db74bdd5a7f21ee2d764e516de25403bcbb471c8cb97bfc4"
+    },
+    {
+        "index": 110,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 30,
+            "start_minute": 450,
+            "end_minute": 465,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "faa29a06b9180a01db74bdd5a7f21ee2d764e516de25403bcbb471c8cb97bfc4",
+        "hash": "e8e510cd3664d05230ecb8f2e5a40d9b9d7e9c5348271c3a3c66bf1e02ac9dfb"
+    },
+    {
+        "index": 111,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 31,
+            "start_minute": 465,
+            "end_minute": 480,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "e8e510cd3664d05230ecb8f2e5a40d9b9d7e9c5348271c3a3c66bf1e02ac9dfb",
+        "hash": "09ec848eec758ba025138903f4e99269f3ff7cc5a967e177572e707887bad116"
+    },
+    {
+        "index": 112,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 32,
+            "start_minute": 480,
+            "end_minute": 495,
+            "dam_price": null,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "09ec848eec758ba025138903f4e99269f3ff7cc5a967e177572e707887bad116",
+        "hash": "bda4c1915b635968dcfae1e20df3d744f04cf7180e359cce8a72ab67253c52dd"
+    },
+    {
+        "index": 113,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 33,
+            "start_minute": 495,
+            "end_minute": 510,
+            "dam_price": null,
+            "rtm_price": 7200.89,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "bda4c1915b635968dcfae1e20df3d744f04cf7180e359cce8a72ab67253c52dd",
+        "hash": "454558bcca4afc59dea337bf6e94e2fbbef27ab341f4da5e8830df7510fa0246"
+    },
+    {
+        "index": 114,
+        "timestamp": "2026-10-14T08:37:51.647505",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 34,
+            "start_minute": 510,
+            "end_minute": 525,
+            "dam_price": null,
+            "rtm_price": 5534.3,
+            "recorded_at": "2026-10-14T08:37:51.647505+00:00"
+        },
+        "prev_hash": "454558bcca4afc59dea337bf6e94e2fbbef27ab341f4da5e8830df7510fa0246",
+        "hash": "cd4df6b0dfb0a9ee52fc0c40ffb4736e8c5f2a5d2e6d780c0c78c70f91dc9842"
+    },
+    {
+        "index": 115,
+        "timestamp": "2026-10-14T08:45:51.637604",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 35,
+            "start_minute": 525,
+            "end_minute": 540,
+            "dam_price": null,
+            "rtm_price": 5229.46,
+            "recorded_at": "2026-10-14T08:45:51.637604+00:00"
+        },
+        "prev_hash": "cd4df6b0dfb0a9ee52fc0c40ffb4736e8c5f2a5d2e6d780c0c78c70f91dc9842",
+        "hash": "d0c354e2cc63820c0528fc3b72b44bbcb183f1eec6a4ef773b0246161e84dd7d"
+    },
+    {
+        "index": 116,
+        "timestamp": "2026-10-14T09:00:51.643004",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 36,
+            "start_minute": 540,
+            "end_minute": 555,
+            "dam_price": null,
+            "rtm_price": 4348.37,
+            "recorded_at": "2026-10-14T09:00:51.643004+00:00"
+        },
+        "prev_hash": "d0c354e2cc63820c0528fc3b72b44bbcb183f1eec6a4ef773b0246161e84dd7d",
+        "hash": "5a49ba26c1d847cf6a1bac6d66bf96c2e955d2b7b4697f5cfdfe88ee1d9ecc2b"
+    },
+    {
+        "index": 117,
+        "timestamp": "2026-10-14T09:15:51.701262",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 37,
+            "start_minute": 555,
+            "end_minute": 570,
+            "dam_price": null,
+            "rtm_price": 4309.63,
+            "recorded_at": "2026-10-14T09:15:51.701262+00:00"
+        },
+        "prev_hash": "5a49ba26c1d847cf6a1bac6d66bf96c2e955d2b7b4697f5cfdfe88ee1d9ecc2b",
+        "hash": "254319a6b00f2d17092acb62104a8c0d7b60bd97058eb3d34ab58143e61b3970"
+    },
+    {
+        "index": 118,
+        "timestamp": "2026-10-14T09:30:51.678541",
+        "payload": {
+            "date": "2026-10-14",
+            "block_index": 38,
+            "start_minute": 570,
+            "end_minute": 585,
+            "dam_price": null,
+            "rtm_price": 4702.08,
+            "recorded_at": "2026-10-14T09:30:51.678541+00:00"
+        },
+        "prev_hash": "254319a6b00f2d17092acb62104a8c0d7b60bd97058eb3d34ab58143e61b3970",
+        "hash": "c5202bf05e1180e4f31b8ffadd519a7185c1c4a52ae20fdf41c36e68c94e8784"
+    },
+    {
+        "index": 119,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 0,
+            "start_minute": 0,
+            "end_minute": 15,
+            "dam_price": null,
+            "rtm_price": 3384.71,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "c5202bf05e1180e4f31b8ffadd519a7185c1c4a52ae20fdf41c36e68c94e8784",
+        "hash": "b7bceebe7ca4580171883f4cf4a720453f32b21a77bf552192de2d0416924b41"
+    },
+    {
+        "index": 120,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 1,
+            "start_minute": 15,
+            "end_minute": 30,
+            "dam_price": null,
+            "rtm_price": 3332.9,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "b7bceebe7ca4580171883f4cf4a720453f32b21a77bf552192de2d0416924b41",
+        "hash": "23bd82064e3ddaef40a7ff2e8b7fcf7a5ea1c986aae0680253eff4e4e443f569"
+    },
+    {
+        "index": 121,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 2,
+            "start_minute": 30,
+            "end_minute": 45,
+            "dam_price": null,
+            "rtm_price": 3221.77,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "23bd82064e3ddaef40a7ff2e8b7fcf7a5ea1c986aae0680253eff4e4e443f569",
+        "hash": "c5c61c7168f2a89c5995c572c5eb49ccc836a40f539dc25fc2a03a117e04cd6b"
+    },
+    {
+        "index": 122,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 3,
+            "start_minute": 45,
+            "end_minute": 60,
+            "dam_price": null,
+            "rtm_price": 3189.8,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "c5c61c7168f2a89c5995c572c5eb49ccc836a40f539dc25fc2a03a117e04cd6b",
+        "hash": "81087dd0374d0083b84d3d946ee694eb57a398d4d1933ae603671f9bd8537473"
+    },
+    {
+        "index": 123,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 4,
+            "start_minute": 60,
+            "end_minute": 75,
+            "dam_price": null,
+            "rtm_price": 2810.83,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "81087dd0374d0083b84d3d946ee694eb57a398d4d1933ae603671f9bd8537473",
+        "hash": "c7301747dccb8b24aa97c01e07a7217d6ae219a8fa9d7f0908a8c79c60d950ab"
+    },
+    {
+        "index": 124,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 5,
+            "start_minute": 75,
+            "end_minute": 90,
+            "dam_price": null,
+            "rtm_price": 2789.87,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "c7301747dccb8b24aa97c01e07a7217d6ae219a8fa9d7f0908a8c79c60d950ab",
+        "hash": "a5300c20fb9484a02545bde8f4ee0043ac9cc68f25464740786ece46f8a15b03"
+    },
+    {
+        "index": 125,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 6,
+            "start_minute": 90,
+            "end_minute": 105,
+            "dam_price": null,
+            "rtm_price": 3450.55,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "a5300c20fb9484a02545bde8f4ee0043ac9cc68f25464740786ece46f8a15b03",
+        "hash": "e21f845418818fe7d115d94083c20c3573ba0949836525e2ed76c2513d3877f5"
+    },
+    {
+        "index": 126,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 7,
+            "start_minute": 105,
+            "end_minute": 120,
+            "dam_price": null,
+            "rtm_price": 3400.31,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "e21f845418818fe7d115d94083c20c3573ba0949836525e2ed76c2513d3877f5",
+        "hash": "51dc4cafc99c9a54392250ebbeaa4742dda25693042365a31dd80fcd9ef6ffde"
+    },
+    {
+        "index": 127,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 8,
+            "start_minute": 120,
+            "end_minute": 135,
+            "dam_price": null,
+            "rtm_price": 2800.57,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "51dc4cafc99c9a54392250ebbeaa4742dda25693042365a31dd80fcd9ef6ffde",
+        "hash": "d343234b8697398caac8bab056e721b83626fa41f46ee664545d0177c60dd2d0"
+    },
+    {
+        "index": 128,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 9,
+            "start_minute": 135,
+            "end_minute": 150,
+            "dam_price": null,
+            "rtm_price": 2810.19,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "d343234b8697398caac8bab056e721b83626fa41f46ee664545d0177c60dd2d0",
+        "hash": "cf1f4b280d2aecdaaf99ac2fd93aadee57e45621f0350b218a494419fd7bfc19"
+    },
+    {
+        "index": 129,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 10,
+            "start_minute": 150,
+            "end_minute": 165,
+            "dam_price": null,
+            "rtm_price": 2699.31,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "cf1f4b280d2aecdaaf99ac2fd93aadee57e45621f0350b218a494419fd7bfc19",
+        "hash": "589e065081d848b54a30502db47c53a6908115ad601453cf3455166f95a6c147"
+    },
+    {
+        "index": 130,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 11,
+            "start_minute": 165,
+            "end_minute": 180,
+            "dam_price": null,
+            "rtm_price": 2700.05,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "589e065081d848b54a30502db47c53a6908115ad601453cf3455166f95a6c147",
+        "hash": "89d5d971ec3d7dd2982cfe2e4bd9bb61b94eaed87bd1997b7d92b65f33e4bc05"
+    },
+    {
+        "index": 131,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 12,
+            "start_minute": 180,
+            "end_minute": 195,
+            "dam_price": null,
+            "rtm_price": 2050.0,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "89d5d971ec3d7dd2982cfe2e4bd9bb61b94eaed87bd1997b7d92b65f33e4bc05",
+        "hash": "c138e6aa28477721e24c7d5710cc466b1edb5c34852a6c349b2286ddcb7c06a9"
+    },
+    {
+        "index": 132,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 13,
+            "start_minute": 195,
+            "end_minute": 210,
+            "dam_price": null,
+            "rtm_price": 2469.31,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "c138e6aa28477721e24c7d5710cc466b1edb5c34852a6c349b2286ddcb7c06a9",
+        "hash": "a4bfbbb28a214daee50975d3376d1028196fbbfa456f640ba3cc9ea07b379552"
+    },
+    {
+        "index": 133,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 14,
+            "start_minute": 210,
+            "end_minute": 225,
+            "dam_price": null,
+            "rtm_price": 2485.58,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "a4bfbbb28a214daee50975d3376d1028196fbbfa456f640ba3cc9ea07b379552",
+        "hash": "eed416425f712666a0cf3688b9159d9d66d614c608a9acc64a94e6c1f3fcb529"
+    },
+    {
+        "index": 134,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 15,
+            "start_minute": 225,
+            "end_minute": 240,
+            "dam_price": null,
+            "rtm_price": 2100.76,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "eed416425f712666a0cf3688b9159d9d66d614c608a9acc64a94e6c1f3fcb529",
+        "hash": "ab991fd1877387c56c74a1dc666172f2e076705a5dda3a5f99679658c22b2d77"
+    },
+    {
+        "index": 135,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 16,
+            "start_minute": 240,
+            "end_minute": 255,
+            "dam_price": null,
+            "rtm_price": 2749.87,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "ab991fd1877387c56c74a1dc666172f2e076705a5dda3a5f99679658c22b2d77",
+        "hash": "c9180ffcc4a09ba3e066054e59b8293d0aaf7eb2c82c1a59881986daca7b160e"
+    },
+    {
+        "index": 136,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 17,
+            "start_minute": 255,
+            "end_minute": 270,
+            "dam_price": null,
+            "rtm_price": 2200.12,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "c9180ffcc4a09ba3e066054e59b8293d0aaf7eb2c82c1a59881986daca7b160e",
+        "hash": "60463c704c08e08755a7ae7d66319ab8f55be36ce65b5900d56884755f289fb8"
+    },
+    {
+        "index": 137,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 18,
+            "start_minute": 270,
+            "end_minute": 285,
+            "dam_price": null,
+            "rtm_price": 2500.62,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "60463c704c08e08755a7ae7d66319ab8f55be36ce65b5900d56884755f289fb8",
+        "hash": "5f161a442ec6bd67077996f768d636646db0e7a1faa652a9a940f820e7f506bb"
+    },
+    {
+        "index": 138,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 19,
+            "start_minute": 285,
+            "end_minute": 300,
+            "dam_price": null,
+            "rtm_price": 2810.12,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "5f161a442ec6bd67077996f768d636646db0e7a1faa652a9a940f820e7f506bb",
+        "hash": "89663685e9caf5ff4656dda8684d1b7436d87e62eede710499a48aa9a3ed1b75"
+    },
+    {
+        "index": 139,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 20,
+            "start_minute": 300,
+            "end_minute": 315,
+            "dam_price": null,
+            "rtm_price": 3550.61,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "89663685e9caf5ff4656dda8684d1b7436d87e62eede710499a48aa9a3ed1b75",
+        "hash": "655e6d843de8dfbe0dc60c41240aa5e5fc6120730ca7b8c19edf24d6b11852d4"
+    },
+    {
+        "index": 140,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 21,
+            "start_minute": 315,
+            "end_minute": 330,
+            "dam_price": null,
+            "rtm_price": 3847.84,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "655e6d843de8dfbe0dc60c41240aa5e5fc6120730ca7b8c19edf24d6b11852d4",
+        "hash": "f9e6452764543eade64f860255e922d6e8a169b368f51c6564e31d01bf7796f7"
+    },
+    {
+        "index": 141,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 22,
+            "start_minute": 330,
+            "end_minute": 345,
+            "dam_price": null,
+            "rtm_price": 3741.81,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "f9e6452764543eade64f860255e922d6e8a169b368f51c6564e31d01bf7796f7",
+        "hash": "5774e5a6675344da4f01f76cb8538f2194c900ea4c8134d4c6544e88910f1fbe"
+    },
+    {
+        "index": 142,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 23,
+            "start_minute": 345,
+            "end_minute": 360,
+            "dam_price": null,
+            "rtm_price": 3750.17,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "5774e5a6675344da4f01f76cb8538f2194c900ea4c8134d4c6544e88910f1fbe",
+        "hash": "2676152f5cd144f41790de2492a191878eaaf2addadb2758f16bcdaa575b3450"
+    },
+    {
+        "index": 143,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 24,
+            "start_minute": 360,
+            "end_minute": 375,
+            "dam_price": null,
+            "rtm_price": 4260.04,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "2676152f5cd144f41790de2492a191878eaaf2addadb2758f16bcdaa575b3450",
+        "hash": "602399ce3a7ad20e48931bd2a32b46d5959dd9860e99c0755e657ad1252651d0"
+    },
+    {
+        "index": 144,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 25,
+            "start_minute": 375,
+            "end_minute": 390,
+            "dam_price": null,
+            "rtm_price": 5391.44,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "602399ce3a7ad20e48931bd2a32b46d5959dd9860e99c0755e657ad1252651d0",
+        "hash": "2a15ee6049539f7f98c90a06bdc6fc54bbd3eff2825bf6cf501d53f253e57a42"
+    },
+    {
+        "index": 145,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 26,
+            "start_minute": 390,
+            "end_minute": 405,
+            "dam_price": null,
+            "rtm_price": 6500.68,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "2a15ee6049539f7f98c90a06bdc6fc54bbd3eff2825bf6cf501d53f253e57a42",
+        "hash": "8788c1326311bef66ceaa0f99c3d7b153c3f943fdc3d895beb91abdcbec41722"
+    },
+    {
+        "index": 146,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 27,
+            "start_minute": 405,
+            "end_minute": 420,
+            "dam_price": null,
+            "rtm_price": 7100.11,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "8788c1326311bef66ceaa0f99c3d7b153c3f943fdc3d895beb91abdcbec41722",
+        "hash": "dd1de2dc9b5f74cc76c8d62e033efeff05f69dcb2319960a8fc59b82f751d0ae"
+    },
+    {
+        "index": 147,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 28,
+            "start_minute": 420,
+            "end_minute": 435,
+            "dam_price": null,
+            "rtm_price": 7462.36,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "dd1de2dc9b5f74cc76c8d62e033efeff05f69dcb2319960a8fc59b82f751d0ae",
+        "hash": "3b5e354b3959b380050a818496d390a8526a9964bc03c0ac112a9d26907a480a"
+    },
+    {
+        "index": 148,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 29,
+            "start_minute": 435,
+            "end_minute": 450,
+            "dam_price": null,
+            "rtm_price": 6500.9,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "3b5e354b3959b380050a818496d390a8526a9964bc03c0ac112a9d26907a480a",
+        "hash": "24bf8da30cde8201f5a5d88863b3dfaba557b93e28f6e8415b308d67aa0fa826"
+    },
+    {
+        "index": 149,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 30,
+            "start_minute": 450,
+            "end_minute": 465,
+            "dam_price": null,
+            "rtm_price": 3850.6,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "24bf8da30cde8201f5a5d88863b3dfaba557b93e28f6e8415b308d67aa0fa826",
+        "hash": "52cf5470a64f2fcdd12fa8e1e250594fb94718b92c447578826ebfff7adda786"
+    },
+    {
+        "index": 150,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 31,
+            "start_minute": 465,
+            "end_minute": 480,
+            "dam_price": null,
+            "rtm_price": 2521.99,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "52cf5470a64f2fcdd12fa8e1e250594fb94718b92c447578826ebfff7adda786",
+        "hash": "57dd7866d8615e7617840a6938984b2b2c9015a75f4053a1539207cd3ccb5bcd"
+    },
+    {
+        "index": 151,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 32,
+            "start_minute": 480,
+            "end_minute": 495,
+            "dam_price": null,
+            "rtm_price": 2800.8,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "57dd7866d8615e7617840a6938984b2b2c9015a75f4053a1539207cd3ccb5bcd",
+        "hash": "968a14511ab293d0f05b7dec7c9bfc592e5549dca540fd3fae12d5cb6fd1db8f"
+    },
+    {
+        "index": 152,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 33,
+            "start_minute": 495,
+            "end_minute": 510,
+            "dam_price": null,
+            "rtm_price": 2588.4,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "968a14511ab293d0f05b7dec7c9bfc592e5549dca540fd3fae12d5cb6fd1db8f",
+        "hash": "3c01f2d734b7ea3801fa54871cb86524599005c204b988e91adc136aaaf894c6"
+    },
+    {
+        "index": 153,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 34,
+            "start_minute": 510,
+            "end_minute": 525,
+            "dam_price": null,
+            "rtm_price": 2500.75,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "3c01f2d734b7ea3801fa54871cb86524599005c204b988e91adc136aaaf894c6",
+        "hash": "2b767f7103f925fbcf0d4e165b64e179f1dcb24eb26c8b82f1a8034addfc0c22"
+    },
+    {
+        "index": 154,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 35,
+            "start_minute": 525,
+            "end_minute": 540,
+            "dam_price": null,
+            "rtm_price": 1792.46,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "2b767f7103f925fbcf0d4e165b64e179f1dcb24eb26c8b82f1a8034addfc0c22",
+        "hash": "9b45b03a1a2532aa2f94bdc72e9fe8e7a74ff4717762d182f7d3ea4d324bc7ee"
+    },
+    {
+        "index": 155,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 36,
+            "start_minute": 540,
+            "end_minute": 555,
+            "dam_price": null,
+            "rtm_price": 1792.65,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "9b45b03a1a2532aa2f94bdc72e9fe8e7a74ff4717762d182f7d3ea4d324bc7ee",
+        "hash": "919c99b8b2648f96979608001f6984cd9c8097fac00e3dafbe9fa486b8a6b6bc"
+    },
+    {
+        "index": 156,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 37,
+            "start_minute": 555,
+            "end_minute": 570,
+            "dam_price": null,
+            "rtm_price": 1864.54,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "919c99b8b2648f96979608001f6984cd9c8097fac00e3dafbe9fa486b8a6b6bc",
+        "hash": "8b433b26dfde94b376ae6d5780f8ef78896323c8fdf5a62e48d432d55ec37ee4"
+    },
+    {
+        "index": 157,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 38,
+            "start_minute": 570,
+            "end_minute": 585,
+            "dam_price": null,
+            "rtm_price": 1250.17,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "8b433b26dfde94b376ae6d5780f8ef78896323c8fdf5a62e48d432d55ec37ee4",
+        "hash": "ca0206f3678f08f27d0208479868ba5dbe9c88e6afe8342d3ed77172b21ccf09"
+    },
+    {
+        "index": 158,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 39,
+            "start_minute": 585,
+            "end_minute": 600,
+            "dam_price": null,
+            "rtm_price": 749.4,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "ca0206f3678f08f27d0208479868ba5dbe9c88e6afe8342d3ed77172b21ccf09",
+        "hash": "9f77c90197d862075b85af5c00f048a8ccae1183bd21b91acb26dee031929f22"
+    },
+    {
+        "index": 159,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 40,
+            "start_minute": 600,
+            "end_minute": 615,
+            "dam_price": null,
+            "rtm_price": 29.28,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "9f77c90197d862075b85af5c00f048a8ccae1183bd21b91acb26dee031929f22",
+        "hash": "d0799b405e8ce447430f39a238223360c971c36957e8f4bbe642c742229a2005"
+    },
+    {
+        "index": 160,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 41,
+            "start_minute": 615,
+            "end_minute": 630,
+            "dam_price": null,
+            "rtm_price": 50.81,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "d0799b405e8ce447430f39a238223360c971c36957e8f4bbe642c742229a2005",
+        "hash": "b09da5ac4ba2fdcc481627710e47f27661ba63c5296fc005abc6acd9cc996939"
+    },
+    {
+        "index": 161,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 42,
+            "start_minute": 630,
+            "end_minute": 645,
+            "dam_price": null,
+            "rtm_price": 29.06,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "b09da5ac4ba2fdcc481627710e47f27661ba63c5296fc005abc6acd9cc996939",
+        "hash": "4c4e7c2277c5f795ed435c108a982d3ca418968bcf25dc0f0837de51b39ddc1e"
+    },
+    {
+        "index": 162,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 43,
+            "start_minute": 645,
+            "end_minute": 660,
+            "dam_price": null,
+            "rtm_price": 48.66,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "4c4e7c2277c5f795ed435c108a982d3ca418968bcf25dc0f0837de51b39ddc1e",
+        "hash": "75bb494e67a68bf7eaaa9df2b00d9e8ff253c0d1eb4a74590728ed96e7fd6a54"
+    },
+    {
+        "index": 163,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 44,
+            "start_minute": 660,
+            "end_minute": 675,
+            "dam_price": null,
+            "rtm_price": 9.01,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "75bb494e67a68bf7eaaa9df2b00d9e8ff253c0d1eb4a74590728ed96e7fd6a54",
+        "hash": "38f41065fbe561d31e85b58c044248e964610de6468a2cec6af6bfb3a0220262"
+    },
+    {
+        "index": 164,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 45,
+            "start_minute": 675,
+            "end_minute": 690,
+            "dam_price": null,
+            "rtm_price": 9.48,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "38f41065fbe561d31e85b58c044248e964610de6468a2cec6af6bfb3a0220262",
+        "hash": "c51b29d06b5852afcc6519c6d7512234059c39488b05b673963531fd0b788d0a"
+    },
+    {
+        "index": 165,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 46,
+            "start_minute": 690,
+            "end_minute": 705,
+            "dam_price": null,
+            "rtm_price": 0.77,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "c51b29d06b5852afcc6519c6d7512234059c39488b05b673963531fd0b788d0a",
+        "hash": "595e97ebdebd2ac44f90b7ddba7a57d357f7cac07291f171ddc819ea263df7bb"
+    },
+    {
+        "index": 166,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 47,
+            "start_minute": 705,
+            "end_minute": 720,
+            "dam_price": null,
+            "rtm_price": 4.45,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "595e97ebdebd2ac44f90b7ddba7a57d357f7cac07291f171ddc819ea263df7bb",
+        "hash": "9e4d362cb0bf733135692b6f528f1723e34a5921cf655d6298fbb78a77b0ea42"
+    },
+    {
+        "index": 167,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 48,
+            "start_minute": 720,
+            "end_minute": 735,
+            "dam_price": null,
+            "rtm_price": 0.0,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "9e4d362cb0bf733135692b6f528f1723e34a5921cf655d6298fbb78a77b0ea42",
+        "hash": "5679de67a103fcc6d4d68549b51e4c50d063c300c30ff18d933f8dcb2fefd19c"
+    },
+    {
+        "index": 168,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 49,
+            "start_minute": 735,
+            "end_minute": 750,
+            "dam_price": null,
+            "rtm_price": 0.0,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "5679de67a103fcc6d4d68549b51e4c50d063c300c30ff18d933f8dcb2fefd19c",
+        "hash": "5b547ba9242a8ec2a473930318e4c18a487a74ff196bb8843e97be0ef52749a1"
+    },
+    {
+        "index": 169,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 50,
+            "start_minute": 750,
+            "end_minute": 765,
+            "dam_price": null,
+            "rtm_price": 0.0,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "5b547ba9242a8ec2a473930318e4c18a487a74ff196bb8843e97be0ef52749a1",
+        "hash": "a7bcc3ce1cd3756c417a06fe339dab6803f2e0f3e298ed479df0e64fa92edf33"
+    },
+    {
+        "index": 170,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 51,
+            "start_minute": 765,
+            "end_minute": 780,
+            "dam_price": null,
+            "rtm_price": 0.0,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "a7bcc3ce1cd3756c417a06fe339dab6803f2e0f3e298ed479df0e64fa92edf33",
+        "hash": "2cebff90f29d35a059a5c448ca8f7c1fa6f175f5c45cdeab7fa8caa30d080d37"
+    },
+    {
+        "index": 171,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 52,
+            "start_minute": 780,
+            "end_minute": 795,
+            "dam_price": null,
+            "rtm_price": 0.0,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "2cebff90f29d35a059a5c448ca8f7c1fa6f175f5c45cdeab7fa8caa30d080d37",
+        "hash": "78d370b8a16f664c2cd6283d2fb43fcdab79532213b12e8a2d17e809906162e5"
+    },
+    {
+        "index": 172,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 53,
+            "start_minute": 795,
+            "end_minute": 810,
+            "dam_price": null,
+            "rtm_price": 0.0,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "78d370b8a16f664c2cd6283d2fb43fcdab79532213b12e8a2d17e809906162e5",
+        "hash": "5bf4e81f1d1533d9de0a90b6596187845c417621c4d53e398640338283874a2b"
+    },
+    {
+        "index": 173,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 54,
+            "start_minute": 810,
+            "end_minute": 825,
+            "dam_price": null,
+            "rtm_price": 0.0,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "5bf4e81f1d1533d9de0a90b6596187845c417621c4d53e398640338283874a2b",
+        "hash": "418e2e12eb6fcba7daa9a02dc579c640bce83f7736a98874301c5eb1fbf3ed68"
+    },
+    {
+        "index": 174,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 55,
+            "start_minute": 825,
+            "end_minute": 840,
+            "dam_price": null,
+            "rtm_price": 0.0,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "418e2e12eb6fcba7daa9a02dc579c640bce83f7736a98874301c5eb1fbf3ed68",
+        "hash": "b8132e1cbd0da4d0578a42437053e64a08410a7fa9288e132603281c5f5c512e"
+    },
+    {
+        "index": 175,
+        "timestamp": "2026-10-27T14:07:35.140731",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 56,
+            "start_minute": 840,
+            "end_minute": 855,
+            "dam_price": null,
+            "rtm_price": 0.0,
+            "recorded_at": "2026-10-27T14:07:35.140731+00:00"
+        },
+        "prev_hash": "b8132e1cbd0da4d0578a42437053e64a08410a7fa9288e132603281c5f5c512e",
+        "hash": "723c4cb948591c48464be1ce83bee2d318c93d89eb7a7ed8c081eed339542900"
+    },
+    {
+        "index": 176,
+        "timestamp": "2026-10-27T14:15:22.360689",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 57,
+            "start_minute": 855,
+            "end_minute": 870,
+            "dam_price": 1620.04,
+            "rtm_price": 23.46,
+            "recorded_at": "2026-10-27T14:15:22.360689+00:00"
+        },
+        "prev_hash": "723c4cb948591c48464be1ce83bee2d318c93d89eb7a7ed8c081eed339542900",
+        "hash": "7ac5db5b10134aa561660fc7578d995e8e41a7e3d777c04cb8f2ae06f2eb4511"
+    },
+    {
+        "index": 177,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 58,
+            "start_minute": 870,
+            "end_minute": 885,
+            "dam_price": 1620.93,
+            "rtm_price": 999.01,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "7ac5db5b10134aa561660fc7578d995e8e41a7e3d777c04cb8f2ae06f2eb4511",
+        "hash": "dbbb04fd164138c4f80086ea25e0e95dccd1f29039271ee18e98a3848658a069"
+    },
+    {
+        "index": 178,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 59,
+            "start_minute": 885,
+            "end_minute": 900,
+            "dam_price": 1911.74,
+            "rtm_price": 1559.32,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "dbbb04fd164138c4f80086ea25e0e95dccd1f29039271ee18e98a3848658a069",
+        "hash": "96098eb9a71e7ba237ea18a0a8a38d4cee547c5c02a15088614a446d3fc482dc"
+    },
+    {
+        "index": 179,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 60,
+            "start_minute": 900,
+            "end_minute": 915,
+            "dam_price": 2034.34,
+            "rtm_price": 1472.75,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "96098eb9a71e7ba237ea18a0a8a38d4cee547c5c02a15088614a446d3fc482dc",
+        "hash": "44e8c7fc25059e44259c9a2a7103c33afe7f0827923a57b36a510c12bb371327"
+    },
+    {
+        "index": 180,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 61,
+            "start_minute": 915,
+            "end_minute": 930,
+            "dam_price": 2146.52,
+            "rtm_price": 1602.17,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "44e8c7fc25059e44259c9a2a7103c33afe7f0827923a57b36a510c12bb371327",
+        "hash": "228eb805870a15c75734fa9f0390d4eea874f0e5f6cac581a06144dc7a144a9e"
+    },
+    {
+        "index": 181,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 62,
+            "start_minute": 930,
+            "end_minute": 945,
+            "dam_price": 2500.14,
+            "rtm_price": 2521.68,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "228eb805870a15c75734fa9f0390d4eea874f0e5f6cac581a06144dc7a144a9e",
+        "hash": "7bdf60aa0e387b23c01f1eb93414acdfc86d3c0987086ea8b54ce57772711f10"
+    },
+    {
+        "index": 182,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 63,
+            "start_minute": 945,
+            "end_minute": 960,
+            "dam_price": 2692.54,
+            "rtm_price": 2719.3,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "7bdf60aa0e387b23c01f1eb93414acdfc86d3c0987086ea8b54ce57772711f10",
+        "hash": "3641f512b9606c50c35b5afda2d4e1d601de023c0b9395feb76e3ea4dd6944fa"
+    },
+    {
+        "index": 183,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 64,
+            "start_minute": 960,
+            "end_minute": 975,
+            "dam_price": 2939.09,
+            "rtm_price": 3514.88,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "3641f512b9606c50c35b5afda2d4e1d601de023c0b9395feb76e3ea4dd6944fa",
+        "hash": "527ecd8aadc0a255ee58429512da6642522cc65a727a3c926465c3467861edb5"
+    },
+    {
+        "index": 184,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 65,
+            "start_minute": 975,
+            "end_minute": 990,
+            "dam_price": 3000.42,
+            "rtm_price": 3550.73,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "527ecd8aadc0a255ee58429512da6642522cc65a727a3c926465c3467861edb5",
+        "hash": "7e9c4d9b3751bbd1a123b232f8de6c5289d0914703a153aed14cb68060add363"
+    },
+    {
+        "index": 185,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 66,
+            "start_minute": 990,
+            "end_minute": 1005,
+            "dam_price": 3554.96,
+            "rtm_price": 4516.77,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "7e9c4d9b3751bbd1a123b232f8de6c5289d0914703a153aed14cb68060add363",
+        "hash": "b1de633a1e540cbc0cf6e392097cec109d976ded36c5acf2ef7f94c0d8d9044b"
+    },
+    {
+        "index": 186,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 67,
+            "start_minute": 1005,
+            "end_minute": 1020,
+            "dam_price": 4036.05,
+            "rtm_price": 6000.69,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "b1de633a1e540cbc0cf6e392097cec109d976ded36c5acf2ef7f94c0d8d9044b",
+        "hash": "b929ba83304ff56aa3a5b5e0e388483b6bf7f480604661d21be732d060b8f2d9"
+    },
+    {
+        "index": 187,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 68,
+            "start_minute": 1020,
+            "end_minute": 1035,
+            "dam_price": 4524.75,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "b929ba83304ff56aa3a5b5e0e388483b6bf7f480604661d21be732d060b8f2d9",
+        "hash": "5b0ea5bee737b79eadb4ca78c0bfc31d41cfdcf44c37d615a7ba17b106d391e9"
+    },
+    {
+        "index": 188,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 69,
+            "start_minute": 1035,
+            "end_minute": 1050,
+            "dam_price": 10000.0,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "5b0ea5bee737b79eadb4ca78c0bfc31d41cfdcf44c37d615a7ba17b106d391e9",
+        "hash": "71bf75d505e1c18c1647f4da6c535871407e3390767a61fbd7ae440aecbc31c9"
+    },
+    {
+        "index": 189,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 70,
+            "start_minute": 1050,
+            "end_minute": 1065,
+            "dam_price": 10000.0,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "71bf75d505e1c18c1647f4da6c535871407e3390767a61fbd7ae440aecbc31c9",
+        "hash": "2f59042f32a26992d4bd77e9f5e06b605d7996cae78f64c05f07588318726d60"
+    },
+    {
+        "index": 190,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 71,
+            "start_minute": 1065,
+            "end_minute": 1080,
+            "dam_price": 10000.0,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "2f59042f32a26992d4bd77e9f5e06b605d7996cae78f64c05f07588318726d60",
+        "hash": "7e2907bdbece7a730ca12403e8d716dbac868e3a3f4ba83f8cb6213c56443814"
+    },
+    {
+        "index": 191,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 72,
+            "start_minute": 1080,
+            "end_minute": 1095,
+            "dam_price": 10000.0,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "7e2907bdbece7a730ca12403e8d716dbac868e3a3f4ba83f8cb6213c56443814",
+        "hash": "e85fa5b982b5b642f3d18a96611ccf93787cfff4f0f39bbbd8e181c8605f7c91"
+    },
+    {
+        "index": 192,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 73,
+            "start_minute": 1095,
+            "end_minute": 1110,
+            "dam_price": 10000.0,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "e85fa5b982b5b642f3d18a96611ccf93787cfff4f0f39bbbd8e181c8605f7c91",
+        "hash": "1167e76145d762e6f4b95d789180be776f370e110ce0c78a685e1c74dd16ca60"
+    },
+    {
+        "index": 193,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 74,
+            "start_minute": 1110,
+            "end_minute": 1125,
+            "dam_price": 10000.0,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "1167e76145d762e6f4b95d789180be776f370e110ce0c78a685e1c74dd16ca60",
+        "hash": "ab1e2c906062c4a416ac2863cc3de50575e45568586b45574f5d650d479c9e64"
+    },
+    {
+        "index": 194,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 75,
+            "start_minute": 1125,
+            "end_minute": 1140,
+            "dam_price": 10000.0,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "ab1e2c906062c4a416ac2863cc3de50575e45568586b45574f5d650d479c9e64",
+        "hash": "381544db9fcf71be4a9193ba323e8efe9ef38adccd1be8cddd727ff46e8d969d"
+    },
+    {
+        "index": 195,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 76,
+            "start_minute": 1140,
+            "end_minute": 1155,
+            "dam_price": 10000.0,
+            "rtm_price": 10000.0,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "381544db9fcf71be4a9193ba323e8efe9ef38adccd1be8cddd727ff46e8d969d",
+        "hash": "c24ab4f18c037ee2c21c4e52a8d42b16ac91993eeddc2b6baa390855ae273445"
+    },
+    {
+        "index": 196,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 77,
+            "start_minute": 1155,
+            "end_minute": 1170,
+            "dam_price": 10000.0,
+            "rtm_price": 9500.09,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "c24ab4f18c037ee2c21c4e52a8d42b16ac91993eeddc2b6baa390855ae273445",
+        "hash": "e0682bbc17410ed5f489659b771ee0233db06f402c089ceb2a7d17a7e0e7c775"
+    },
+    {
+        "index": 197,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 78,
+            "start_minute": 1170,
+            "end_minute": 1185,
+            "dam_price": 10000.0,
+            "rtm_price": 5210.29,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "e0682bbc17410ed5f489659b771ee0233db06f402c089ceb2a7d17a7e0e7c775",
+        "hash": "6c4bda6e3e7950f4cd17c1b1f51098116c6fd46d0993eb4c18c6e22f5ed6a3ed"
+    },
+    {
+        "index": 198,
+        "timestamp": "2026-10-27T14:17:07.080181",
+        "payload": {
+            "date": "2026-10-27",
+            "block_index": 79,
+            "start_minute": 1185,
+            "end_minute": 1200,
+            "dam_price": 6459.2,
+            "rtm_price": 4648.27,
+            "recorded_at": "2026-10-27T14:17:07.080181+00:00"
+        },
+        "prev_hash": "6c4bda6e3e7950f4cd17c1b1f51098116c6fd46d0993eb4c18c6e22f5ed6a3ed",
+        "hash": "f7ff912ac4641cbc823306d88ab03db66de40e75282f4551d58ef1f7046a993f"
+    }
+]
