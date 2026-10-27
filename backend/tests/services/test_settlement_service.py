@@ -2,6 +2,7 @@ from datetime import date, datetime, time, timezone
 from decimal import Decimal
 
 from app.models.repository import create_scenario, load_settlement_blocks, upsert_price_blocks
+from app.pricing.time_utils import IST
 from app.scraper.parser import PriceBlockRecord
 from app.services.settlement_service import check_and_settle_due_ranges
 
@@ -9,7 +10,7 @@ TODAY = date(2026, 9, 15)
 
 
 def _now(hour: int, minute: int) -> datetime:
-    return datetime(TODAY.year, TODAY.month, TODAY.day, hour, minute, tzinfo=timezone.utc)
+    return datetime(TODAY.year, TODAY.month, TODAY.day, hour, minute, tzinfo=IST)
 
 
 def _seed_price(session, market: str, block_start: time, block_end: time, mcp: str):
@@ -115,3 +116,27 @@ def test_range_spanning_multiple_blocks_partially_priced_marks_not_fully_priced(
     assert payload["total_kwh"] == 2.0  # 4kW * 0.5h, fully known regardless of pricing
     assert payload["priced_kwh"] == 1.0  # only the priced first block
     assert payload["cost_rs"] == 4.0  # 1.0 kWh * 4000 / 1000
+
+
+def test_utc_instant_is_read_as_ist_market_time(db_session):
+    create_scenario(db_session, "scenario", [(1080, 1095, 5.0)])  # 18:00-18:15 IST
+    _seed_price(db_session, "DAM", time(18, 0), time(18, 15), "4000")
+
+    # 12:29 UTC is 17:59 IST: not due yet; 12:30 UTC is 18:00 IST: due
+    assert check_and_settle_due_ranges(db_session, datetime(2026, 9, 15, 12, 29, tzinfo=timezone.utc)) == []
+    result = check_and_settle_due_ranges(db_session, datetime(2026, 9, 15, 12, 30, tzinfo=timezone.utc))
+
+    assert len(result) == 1
+    assert result[0].payload["date"] == "2026-09-15"
+
+
+def test_utc_instant_late_in_the_day_settles_for_the_next_ist_date(db_session):
+    create_scenario(db_session, "scenario", [(0, 15, 5.0)])  # 00:00-00:15 IST
+    _seed_price(db_session, "DAM", time(0, 0), time(0, 15), "4000")
+
+    # 2026-09-14 19:00 UTC is 2026-09-15 00:30 IST
+    result = check_and_settle_due_ranges(db_session, datetime(2026, 9, 14, 19, 0, tzinfo=timezone.utc))
+
+    assert len(result) == 1
+    assert result[0].payload["date"] == TODAY.isoformat()
+    assert result[0].payload["cost_rs"] == 5.0

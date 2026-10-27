@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 from ..chain.block import ChainBlock
 from ..chain.ledger import Chain
 from ..models.repository import get_price_blocks, load_price_ledger_blocks, save_price_ledger_block
+from ..pricing.time_utils import to_market_time
 from ..pricing.blocks import block_index_for_minute, generate_blocks, minutes_from_time
 
 
@@ -29,8 +30,9 @@ def check_and_record_price_blocks(session: Session, now: datetime) -> list[Chain
     once a block is recorded it is never revisited, even if the underlying
     price data changes afterwards.
     """
-    today = now.date()
-    now_minute = now.hour * 60 + now.minute
+    market_now = to_market_time(now)
+    today = market_now.date()
+    now_minute = market_now.hour * 60 + market_now.minute
 
     existing_models = load_price_ledger_blocks(session)
     chain_was_empty = not existing_models

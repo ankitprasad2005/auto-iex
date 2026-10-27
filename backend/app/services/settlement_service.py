@@ -12,6 +12,7 @@ from ..models.repository import (
     save_settlement_block,
 )
 from ..pricing.allocation import ConsumptionRange, allocate_to_blocks
+from ..pricing.time_utils import to_market_time
 from ..pricing.blocks import block_index_for_minute, generate_blocks, minutes_from_time
 
 
@@ -38,8 +39,9 @@ def check_and_settle_due_ranges(session: Session, now: datetime) -> list[ChainBl
     if scenario is None:
         return []
 
-    today = now.date()
-    now_minute = now.hour * 60 + now.minute
+    market_now = to_market_time(now)
+    today = market_now.date()
+    now_minute = market_now.hour * 60 + market_now.minute
 
     existing_models = load_settlement_blocks(session)
     chain_was_empty = not existing_models

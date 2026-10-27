@@ -1,4 +1,9 @@
+from datetime import datetime, timedelta, timezone
+
 MINUTES_PER_DAY = 1440
+
+# IEX market days and time blocks are defined in IST, which has no DST.
+IST = timezone(timedelta(hours=5, minutes=30), "IST")
 
 
 def hhmm_to_minutes(value: str) -> int:
@@ -15,3 +20,7 @@ def hhmm_to_minutes(value: str) -> int:
     if total > MINUTES_PER_DAY:
         raise ValueError(f"time out of range: {value!r}")
     return total
+
+
+def to_market_time(instant: datetime) -> datetime:
+    return instant.astimezone(IST)
