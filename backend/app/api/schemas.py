@@ -1,6 +1,10 @@
-from decimal import Decimal
+from decimal import ROUND_HALF_UP, Decimal
 
 from pydantic import BaseModel, field_serializer
+
+
+def _rupees(value: Decimal) -> str:
+    return str(value.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP))
 
 
 class ConsumptionRangeIn(BaseModel):
@@ -26,7 +30,7 @@ class BlockComparisonOut(BaseModel):
     def serialize_cost(self, value: Decimal | None) -> str | None:
         if value is None:
             return None
-        return str(value.normalize())
+        return _rupees(value)
 
 
 class ComparisonOut(BaseModel):
@@ -39,4 +43,4 @@ class ComparisonOut(BaseModel):
 
     @field_serializer('dam_total_rs', 'rtm_total_rs', 'hybrid_total_rs')
     def serialize_total(self, value: Decimal) -> str:
-        return str(value.normalize())
+        return _rupees(value)

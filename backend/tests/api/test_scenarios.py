@@ -44,5 +44,5 @@ def test_get_comparison_returns_full_breakdown(client, db_session):
     assert resp.status_code == 200
     body = resp.json()
     assert len(body["blocks"]) == 96
-    assert body["blocks"][0]["dam_cost_rs"] == "4"
+    assert body["blocks"][0]["dam_cost_rs"] == "4.00"
     assert body["dam_pending_blocks"] == 95
