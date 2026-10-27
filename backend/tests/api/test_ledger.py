@@ -3,6 +3,7 @@ from decimal import Decimal
 
 from app.chain.block import ChainBlock, GENESIS_PREV_HASH
 from app.models.repository import create_scenario, save_settlement_block, upsert_price_blocks
+from app.pricing.time_utils import to_market_time
 from app.scraper.parser import PriceBlockRecord
 
 
@@ -44,7 +45,7 @@ def test_check_ledger_settles_due_ranges(client, db_session):
     create_scenario(db_session, "scenario", [(0, 15, 4.0)])  # 00:00-00:15
     upsert_price_blocks(
         db_session,
-        [PriceBlockRecord(date=datetime.now(timezone.utc).date(), market="DAM", block_start=time(0, 0), block_end=time(0, 15), mcp_rs_per_mwh=Decimal("4000"))],
+        [PriceBlockRecord(date=to_market_time(datetime.now(timezone.utc)).date(), market="DAM", block_start=time(0, 0), block_end=time(0, 15), mcp_rs_per_mwh=Decimal("4000"))],
     )
 
     resp = client.post("/ledger/check")

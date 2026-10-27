@@ -3,6 +3,7 @@ from decimal import Decimal
 
 from app.chain.block import ChainBlock, GENESIS_PREV_HASH
 from app.models.repository import save_price_ledger_block, upsert_price_blocks
+from app.pricing.time_utils import to_market_time
 from app.scraper.parser import PriceBlockRecord
 
 
@@ -43,7 +44,7 @@ def test_verify_price_ledger_detects_tampering(client, db_session):
 def test_check_price_ledger_records_due_blocks(client, db_session):
     upsert_price_blocks(
         db_session,
-        [PriceBlockRecord(date=datetime.now(timezone.utc).date(), market="DAM", block_start=time(0, 0), block_end=time(0, 15), mcp_rs_per_mwh=Decimal("4000"))],
+        [PriceBlockRecord(date=to_market_time(datetime.now(timezone.utc)).date(), market="DAM", block_start=time(0, 0), block_end=time(0, 15), mcp_rs_per_mwh=Decimal("4000"))],
     )
 
     resp = client.post("/price-ledger/check")
